@@ -1,0 +1,478 @@
+ul {
+    list-style: none;
+    margin: 0 0 0 0;
+}
+
+.goodsEvaluateReplyButton {
+    padding-left: 84px;
+    color: #0593d3;
+    cursor: pointer;
+    width: 26px;
+}
+
+.heart {
+  width: 58px;
+  height: 50px;
+  position: absolute;
+  left: 65%;
+  top: 84%;
+  background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
+  background-position: 0 0;
+  background-size: auto 55px;
+  cursor: pointer;
+  transition: background 0.8s steps(28);
+}
+/*.heart:hover {
+  background-position: -1540px 0;
+  transition: background 1s steps(28);
+}*/
+
+#goodsInfomationFavorites {
+    font-size: 15px;
+    width: 83px;
+    margin-left: 349px;
+    margin-top: 34px;
+    cursor: pointer;
+}
+
+.goodsEvaluateUserName {
+    color: #0593d3;
+}
+
+.goodsEvaluateCreatedTime {
+    color: #999999;
+}
+
+.goodsEvaluateImg {
+    height: 40px;
+    width: 40px;
+    border: 2px solid #f2f2f2;
+}
+
+.goodsEvaluateImgUl {
+    height: 40px;
+    margin-bottom: 8px;
+    margin-top: 7px;
+}
+
+.goodsEvaluateImgLi {
+    float: left;
+    border-right: 1px solid #dddddd;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-bottom: 3px;
+    width: 40px;
+    height: 40px;
+}
+
+.goodsEvaluateReplyLi {
+    padding-top: 17px;
+    border-top: 1px solid #dddddd;
+}
+
+.goodsEvaluateReplyUl {
+    list-style: none;
+    margin-left: 72px;
+}
+
+.goodsEvaluateContent {
+    padding-left: 84px;
+}
+
+.goodsEvaluateliLeftDiv {
+    width: 835px;
+    background-color: white;
+    padding-left: 9px;
+    padding-top: 12px;
+}
+
+.goodsEvaluateLi {
+}
+
+.goodsEvaluateUl {
+    list-style: none;
+    margin: 0 0 0 0;
+}
+
+#goodsEvaluateRightDiv {
+    position: relative;
+    top: 114px;
+    left: 174px;
+    float: left;
+    height: 533px;
+    width: 835px;
+}
+
+.goodsInformationRightDiv-fifth {
+    height: 100px;
+    width: 402px;
+    position: relative;
+    left: 400px;
+    bottom: 85px;
+}
+
+.goodsInformationChangeQuantityDiv {
+    height: 33px;
+    width: 134px;
+    margin-left: 33px;
+}
+
+.goodsInformationBuyQuantityReduce {
+    height: 30px;
+    width: 30px;
+    background-color: antiquewhite;
+    text-align: center;
+    line-height: 26px;
+    position: relative;
+    left: 18px;
+    top: -64px;
+    border: 1px solid #c9c9c9;
+    font-size: 25px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.goodsInformationBuyQuantityAdd {
+    height: 30px;
+    width: 30px;
+    background-color: antiquewhite;
+    text-align: center;
+    line-height: 28px;
+    position: relative;
+    left: 82px;
+    top: -32px;
+    border: 1px solid #c9c9c9;
+    font-size: 25px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.goodsInformationBuyQuantityReduce:hover {
+    background-color: bisque;
+}
+
+.goodsInformationBuyQuantityAdd:hover {
+    background-color: bisque;
+}
+
+.goodsInformationBuyQuantity {
+    height: 30px;
+    width: 30px;
+    margin-left: 50px;
+    margin-top: 7px;
+    border: 1px solid #c9c9c9;
+    text-align: center;
+    line-height: 30px;
+}
+
+.goodsInformationColor {
+    height: 87px;
+}
+
+.goodsInformationNetWeight {
+    height: 97px;
+}
+
+.ColorLi {
+    height: 42px;
+    width: 42px;
+    background-color: red;
+    border: 5px solid #c9c9c9;
+    margin-left: 24px;
+    float: left;
+    margin-top: 5px;
+}
+
+.ColorLi-select {
+    height: 42px;
+    width: 42px;
+    background-color: red;
+    border: 5px solid #c40000;
+    margin-left: 24px;
+    float: left;
+    margin-top: 5px;
+} 
+
+.NetWeightLi-select {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #c40000;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+    margin-left: 24px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#goodsInformationRightDiv-fourth {
+    margin-top: 25px;
+    width: 288px;
+}
+
+.NetWeightLi {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #c9c9c9;
+    text-align: center;
+    line-height: 50px;
+    float: left;
+    margin-left: 24px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.tm-ind-panel .tm-count {
+    display: inline-block;
+    line-height: 16px;
+    height: 16px;
+    color: #c40000;
+    font-weight: 700;
+    margin-left: 3px;
+}
+
+.tm-ind-item .tm-label, .tm-ind-item .tm-monthavg {
+    display: inline-block;
+    line-height: 16px;
+    height: 16px;
+    color: #999;
+}
+
+.tm-ind-item {
+    float: left;
+    width: 33%;
+    text-align: center;
+    position: relative;
+    left: -1px;
+    border-left: 1px solid #e5dfda;
+    flex: 1;
+    line-height: 16px;
+}
+
+.tm-ind-panel {
+    border: 1px dotted #c9c9c9;
+    border-width: 1px 0;
+    margin: -1px 1px 0 0;
+    padding: 10px 0;
+    position: relative;
+    overflow: hidden;
+    clear: both;
+    display: flex;
+    list-style: none;
+    margin-top: 27px;
+}
+
+.goodsInfomationDiscountSpan {
+    padding-left: 58px;
+    font-size: 30px;
+    color: #c40000;
+}
+
+.goodsInformationDiscount {
+    padding-top: 31px;
+    font-size: 17px;
+    margin-left: 15px;
+}
+
+.goodsInfomationPriceSpan {
+    padding-left: 68px;
+    text-decoration: line-through;
+}
+
+.goodsInfomationPrice {
+    margin-left: 15px;
+    font-size: 19px;
+    padding-top: 12px;
+}
+
+#goodsInformationRightDiv-second {
+    height: 93px;
+    width: 805px;
+    margin-top: 15px;
+    background-color: #e9e9e9;
+    background-repeat: no-repeat;
+    background-image: url(/Users/zazalu/Desktop/毕设前端/img/gallery/goodsInformationPriceBackground.png);
+}
+
+.goodsInformationSubTitle{
+    font-size: 14px;
+    color: #dd2727;
+    margin: 0;
+}
+
+.goodsInformationTitle {
+    color: black;
+    position: relative;
+    font-size: 24px;
+    height: inherit;
+}
+
+#goodsInformationRightDiv-first {
+    height: 45px;
+    width: 805px;
+}
+
+.goodsInformation-quantity {
+    position: relative;
+    top: 0px;
+    left: -7px;
+    width: 31px;
+    height: 17px;
+    /* color: rgba(255, 0, 0, 0.49); */
+    color: #c40000;
+    text-align: center;
+}
+
+#goodsInformationRightDiv {
+    position: relative;
+    top: 114px;
+    left: 174px;
+    float: left;
+    height: 533px;
+    border: 0px solid #cfbfb1;
+}
+
+
+#goodsInformationMiddleDiv-first-Head {
+    width: initial;
+    font-size: 13px;
+    text-align: center;
+    line-height: 17px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 31px;
+    border-right: 1px solid #cfbfb1;
+    border-bottom: 1px solid #cfbfb1;
+    /*border-left: 1px solid #b00000;*/
+}
+
+#goodsInformationMiddleDiv-second-Head {
+    width: initial;
+    font-size: 13px;
+    text-align: center;
+    line-height: 17px;
+    padding-top: 16px;
+    padding-bottom: 7px;
+    padding-left: 16px;
+    padding-right: 31px;
+    border-right: 1px solid #cfbfb1;
+    border-bottom: 1px solid #cfbfb1;
+    /*border-left: 1px solid #b00000;*/
+}
+
+#goodsInfomationMiddleDiv-first {
+    width: initial;
+}
+
+#goodsInfomationMiddleDiv-first-select {
+    width: initial;
+}
+
+#goodsInfomationMiddleDiv-second {
+}
+
+
+#goodsInformationMiddleDiv {
+    position: relative;
+    top: 114px;
+    left: 142px;
+    float: left;
+    height: 435px;
+    padding-bottom: 101px;
+    width: 48px;
+    border-top: 1px solid #cfbfb1;
+}
+
+.goodsInformationImgSmallBox {
+    float: left;
+    height: 60px;
+    width: 60px;
+}
+
+
+#goodsInformationImgBox {
+    width: 430px;height: 430px;overflow: hidden;margin: auto;
+}
+
+#goodsInformationImgDiv {
+    cursor: pointer;
+    border: 2px solid #c8ccd0;
+    border-radius: 4px;
+    text-align: center;
+}
+
+
+#goodsInfomationDiv {
+    width: auto;
+    height: 675px;
+    display: block;
+    padding-top: 72px;
+    background-color: white;
+}
+
+#goodsInformationLeftDiv {
+    position: relative;
+    top: 114px;
+    left: 142px;
+    float: left;
+    height: 435px;
+    padding-bottom: 101px;
+    border-right-style: ridge;
+    padding-right: 35px;
+}
+
+.goodsInfomationMiddleDiv-first-select::after {
+    content: ' ';
+    display: block;
+    border-width: 5px;
+    border-style: dashed;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #b00000;
+    width: 0;
+    height: 0;
+    font-family: arial;
+    position: absolute;
+    top: 44px;
+    left: 10%;
+    margin-left: -5px;
+}
+
+.goodsInfomationMiddleDiv-second-select::after {
+    content: ' ';
+    display: block;
+    border-width: 5px;
+    border-style: dashed;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #b00000;
+    width: 0;
+    height: 0;
+    font-family: arial;
+    position: absolute;
+    top: 144px;
+    left: 10%;
+    margin-left: -5px;
+}
+
+.NetWeightLi-select::after {
+    content: '✓';
+    position: relative;
+    top: -30px;
+    left: 20px;
+    display: block;
+    color: #c40000;
+    font-family: arial;
+}
+
+.ColorLi-select::after {
+    content: '✓';
+    position: relative;
+    display: block;
+    color: #c40000;
+    background-color: white;
+    height: 12px;
+    width: 12px;
+    font-family: arial;
+    text-align: center;
+    line-height: 13px;
+    left: 35px;
+    top: 35px;
+}

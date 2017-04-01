@@ -1,0 +1,24 @@
+.foot{
+    padding: 20px 20px;
+    color: #fff;
+    width: 30px;
+    display: inline-block;
+    text-align: center;
+    background: rgba(0, 0, 0, 0);
+}
+.footdivone{
+    padding-top: 11px;
+    float: right;
+}
+.footdivone p{
+    font-family: "Microsoft YaHei", "&#24494;&#36719;&#38597;&#40657;", sans-serif;
+    font-style: normal;
+    color: #e2e2e2;
+    font-size: 15px;
+}
+.footul li{
+  line-height: 20px;
+    float: left;
+    display: block;
+  padding: 60px;
+}

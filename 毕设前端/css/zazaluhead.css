@@ -1,0 +1,95 @@
+#headMusicProgress {
+    display: inline-block;
+    width: 0px;
+    height: 1px;
+    background-color: white;
+    padding-right: 242px;
+    margin-left: 12px;
+    margin-bottom: 3px;
+}
+
+#headMusicCircle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: rgb(103, 204, 226);
+    border-radius: 100%;
+    top: 17px;
+    left: 80px;
+    /*left:318px是最左边*/
+}
+
+#headMusicCircleBig {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(225, 229, 230);
+    border-radius: 100%;
+    top: 15px;
+    left: 77px;
+    z-index: -1;
+}
+
+#headMusicTitle {
+    position: absolute;
+    top: -6px;
+    left: 127px;
+    font-size: 8px;
+}
+
+
+#zhezhao {
+ width:100%; 
+ height:100%; 
+ background-color:#000; 
+ filter:alpha(opacity=50); 
+ -moz-opacity:0.5; 
+ opacity:0; 
+ position:fixed; 
+ left:0px; 
+ top:77px; 
+ display:none; 
+ z-index:-1; 
+}
+
+#zhezhaoId {
+    position: relative;
+    left: 320px;
+}
+#zhezhaoLike {
+    position: relative;
+    left: 226px;
+    width: 410px;
+}
+
+.zhezhaoLikeLi {
+    display: block;
+    height: auto;
+    width: 1150px;
+    padding-bottom: 156px;
+}
+
+.zhezhaoLikePicture {
+    float: left;
+}
+
+.zhezhaoLIkeDescrible {
+    float: left;
+    padding-top: 50px;
+    margin-left: -180px;
+}
+
+.zhezhaoLikeImg {
+    width: 36%;
+}
+
+.zhezhaoLIkeDescribleSmall {
+    font-size: large;
+}
+
+.zhezhaoLIkeDescribleTitle {
+    font-size: xx-large;
+    margin-bottom: 41px;
+    margin-top: -27px;    
+}
+

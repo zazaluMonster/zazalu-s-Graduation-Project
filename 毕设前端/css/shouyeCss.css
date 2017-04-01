@@ -1,0 +1,122 @@
+#sidebar > ul {
+    list-style: none;
+    margin: 0px 0 0;
+    padding: 0px 0px 0px 0px;
+    position: absolute;
+    width: 220px;
+}
+#shouyeAds {
+  /*background-image: url('img/gallery/shouyeAds1.jpg');*/
+  width: auto;
+  height: 675px;
+  display: block;
+  padding-top: 72px;
+}
+#shouyeAdsPicture {
+  width: auto;
+  height: auto;
+  display: block;
+  z-index: 0;
+}
+#content {
+    background: none repeat scroll 0 0 #eeeeee;
+    margin-left: 220px;
+    margin-right: 0;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    position: relative;
+    min-height: 100%;
+    width: auto;
+}
+
+#shouyeAdsIndex {
+    background-color: white;
+    
+    width: 100px;
+    height: 10px;
+}
+
+.thumbnails li{
+    max-width: 305.55px;
+    max-height: 172px;
+}
+
+.container-fluid {
+    padding-right: 0px;
+}
+
+.pagination.alternate {
+    margin: 0px;
+    text-align: center;
+}
+
+.goodsname p{
+  position: relative;
+    text-align: center;
+    font-size: 26px;
+    line-height: 40px;
+    color: black;
+    font-family: "Microsoft YaHei", "&#24494;&#36719;&#38597;&#40657;", sans-serif
+}
+.goodsdescribe {
+    border-bottom-style: ridge;
+    padding-bottom: 26px;
+    color: black;
+}
+
+.actions-activity {
+        position: relative;
+    bottom: 101px;
+    background-color: rgba(255, 24, 0, 0.75);
+    height: 68px;
+    width: 55px;
+    left: 0px;
+}
+
+.actions-activity-first-p {
+    color: white;
+    position: relative;
+    left: 10px;
+    top: 4px;
+}
+
+.actions-activity-second-p {
+    color: white;
+    position: relative;
+    left: 17px;
+    top: -1px;
+    font-size: large;
+}
+
+.actions-activity-third-p {
+    color: white;
+    position: relative;
+    left: 15px;
+    top: -9px;
+}
+
+#user-nav-userHeadImg {
+    width: 60px;
+    height: 60px;
+}
+
+#user-nav-userHeadDescrible {
+    float: right;
+    height: 65px;
+    width: 122px;
+    text-align: center;
+}
+
+#user-nav-userHeadA {
+    width: 220px;
+}
+
+#user-nav-userHeadId {
+    padding-top: 5px;
+    font-size: 21px;
+}
+
+#user-nav-userHeadWelcome {
+    padding-top: 20px;
+}
+
