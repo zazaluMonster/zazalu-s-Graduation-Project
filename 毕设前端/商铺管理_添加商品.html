@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Matrix Admin</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="css/matrix-style.css" />
+  <link rel="stylesheet" href="css/matrix-media.css" />
+  <link rel="stylesheet" href="css/shouyeCss.css" />
+  <link rel="stylesheet" href="css/goodsManage.css" />
+  <link rel="stylesheet" href="css/foot.css" />
+  <link rel="stylesheet" href="css/zazaluhead.css" />
+  <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+  <!--Header-part-->
+  <div id="header">
+    <h1><a href="dashboard.html">Matrix Admin</a></h1>
+  </div>
+  <!--close-Header-part-->
+
+  <!--top-Header-menu-->
+  <div id="user-nav" class="navbar navbar-inverse">
+    <ul class="nav" id="headList">
+      <li class="dropdown" id="profile-messages"><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome Manager</span><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="买方个人信息.html" id="user-nav-userHeadA">
+              <img id="user-nav-userHeadImg" src="img/user/user1/userHead.png" />
+              <div id="user-nav-userHeadDescrible">
+                <div id="user-nav-userHeadId">zazalu</div>
+                <div id="user-nav-userHeadWelcome">God Mode</div>
+              </div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li><a href="#"><i class="icon-check"></i> GoodsManage</a></li>
+          <li class="divider"></li>
+          <li><a href="#"><i class="icon-heart-empty"></i> OtherManage</a></li>
+          <li class="divider"></li>
+          <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+        </ul>
+      </li>
+      <li class=""><a title="" href="login.html"><i class="icon icon-question-sign"></i> <span class="text">Support</span></a></li>
+      <li class=""><a title="" href="login.html"><i class="icon icon-heart"></i> <span class="text">About</span></a></li>
+      <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+      <li class="">
+        <a title="" href="#" id="headMusicA">
+          <i class="icon icon-music" id="headMusicI"></i>
+          <span class="text" id="headMusicSpan">music</span>
+          <span id="headMusicProgress" style="display: none"></span>
+          <span id="headMusicCircle" style="display: none"></span>
+          <span id="headMusicTitle" style="display: none">GIRAFFE BLUES ~Freyja Solo~ - 鈴木みのり</span>
+          <audio id="headMusic">
+            <source src="audio/audio1.mp3" type="audio/mpeg" />
+          </audio>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!--sidebar-menu-->
+
+  <div id="sidebar">
+    <!--<a href="#" class="visible-phone"><i class="icon icon-file"></i> Addons</a>-->
+    <ul>
+      <li><a href="index.html"><i class="icon icon-plus"></i> <span>添加商品</span></a> </li>
+      <li><a href="charts.html"><i class="icon icon-tag"></i> <span>商品标签管理</span></a> </li>
+      <li><a href="widgets.html"><i class="icon icon-wrench"></i> <span>商品信息修改</span></a> </li>
+      <li><a href="tables.html"><i class="icon icon-th"></i> <span>查看订单</span></a></li>
+
+    </ul>
+  </div>
+
+  <!--添加商品的页面-->
+  <div id="content">
+    <div id="content-header">
+      <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">商铺管理</a>
+        <a href="#" class="current">添加商品</a>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <!-- <hr> -->
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="widget-box">
+            <div class="widget-title"> <span class="icon"> <i class="icon-plus"></i> </span>
+              <h5>添加商品</h5>
+            </div>
+            <div class="widget-content">
+              <div class="widget-content nopadding">
+                <form action="#" method="get" class="form-horizontal">
+                  <div class="control-group">
+                    <label class="control-label">商品名 :</label>
+                    <div class="controls">
+                      <input type="text" class="span11" placeholder="请输入商品名" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">商品描述 :</label>
+                    <div class="controls">
+                      <textarea class="span11" placeholder="对该商品的官方描述"></textarea>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">商品库存 :</label>
+                    <div class="controls">
+                      <input type="password" class="span11" placeholder="商品库存量" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">净含量 :</label>
+                    <div class="controls">
+                      <input type="text" class="span11" placeholder="写法 :50ml&100ml&150ml" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">颜色 :</label>
+                    <div class="controls">
+                      <input type="text" class="span11" placeholder="写法 :rgba(102, 102, 102, 0.48)&rgba(102, 102, 102, 0.48);&rgba(102, 102, 102, 0.48);" />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">商品Message :</label>
+                    <div class="controls">
+                      <input type="text" class="span11" />
+                      <span class="help-block">商品展示页面在商品名下方显示的补充性文字，红色</span> </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label">商品图片 :</label>
+                    <div class="controls">
+                      <input type="text" class="span11" />
+                      <span class="help-block">商品展示页面在商品名下方显示的补充性文字，红色</span> </div>
+                  </div>
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-success">Save</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Footer-part-->
+  <div class="row-fluid">
+    <ul class="footul">
+      <li style="padding-left: 250px">
+        <span class="foot add-on bg_lg"><i class="icon-phone icon-2x"></i></span>
+        <div class="footdivone">
+          <p>000-000-0000 / 000-000-0000</p>
+          <p style="font-size: 11px">普通话7*24小时</p>
+        </div>
+      </li>
+      <li>
+        <span class="foot add-on bg_lg"><i class="icon-comments icon-2x"></i></span>
+        <div class="footdivone">
+          <p>xxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+          <p style="font-size: 11px">微信公众号</p>
+        </div>
+      </li>
+      <li>
+        <span class="foot add-on bg_lg"><i class="icon-headphones icon-2x"></i></span>
+        <div class="footdivone">
+          <p>xxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+          <p style="font-size: 11px">在线客服</p>
+        </div>
+      </li>
+    </ul>
+    <div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in/">Themedesigner.in</a></div>
+  </div>
+  <!--end-Footer-part-->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.ui.custom.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/matrix.js"></script>
+  <script src="js/shouyeAdsPicture.js"></script>
+  <script src="js/zazaluMusic.js"></script>
+  <script src="js/zazaluSearch.js"></script>
+</body>
+
+</html>
