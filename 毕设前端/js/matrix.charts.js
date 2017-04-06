@@ -1,7 +1,6 @@
 
 $(document).ready(function(){
 	
-	
 	// === Prepare the chart data ===/
 	var sin = [], cos = [];
     for (var i = 0; i < 14; i += 0.5) {
@@ -14,7 +13,6 @@ $(document).ready(function(){
         sin.push([i, Math.sin(i)]);
         cos.push([i, Math.cos(i)]);
     }
-
 	// === Make chart === //
     var plot = $.plot($(".chart"),
            [ { data: sin, label: "sin(x)", color: "#ee7951"}, { data: cos, label: "cos(x)",color: "#4fb9f0" } ], {
@@ -25,7 +23,6 @@ $(document).ready(function(){
                grid: { hoverable: true, clickable: true },
                yaxis: { min: -1.6, max: 1.6 }
 		   });
-    
 	// === Point hover in chart === //
     var previousPoint = null;
     $(".chart").bind("plothover", function (event, pos, item) {
@@ -50,7 +47,6 @@ $(document).ready(function(){
             previousPoint = null;           
         }   
     });	
-    
 	
 	
     
@@ -60,7 +56,6 @@ $(document).ready(function(){
 	{
 		data[i] = { label: "Series"+(i+1), data: Math.floor(Math.random()*100)+1 }
 	}
-	
     var pie = $.plot($(".pie"), data,{
         series: {
             pie: {
@@ -96,7 +91,6 @@ $(document).ready(function(){
             order: 1,
         }
     });    
-	
 	
     //Display graph
     var bar = $.plot($(".bars"), data, {
