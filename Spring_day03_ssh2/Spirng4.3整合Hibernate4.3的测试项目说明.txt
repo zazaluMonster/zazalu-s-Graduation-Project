@@ -1,0 +1,8 @@
+2017.4.12
+
+你好，我是何镓钧
+
+你现在在看的项目是Spirng4.3整合Hibernate4.3成功（无Hibernate.cfg.xml）的测试实例
+
+项目里用到的Spirng版本是4.3.6  Hibernate版本是4.3.11  数据源是c3p0  数据库是mysql  
+

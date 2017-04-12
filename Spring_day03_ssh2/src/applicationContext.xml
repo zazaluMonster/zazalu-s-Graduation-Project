@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						   http://www.springframework.org/schema/beans/spring-beans.xsd
+						   http://www.springframework.org/schema/context
+						   http://www.springframework.org/schema/context/spring-context.xsd
+						   http://www.springframework.org/schema/aop 
+						   http://www.springframework.org/schema/aop/spring-aop.xsd
+						   http://www.springframework.org/schema/tx
+						   http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+	<context:component-scan base-package="com.zazalu.demo"></context:component-scan>
+	<!--导入db.properties -->
+	<context:property-placeholder location="classpath:db.properties" />
+	<!-- 配置c3p0数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}"></property>
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
+	</bean>
+	<!--第一步，我们之前使用了HibernateTemplate来进行数据的CRUD操作，不过我们知道HibernateTemplate是依赖Session的 
+		所以我们要先获取到Session。 而Session的获取我们又是根据SeissonFactory来获取的，而SessionFactory的获取之前我们要先加载Hibernate的配置文件 
+		于是乎这整个步骤如果每次都由我们来写，就显得枯燥无味，所以Spring为我们提供了一个类LocalSessionFactoryBean，专门帮我们搞定了这件事情 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<!-- 配置数据源属性 -->
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="show_sql">true</prop>
+				<prop key="format_sql">true</prop>
+				<prop key="hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<!-- hibernate的所有配置信息都搬过来了 所以Hibernate1的配置文件读入已经不需要了 -->
+		<!-- <property name="configLocations" value="classpath:hibernate.cfg.xml"></property> -->
+		<!-- 配置 hibernate 实体映射文件的位置及名称 ， mappingLocations可以使用通配符 -->
+		<property name="mappingLocations" value="classpath:com/zazalu/entity/*.hbm.xml"></property>
+	</bean>
+	<!--配置Dao -->
+	<bean id="userDao" class="com.zazalu.dao.Impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!--配置Service -->
+	<bean id="userSerivce" class="com.zazalu.service.Impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+
+	<bean id="txManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="register" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config>
+		<aop:advisor advice-ref="txAdvice"
+			pointcut="execution(* com.zazalu.service..*.*(..))" />
+	</aop:config>
+</beans>
