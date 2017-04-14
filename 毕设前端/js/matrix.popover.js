@@ -17,6 +17,7 @@ $(function ()
      .on(
          'blur',
          function() {
+             alert($(this).attr('value'));
              if($(this).attr('value') == ""){
                  if($(this).attr('id') == "to-username"){
                     $(this).attr("data-content","输入您的邮箱名，如果您还没有注册过，请点击Setup");
