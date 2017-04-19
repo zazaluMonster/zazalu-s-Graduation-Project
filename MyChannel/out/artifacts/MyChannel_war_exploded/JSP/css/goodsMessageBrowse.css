@@ -1,0 +1,10 @@
+.recent-posts-goodsLi {
+    -webkit-transition: background-color 1s;
+    transition-property: background-color;
+    transition-duration: 1s;
+}
+
+.recent-posts-goodsLi:hover {
+    background-color: rgba(200, 204, 208, 0.6);
+}
+

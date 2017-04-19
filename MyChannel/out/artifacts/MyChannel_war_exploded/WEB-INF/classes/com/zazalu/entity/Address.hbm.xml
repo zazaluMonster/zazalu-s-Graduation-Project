@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.zazalu.entity.Address" table="Address">
+		<id name="AddressId">
+			<generator class="native"></generator>
+		</id>
+		<property name="AddressPlace" column="AddressPlace"></property>
+		<property name="AddressDetail" column="AddressDetail"></property>
+		<property name="AddressTel" column="AddressTel"></property>
+		<property name="RewardPeople" column="RewardPeople"></property>
+		<property name="isDefault" column="isDefault"></property>
+        <many-to-one name="UserId" class="com.zazalu.entity.User" column="UserId" unique="true"> </many-to-one>
+	</class>
+
+</hibernate-mapping>

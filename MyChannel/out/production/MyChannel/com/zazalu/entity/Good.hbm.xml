@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.zazalu.entity.Good" table="Good">
+		<id name="GoodId">
+			<generator class="native"></generator>
+		</id>
+		<property name="GoodName" column="GoodName"></property>
+		<property name="GoodDescrible" column="GoodDescrible"></property>
+		<property name="GoodStock" column="GoodStock"></property>
+		<property name="GoodNetWeight" column="GoodNetWeight"> </property>
+        <property name="GoodColor" column="GoodColor"></property>
+        <property name="GoodMessage" column="GoodMessage"></property>
+        <property name="GoodImgUrl164" column="GoodImgUrl164"></property>
+        <property name="GoodImgUrl60" column="GoodImgUrl60"></property>
+        <property name="GoodImgUrl30" column="GoodImgUrl30"></property>
+        <property name="GoodImgUrl430" column="GoodImgUrl430"></property>
+        <property name="Semaphore" column="Semaphore"></property>
+        <property name="GoodPoint" column="GoodPoint"></property>
+        <property name="GoodDiscount" column="GoodDiscount"></property>
+
+        <set name="ordersSet">
+            <key column="GoodId"></key>
+            <one-to-many class="com.zazalu.entity.Orders"></one-to-many>
+        </set>
+        <!--这个property-ref在这里会报错 不知道为什么-->
+        <one-to-one name="AdsId" class="com.zazalu.entity.Advertisement" property-ref="GoodId"></one-to-one>
+	</class>
+
+</hibernate-mapping>

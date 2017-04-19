@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="userAction_*" class="userAction" method="{1}">
+			<result name="success">/index.jsp</result>
+            <result name="passwordWrong">/wrongPassword.jsp</result>
+            <result name="messageIncomplete">/messageIncomplete.jsp</result>
+            <result name="userDisabled">/userDisabled.jsp</result>
+		</action>
+        <action name="userActionNoModelDriven_*" class="userActionNoModelDriven" method="{1}">
+            <result name="success">/index.jsp</result>
+        </action>
+        <action name="goodAction_*" class="goodAction" method="{1}">
+            <result name="success">/index.jsp</result>
+        </action>
+        <action name="ordersAction_newOrder" class="ordersAction" method="newOrder">
+            <result name="success">/index.jsp</result>
+        </action>
+		<action name="favoriteAction_*" class="favoriteAction" method="{1}">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="tagAction_*" class="tagAction" method="{1}">
+			<result name="success">/index.jsp</result>
+		</action>
+        <action name="evaluateAction_*" class="evaluateAction" method="{1}">
+            <result name="success">/index.jsp</result>
+        </action>
+        <action name="advertisementAction_*" class="advertisementAction" method="{1}">
+            <result name="success">/index.jsp</result>
+        </action>
+        <action name="addressAction_*" class="addressAction" method="{1}">
+            <result name="success">/index.jsp</result>
+        </action>
+	</package>
+</struts>

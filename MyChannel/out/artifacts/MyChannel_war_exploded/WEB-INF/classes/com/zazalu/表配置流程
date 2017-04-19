@@ -1,0 +1,12 @@
+1.先编写正确的实体entity类
+    所有外键注意使用对应的实体类作为类型 还不是Integer 比如
+        User userId
+2.编写正确的Hibernate的实体类配置文件
+    注意外键关系
+        在外键关系中 在对应的其他有关系的类中添加 HashSet 表示一对多
+3.编写dao层 保存新实例 统一用save方法
+4.编写sevice层 用可以表现业务功能的方法
+5.编写Action层 有外键的表 不要使用模型驱动
+6.在Spring配置文件里添加dao service action 还有新的action方法的配置
+7.配置struts.xml
+8.配置网页demo的表单

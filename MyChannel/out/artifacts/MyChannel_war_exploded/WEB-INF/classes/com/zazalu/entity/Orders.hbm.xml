@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.zazalu.entity.Orders" table="Orders">
+		<id name="OrdersId">
+			<generator class="native"> </generator>
+		</id>
+        <many-to-one name="UserId" class="com.zazalu.entity.User" column="UserId" unique="true"> </many-to-one>
+        <many-to-one name="GoodId" class="com.zazalu.entity.Good" column="GoodId" unique="true"> </many-to-one>
+		<property name="GoodNumber" column="GoodNumber"> </property>
+		<property name="GoodNetWeight" column="GoodNetWeight"> </property>
+		<property name="GoodColor" column="GoodColor"> </property>
+        <property name="isPay" column="isPay"> </property>
+        <property name="isUnSubscribe" column="isUnSubscribe"> </property>
+        <property name="OrderTime" column="OrderTime"> </property>
+
+		<set name="evaluateSet">
+			<key column="OrdersId"></key>
+			<one-to-many class="com.zazalu.entity.Evaluate"></one-to-many>
+		</set>
+	</class>
+
+</hibernate-mapping>

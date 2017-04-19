@@ -1,0 +1,427 @@
+/* Limit image width to avoid overflow the container */
+img {
+  max-width: 100%; /* This rule is very important, please do not ignore this! */
+}
+
+
+#personalInformation-PasswordChange-Div {
+    height: 427px;
+    width: 805px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;   
+    opacity: 0;
+}
+
+#personalInformation-ShouHuoAddress-div {
+    height: 427px;
+    width: 805px;
+    margin-left: 40px;
+    margin-right: 40px;   
+    opacity: 0;
+}
+
+.controlCropBoxButtons {
+    left: 300px;
+    position: relative;
+    top: 7px;
+    border-radius: 23px;
+}
+
+#headEditorDiv-third-top {
+    position: relative;
+    bottom: 44px;
+}
+
+#preview164 {
+    width: 164px;
+    height: 164px;
+    overflow: hidden;
+    position: relative;
+    left: 682px;
+    bottom: 400px;
+}
+
+#preview60 {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+    left: 682px;
+    bottom: 367px;
+}
+
+#preview30 {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    left: 782px;
+    bottom: 426px;
+}
+
+#headEditorDiv-third-middle-left {
+    width: 600px;
+    height: 400px;
+    padding-right: 43px;
+    padding-bottom: 72px;
+    border-right-style: ridge;
+}
+
+#personalInformationDiv {
+    width: auto;
+    height: 675px;
+    display: block;
+    padding-top: 72px;
+    background-color: white;
+}
+
+#personalInformationLeftDiv {
+    position: relative;
+    top: 114px;
+    left: 211px;
+    float: left;
+    height: 472px;
+    border-right-style: ridge;
+    padding-right: 118px;
+}
+
+#personalInformationHeadDiv {
+    border: 1px solid #c8ccd0;
+    border-radius: 4px;
+    text-align: center;
+    padding: 26px;
+    box-shadow: inset 0 172px 5px #e7e8ea;
+    -webkit-transition: box-shadow 1s;
+    transition-property: box-shadow;
+    transition-duration: 1s;
+}
+
+#personalInformationHead {
+    width: 164px;
+    height: 164px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#personalInformationHeadImg60 {
+    margin-left: 46px;
+    margin-top: 17px;
+    border: 3px solid rgba(200, 204, 208, 0.6);
+}
+
+#personalInformationLevel {
+    padding: 21px 0 0 0;
+    font-size: 22px;
+    color: #181a1c;
+}
+
+.personalInformationLeftDivDown {
+    border: 1px solid #c8ccd0;
+    border-radius: 4px;
+    text-align: center;
+    /* box-shadow: inset 0 130px 0 #e7e8ea; */
+    position: relative;
+    top: 26px;
+    margin-top: 17px;
+    background: #e7e8ea;
+    -webkit-transition: background 1s,width 1s,height 1s;
+    transition-property: background;
+    transition-duration: 1s;
+}
+
+#personalInformationTrans {
+    height: 45px;
+    width: 805px;
+    margin-left: 40px;
+    margin-right: 40px;
+    /*border-bottom-style: ridge;*/
+}
+
+#personalInformationRightDiv {
+    position: relative;
+    top: 114px;
+    left: 211px;
+    float: left;
+    height: 472px;
+    /*border-right-style: ridge;*/
+}
+
+#personalInformationRightDiv-ghost {
+    position: relative;
+    top: 114px;
+    left: 211px;
+    float: left;
+    height: 472px;   
+}
+
+#headEditorDiv-second {
+    position: relative;
+    bottom: 17px;
+    left: 228px;
+    cursor:pointer;
+    width: 52px;
+    text-decoration: blink;
+    -webkit-transition: text-decoration 0.5s,color,0.1s;
+    transition-property: text-decoration,color;
+    transition-duration: 0.5s,0.1s;
+}
+
+#headEditorDiv-third {
+    position: relative;
+    top: 114px;
+    left: 211px;
+    float: left;
+    height: 472px;
+    margin-left: 31px;
+}
+
+/*选中这个div下的第一个span元素*/
+.personalInformationChangeForm-div > span:first-of-type {
+    margin-left: 46px;
+}
+
+.personalInformationChangeForm-div > span {
+    width: 98px;
+    margin-top: 15px
+}
+
+.personalInformationHeadChange {
+    height: 96px;
+    width: 758px;
+    border-bottom: 1px solid #e6ecf0;
+    -webkit-transition: box-shadow 0.5s,background-color 0.5s;
+    transition-property: box-shadow,background-color;
+    transition-duration: 0.5s,0.5s;
+}
+
+.personalInformationChangeDiv {
+    position: relative;
+}
+
+.personalInformationChangeDivContent {
+
+}
+
+.personalInformationChangeForm-div {
+    margin-bottom: 0;
+}
+
+.personalInformation-input-div {
+    margin-left: 151px;
+    padding: 10px 0;
+}
+
+.personalInformationChangeForm-save {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 48px;
+    border-top: 1px solid #e5e5e5;
+    padding: 19px 20px 20px;
+}
+
+.personalInformation-label {
+    float: left;
+    text-align: right;
+    padding-top: 15px;
+    width: 105px;
+}
+
+.personalInformationRightUp {
+    position: relative;
+    float: left;
+    font-size: 19px;
+    /*border-right-style: ridge;*/
+    padding-right: 55px;
+    padding-left: 55px;
+    padding-bottom: 27px;
+    box-shadow: inset 0 0px 0px #e7e8ea;
+    -webkit-transition: color 0.5s;
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+
+#personalInformationMessage {
+    height: 427px;
+    width: 805px;
+    margin-left: 40px;
+    margin-right: 40px;
+    /*border-bottom-style: ridge;*/
+    /*border-top-style: ridge;
+    border-left-style: ridge;
+    border-right-style: ridge;*/
+}
+
+.personalInformationRightDivDown {
+    height: 114px;
+    width: 758px;
+    border-top: 1px solid #e6ecf0;
+    border-bottom: 1px solid #e6ecf0;
+    opacity: 0;
+    box-shadow: 0px 0px 0px #e6ecf0;
+    background-color: white;
+    -webkit-transition: box-shadow 0.5s,background-color 0.5s;
+    transition-property: box-shadow,background-color;
+    transition-duration: 0.5s,0.5s;
+}
+
+.personalInformation-ShouHuoAddress-Message-isDefault-true {
+    margin-top: -97px;
+    margin-left: 477px;
+    word-break: break-all;
+    height: 20px;
+    width: 57px;
+    text-align: center;
+    border-color: rgba(63, 183, 114, 1);
+    border-radius: 3px;
+    background: rgba(63, 183, 114, 0.23);
+    color: rgba(63, 183, 114, 1);
+    border: 1px solid rgba(63, 183, 114, 1);
+    cursor: default;
+}
+
+.personalInformation-ShouHuoAddress-Message-isDefault-false {
+    margin-top: -97px;
+    margin-left: 477px;
+    word-break: break-all;
+    height: 20px;
+    width: 57px;
+    text-align: center;
+    opacity: 0;
+    border-color: #ff3800;
+    border-radius: 3px;
+    background: #ffd6cc;
+    color: #ff3800;
+    border: 1px solid #ff3800;
+    cursor: pointer;
+    -webkit-transition: opacity 0.1s;
+    transition-property: opacity;
+    transition-duration: 0.1s;
+
+}
+
+.personalInformation-ShouHuoAddress-Message-AddressTel {
+    margin-top: -59px;
+    margin-left: 1px;
+    height: 60px;
+    width: 162px;
+    word-break: break-all;
+    overflow: scroll;
+}
+
+.personalInformation-ShouHuoAddress-Message-AddressDetail {
+    margin-top: -24px;
+    margin-left: 179px;
+    height: 60px;
+    width: 285px;
+    word-break: break-all;
+    overflow: scroll;
+}
+
+.personalInformationRightUpA {
+    -webkit-transition: color 0.5s;
+    transition-property: color;
+    transition-duration: 0.5s;
+    cursor:pointer;
+}
+
+.personalInformation-goodsDiv {
+    float: left;
+    width: 600px;
+    height: 116px;
+    padding-left: 22px;
+}
+
+.personalInformation-ShouHuoAddress-Message-Div{
+    float: left;
+    width: 600px;
+    height: 116px;
+    padding-left: 22px;
+}
+
+.personalInformation-goodsId {
+    margin-top: 12px;
+}
+
+.personalInformation-ShouHuoAddress-Message-RewardPeople {
+    margin-top: 9px;   
+}
+
+.personalInformation-goodsdescrible {
+    margin-top: 9px;
+    height: 60px;
+    word-break: break-all;
+    overflow: scroll;
+}
+
+.personalInformation-ShouHuoAddress-Message-AddressPlace {
+    margin-top: -21px;
+    margin-left: 179px;
+    margin-bottom: 23px;
+    height: 42px;
+    width: 285px;
+    word-break: break-all;
+    overflow: scroll;
+}
+
+.personalInformation-buttons-div {
+    float: left;
+    position: relative;
+    top: -6px;
+    left: -12px;
+}
+
+.personalInformation-buttons {
+    border: 1px solid rgba(200, 204, 208, 0.8);
+    border-radius: 16px;
+    text-align: center;
+    /* box-shadow: inset 0 130px 0 #e7e8ea; */
+    position: relative;
+    background: rgba(231, 232, 234, 0.24);
+    margin-top: 22px;
+    font-size: 15px;
+    padding: 5px;
+    -webkit-transition: background 1s,width 1s,height 1s;
+    transition-property: background;
+    transition-duration: 1s;
+    cursor: pointer
+}
+
+.personalInformation-quantity {
+    position: relative;
+    left: 8px;
+    color: rgba(255, 0, 0, 0.49)
+}
+
+.personalInformationRightUpA:hover
+{
+    color: rgba(255, 0, 0, 0.49);
+}
+
+.personalInformationLeftDivDown:hover
+{
+    background: rgba(255, 0, 0, 0.49);
+}
+
+.personalInformation-buttons:hover
+{
+    background: rgba(255, 0, 0, 0.3);
+}
+
+#personalInformationHeadDiv:hover
+{
+    box-shadow: inset 0 130px 1px rgba(255, 0, 0, 0.49);
+}
+
+.personalInformationRightDivDown:hover
+{
+    box-shadow: 5px 4px 9px #e6ecf0;
+    background-color: #e6ecf0;
+}
+
+#headEditorDiv-second:hover
+{
+    text-decoration: underline;
+    color: rgba(255, 0, 0, 0.49)
+}

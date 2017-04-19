@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.zazalu.entity.Tag" table="Tag">
+		<id name="TagId">
+			<generator class="native"></generator>
+		</id>
+		<property name="TagName" column="TagName"></property>
+		<property name="TagDescrible" column="TagDescrible"></property>
+		<property name="FatherTagId" column="FatherTagId"></property>
+	</class>
+
+</hibernate-mapping>

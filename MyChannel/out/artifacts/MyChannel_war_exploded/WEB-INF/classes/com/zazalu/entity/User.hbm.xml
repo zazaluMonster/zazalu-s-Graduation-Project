@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="com.zazalu.entity.User" table="User">
+		<id name="UserId">
+			<generator class="native"></generator>
+		</id>
+		<property name="UserName" column="UserName"></property>
+		<property name="UserTel" column="UserTel"></property>
+		<property name="UserAddress" column="UserAddress"></property>
+		<property name="UserEmail" column="UserEmail"></property>
+        <property name="UserPassword" column="UserPassword"></property>
+        <property name="UserIdentity" column="UserIdentity"></property>
+        <property name="UserBirth" column="UserBirth"></property>
+        <property name="UserSex" column="UserSex"></property>
+        <property name="UserHeadUrl164" column="UserHeadUrl164"></property>
+        <property name="UserHeadUrl60" column="UserHeadUrl60"></property>
+        <property name="UserHeadUrl30" column="UserHeadUrl30"></property>
+        <property name="isManager" column="isManager"></property>
+        <property name="Semaphore" column="Semaphore"></property>
+
+        <set name="ordersSet">
+            <key column="UserId"></key>
+            <one-to-many class="com.zazalu.entity.Orders"></one-to-many>
+        </set>
+
+        <set name="favoriteSet">
+            <key column="UserId"></key>
+            <one-to-many class="com.zazalu.entity.Favorite"></one-to-many>
+        </set>
+
+        <set name="addressSet">
+            <key column="UserId"></key>
+            <one-to-many class="com.zazalu.entity.Address"></one-to-many>
+        </set>
+	</class>
+
+</hibernate-mapping>

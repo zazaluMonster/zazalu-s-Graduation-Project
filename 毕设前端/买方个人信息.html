@@ -303,11 +303,11 @@
                   <label class="personalInformation-label">* 性别 :</label>
                   <div class="personalInformation-input-div">
                     <label>
-                    <input type="radio" name="radios" style="vertical-align: initial;" />
+                    <input type="radio" name="radios" style="vertical-align: initial;" checked="checked"/>
                     男
                     </label>
                     <label>
-                    <input type="radio" name="radios" style="vertical-align: initial;"/>
+                    <input type="radio" name="radios" style="vertical-align: initial;" checked/>
                     女
                   </label>
                   </div>
@@ -332,8 +332,8 @@
                     <option value="WY">陕西</option>
                   </select>
                   <select class="personalInformation-Address city" style="width: 98px;">
-                      <option value="AL">绍兴</option>
                       <option value="WY">西安</option>
+                      <option value="AL">绍兴</option>
                   </select>
                   <select class="personalInformation-Address area" style="width: 98px;">
                     <option value="AL">上虞</option>
@@ -502,6 +502,7 @@
         <p style="    position: relative;left: 687px;bottom: 384px;font-size: 11px;width: 177px;color: rgba(135, 80, 0, 1);">您上传的头像会自动生成三种尺寸，请注意中小尺寸的头像是否清晰</p>
       </div>
       <div id="headEditorDiv-third-top">
+        <input type="file" class="sr-only" id="inputImage" name="file" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff" />
         <button class="btn btn-info btn-large">上传图片</button>
         <button class="btn btn-success btn-large" id="controlCropBoxSaveButtons">保存</button>
         <button class="btn  controlCropBoxButtons" id="controlCropBoxTurnBigButtons">放大</button>
