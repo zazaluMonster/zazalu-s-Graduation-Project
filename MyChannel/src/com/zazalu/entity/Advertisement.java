@@ -8,6 +8,14 @@ public class Advertisement {
     private String AdsImgUrl;
     private Good GoodId;
 
+    public Good getGoodId() {
+        return GoodId;
+    }
+
+    public void setGoodId(Good goodId) {
+        GoodId = goodId;
+    }
+
     public Integer getAdsId() {
         return AdsId;
     }
@@ -24,11 +32,4 @@ public class Advertisement {
         AdsImgUrl = adsImgUrl;
     }
 
-    public Good getGoodId() {
-        return GoodId;
-    }
-
-    public void setGoodId(Good goodId) {
-        GoodId = goodId;
-    }
 }

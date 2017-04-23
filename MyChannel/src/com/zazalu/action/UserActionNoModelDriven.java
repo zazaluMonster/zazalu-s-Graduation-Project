@@ -12,6 +12,7 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.sql.Date;
 import java.util.List;
@@ -39,9 +40,23 @@ public class UserActionNoModelDriven extends ActionSupport{
     public String personalInformationSave(){
         HttpServletRequest httpServletRequest = ServletActionContext.getRequest();
         User user = composeUser(httpServletRequest,userService);
-        userService.update(user);
         System.out.println("personal message save success!");
-        return null;
+        //个人信息已经改变 所以session中的原来的user已经失效 需要刷新
+        HttpSession httpSession =  httpServletRequest.getSession();
+        httpSession.setAttribute("user",user);
+        System.out.println("personal message flash in session success!");
+        //检测个人信息是否填写完整
+        if(UserAction.testUserMessageComplete(user)){
+            //到这里说明填写完毕
+            System.out.println("user message complete! trun the Semphore to 1");
+            user.setSemaphore(1);
+        }
+        userService.update(user);
+        //为了实现男女选择框的点亮
+        UserAction.addUserSexToSession(user,httpSession);
+        //为了实现用户年月份的点亮
+        UserAction.addUserBirthStringToSession(user,httpSession);
+        return "success"; //  to /messageFlashSuccess.jsp
     }
 
 //    public String personalImgSave(){
@@ -84,24 +99,37 @@ public class UserActionNoModelDriven extends ActionSupport{
     public static User composeUser(HttpServletRequest htr,UserService userService){
         String userName = htr.getParameter("UserName");
         User user = userService.verifyByName(userName);
-        user.setUserSex(Integer.parseInt(htr.getParameter("UserSex")));
-        user.setUserTel(htr.getParameter("UserTel"));
-        user.setUserEmail(htr.getParameter("UserEmail"));
+        String userSex = htr.getParameter("UserSex");
+        if (userSex != null){
+            user.setUserSex(Integer.parseInt(userSex));
+        }
+        String userTel = htr.getParameter("UserTel");
+        if(userTel != null){
+            user.setUserTel(userTel);
+        }
+        String userEmail = htr.getParameter("UserEmail");
+        if(userEmail != null){
+            user.setUserEmail(userEmail);
+        }
         String userProvince = htr.getParameter("UserProvince");
         String userCity = htr.getParameter("UserCity");
         String userArea = htr.getParameter("UserArea");
-        String userAddress = userProvince+userCity+userArea;
-        System.out.println("userAddress = " + userAddress);
-        user.setUserAddress(userAddress);
+        if(userProvince != null && userCity != null){
+            String userAddress = userProvince+userCity+userArea;
+            user.setUserAddress(userAddress);
+        }
         String userBirthYear = htr.getParameter("UserBirthYear");
         String userBirthMonth = htr.getParameter("UserBirthMonth");
         String userBirthDay = htr.getParameter("UserBirthDay");
         String userBirthString = userBirthYear + "-" + userBirthMonth + "-" + userBirthDay;
-        System.out.println(userBirthString);
-        Date date = Date.valueOf(userBirthString);
-        System.out.println(date.toString());
-        user.setUserBirth(date);
-        user.setUserIdentity(htr.getParameter("UserIdentity"));
+        if(userBirthString.length() >= 8){
+            Date date = Date.valueOf(userBirthString);
+            user.setUserBirth(date);
+        }
+        String userIdentity = htr.getParameter("UserIdentity");
+        if(userIdentity != null){
+            user.setUserIdentity(userIdentity);
+        }
         return user;
     }
 }

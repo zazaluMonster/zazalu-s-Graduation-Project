@@ -62,7 +62,7 @@ $(document).ready(function () {
         var img = $(this).parent().parent().next().find("img");
         if (imgToggle == 0) {
             imgToggle = imgToggle + 1;
-            $(".goodsEvaluateImg").css("border", "2px solid #f2f2f2")
+            $(".goodsEvaluateImg").css("border", "2px solid #f2f2f2");
             $(this).css("border", "2px solid #c40000");
 
             img.attr("src", url);
@@ -71,7 +71,7 @@ $(document).ready(function () {
         } else {
             imgToggle = 0;
             $(this).css("border", "2px solid #f2f2f2");
-            img.css("display", "none")
+            img.css("display", "none");
             img.css("width", "0%");
             img.attr("src", "");
         }

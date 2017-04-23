@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Date;
 
 public class UserAction extends ActionSupport implements ModelDriven<User>{
 	//	模型驱动
@@ -39,6 +40,8 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 		try {
 		    //刚注册的用户信息填补不完全 设置帐号可用性为 不可用
 		    user.setSemaphore(0);
+		    //为刚注册的用户添加默认的头像
+            addUserDefaultHeadImg(user);
 			userService.register(user);
 		} catch (Exception e) {
 			System.out.println("save defeat");
@@ -58,6 +61,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
             user.setIsManager(0);
             //为此用户设置临时用户名
             user.setUserName(user.getUserEmail().substring(0,5));
+            addUserDefaultHeadImg(user);
             userService.register(user);
             System.out.println("save success!");
             //发送验证邮件
@@ -85,7 +89,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         }
         return null;
 	}
-
+//  用户登录
 	public String userLogin(){
 	    //取出前端发过来的用户名和密码
         HttpServletResponse response = ServletActionContext.getResponse();
@@ -107,20 +111,23 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
             //为了实现用户年月份的点亮
             addUserBirthStringToSession(user,httpSession);
             //检测帐号完整性
-            if(user.getUserEmail() == null || user.getUserAddress() == null || user.getUserBirth() == null ||
-                    user.getUserHeadUrl30() == null || user.getUserHeadUrl60() == null || user.getUserHeadUrl164() == null ||
-                    user.getUserIdentity() == null || user.getUserSex() == null || user.getUserTel() == null){
+            if(!testUserMessageComplete(user)){
                 //到这里说明不完整 跳转到 买方个人信息页面 要求其进行填写
                 return "messageIncomplete";
             }
-            if (user.getSemaphore() == 0){
+            if (user.getSemaphore() == null || user.getSemaphore() == 0){
                 //到这里说明 信息填写完成 帐号被管理员封禁的帐号
                 return "userDisabled";
+            }
+            //检测是否是管理员巨巨
+            if(user.getIsManager() == 1){
+                //到这里说明 是管理员账户 跳转到管理员页面
+                return "toManagePageSelect"; // /JSP/forwardPage/toManagePageSelect.jsp
             }
             //到这里就是正常用户的登录了
             System.out.println("login success!");
 
-            return "success";
+            return "success"; //  /JSP/shouye.jsp
         }
         //密码错误 登录失败 转回登录页面
         if(!b){
@@ -129,12 +136,12 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         }
 		return null;
 	}
-
+//  用户快速注册成功后跳转至个人信息
 	public String quicksetupReceiveMail(){
 	    //用户点击了激活邮件后转到此方法,这个任务的作用应该是跳转到买方个人信息填充页面
 	    return "success";
     }
-
+//  找回密码
     public String lostPassword(){
         System.out.println("start to find password");
         try {
@@ -148,7 +155,44 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         return "success";
     }
 
-    public void addUserSexToSession(User user,HttpSession httpSession){
+    public String verifyUserPassword() throws IOException {
+        System.out.println("verify user password");
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse response = ServletActionContext.getResponse();
+        String userName = request.getParameter("userName").trim();
+        String ordPassword = request.getParameter("ordPassword");
+        System.out.println(ordPassword);
+        User user = userService.verifyByName(userName);
+        String passwordInDataBase = user.getUserPassword();
+        System.out.println(passwordInDataBase + " / " + ordPassword);
+        if (passwordInDataBase.equals(ordPassword)){
+            //说明旧密码正确
+            response.getWriter().write("ordPassword correct");
+        }
+        return null;
+    }
+
+    public String passwordChange(){
+        System.out.println("start to change user password");
+        HttpServletRequest request = ServletActionContext.getRequest();
+        String newPassword = request.getParameter("newPassword");
+        String userName = request.getParameter("userName");
+        User user = userService.verifyByName(userName);
+        user.setUserPassword(newPassword);
+        userService.update(user);
+        return "changePasswordSuccess"; // changePasswordSuccess.jsp
+    }
+
+    public String userLogOut(){
+        System.out.println("start to logout");
+        //清空httpsession中的user
+        HttpSession httpSession = ServletActionContext.getRequest().getSession();
+        httpSession.removeAttribute("user");
+        return "successLogOut";  // successLogOut.jsp
+    }
+
+
+    public static void addUserSexToSession(User user, HttpSession httpSession){
         if(user.getUserSex() != null){
             if(user.getUserSex() == 1){
                 httpSession.setAttribute("UserSexMale","true");
@@ -160,7 +204,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         }
     }
 
-    public void addUserBirthStringToSession(User user,HttpSession httpSession){
+    public static void addUserBirthStringToSession(User user, HttpSession httpSession){
         if(user.getUserBirth() != null){
             String userBirth = user.getUserBirth().toString();
             String userBirthArray[] = userBirth.split("-");
@@ -171,5 +215,21 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
             httpSession.setAttribute("userBirthMonth",userBirthMonth);
             httpSession.setAttribute("userBirthDay",userBirthDay);
         }
+    }
+
+    public void addUserDefaultHeadImg(User user){
+        //为刚注册的用户添加默认的头像
+        user.setUserHeadUrl164("/zazaluImg/img/user/user1/personalImgHead164.png");
+        user.setUserHeadUrl60("/zazaluImg/img/user/user1/personalImgHead60.png");
+        user.setUserHeadUrl30("/zazaluImg/img/user/user1/personalImgHead30.png");
+    }
+
+    public static boolean testUserMessageComplete(User user){
+        if (user.getUserEmail() == null || user.getUserAddress() == null || user.getUserBirth() == null ||
+                user.getUserHeadUrl30() == null || user.getUserHeadUrl60() == null || user.getUserHeadUrl164() == null ||
+                user.getUserIdentity() == null || user.getUserSex() == null || user.getUserTel() == null)  {
+            return false;
+        }
+        return true;
     }
 }

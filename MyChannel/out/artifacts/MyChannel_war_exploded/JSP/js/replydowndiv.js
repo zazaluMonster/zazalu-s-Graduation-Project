@@ -77,9 +77,9 @@ $(document).ready(function () {
             alert("您不想上传一些图片吗？")
         } else {
             godFormData.append('goodsEvaluateReplyForm', $('#goodsEvaluateReplyDownDiv-second-textarea').val());
-            for (var pair of godFormData.entries()) {
-                console.log(pair[0] + ', ' + pair[1]);
-            }
+            // for (var pair of godFormData.entries()) {
+            //     console.log(pair[0] + ', ' + pair[1]);
+            // }
             $.ajax('/TestReply/testReply', {
                 method: "POST",
                 data: godFormData,
@@ -103,7 +103,7 @@ $(document).ready(function () {
         $("#replyZheZhao").animate({ opacity: ".6" }, 800, "easeInOutQuart");
         $(".goodsEvaluateReplyDownDiv").animate({ bottom: "0%" }, 800, "easeInOutQuart");
 
-    })
+    });
 
     // 点击遮罩 取消回复
     $("#replyZheZhao,#goodsEvaluateReplyDownDiv-first-a2").click(function () {

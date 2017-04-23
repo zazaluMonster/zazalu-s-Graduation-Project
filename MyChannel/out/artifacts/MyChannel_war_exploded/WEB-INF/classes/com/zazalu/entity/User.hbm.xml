@@ -23,17 +23,17 @@
         <property name="isManager" column="isManager"></property>
         <property name="Semaphore" column="Semaphore"></property>
 
-        <set name="ordersSet">
+        <set name="ordersSet" lazy="false">
             <key column="UserId"></key>
             <one-to-many class="com.zazalu.entity.Orders"></one-to-many>
         </set>
 
-        <set name="favoriteSet">
+        <set name="favoriteSet" lazy="false">
             <key column="UserId"></key>
             <one-to-many class="com.zazalu.entity.Favorite"></one-to-many>
         </set>
 
-        <set name="addressSet">
+        <set name="addressSet" lazy="false">
             <key column="UserId"></key>
             <one-to-many class="com.zazalu.entity.Address"></one-to-many>
         </set>

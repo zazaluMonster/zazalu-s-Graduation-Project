@@ -2,9 +2,9 @@
 $(function ()
 {
     var reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var regPassword = /^(?=.*[0-9])(?=.*[!@#$%^&*_])[a-zA-Z0-9!@#$%^&*_]{6,16}$/
-    var mobilephone = /^1(3|4|5|7|8)\d{9}$/
-    var usernameRegex = /^[a-z0-9_-]{1,6}$/
+    var regPassword = /^(?=.*[0-9])(?=.*[!@#$%^&*_])[a-zA-Z0-9!@#$%^&*_]{6,16}$/;
+    var mobilephone = /^1(3|4|5|7|8)\d{9}$/;
+    var usernameRegex = /^[a-z0-9_-]{1,6}$/;
 
     var setupUsernameSem = 0;
     var setupPasswordSem = 0;
@@ -28,7 +28,7 @@ $(function ()
                 $("#setupFormSubmitButton").text("Confirm");
             }
         }
-    }
+    };
 
     var verifyLoginInputIsReady = function () {
         if(loginPasswordSem === 1 && loginUserNameSem === 1){
@@ -38,7 +38,7 @@ $(function ()
                 $("#to-index").text("Login");
             }
         }
-    }
+    };
 
     var verifyQuickSetupInputIsReady = function() {
         if(quicksetupEmailSem === 1 && quicksetupPasswordSem === 1){
@@ -48,7 +48,7 @@ $(function ()
                 $("#quicksetupFormSubmitButton").text("Confirm");
             }
         }
-    }
+    };
 
 
     // 以下完成了登陆界面的基本验证功能
@@ -204,7 +204,7 @@ $(function ()
                 //邮箱格式输错了
                 $(this).attr("data-content","<p style='color:red'>邮箱格式有误</p>");
                 $(this).popover('show');
-                quicksetupEmailSem = 0
+                quicksetupEmailSem = 0;
                 verifyQuickSetupInputIsReady();
             }else{
                 quicksetupEmailSem = 1;
@@ -375,10 +375,10 @@ $(function ()
 
 
 !function( $ ) {
-"use strict"
+"use strict";
 var Popover = function ( element, options ) {
 this.init('popover', element, options)
-}
+};
 /* NOTE: POPOVER EXTENDS BOOTSTRAP-TOOLTIP.js
 ========================================== */
 Popover.prototype = $.extend({}, $.fn.tooltip.Constructor.prototype, {
@@ -386,9 +386,9 @@ constructor: Popover
 , setContent: function () {
 var $tip = this.tip()
 , title = this.getTitle()
-, content = this.getContent()
-$tip.find('.popover-title')[ $.type(title) == 'object' ? 'append' : 'html' ](title)
-$tip.find('.popover-content > *')[ $.type(content) == 'object' ? 'append' : 'html' ](content)
+, content = this.getContent();
+$tip.find('.popover-title')[ $.type(title) == 'object' ? 'append' : 'html' ](title);
+$tip.find('.popover-content > *')[ $.type(content) == 'object' ? 'append' : 'html' ](content);
 $tip.removeClass('fade top bottom left right in')
 }
 , hasContent: function () {
@@ -397,10 +397,10 @@ return this.getTitle() || this.getContent()
 , getContent: function () {
 var content
 , $e = this.$element
-, o = this.options
+, o = this.options;
 content = $e.attr('data-content')
-|| (typeof o.content == 'function' ? o.content.call($e[0]) : o.content)
-content = content.toString().replace(/(^\s*|\s*$)/, "")
+|| (typeof o.content == 'function' ? o.content.call($e[0]) : o.content);
+content = content.toString().replace(/(^\s*|\s*$)/, "");
 return content
 }
 , tip: function() {
@@ -409,19 +409,19 @@ this.$tip = $(this.options.template)
 }
 return this.$tip
 }
-})
+});
 /* POPOVER PLUGIN DEFINITION
 * ======================= */
 $.fn.popover = function ( option ) {
 return this.each(function () {
 var $this = $(this)
 , data = $this.data('popover')
-, options = typeof option == 'object' && option
-if (!data) $this.data('popover', (data = new Popover(this, options)))
+, options = typeof option == 'object' && option;
+if (!data) $this.data('popover', (data = new Popover(this, options)));
 if (typeof option == 'string') data[option]()
 })
-}
-$.fn.popover.Constructor = Popover
+};
+$.fn.popover.Constructor = Popover;
 $.fn.popover.defaults = $.extend({} , $.fn.tooltip.defaults, {
 placement: 'right'
 , content: ''

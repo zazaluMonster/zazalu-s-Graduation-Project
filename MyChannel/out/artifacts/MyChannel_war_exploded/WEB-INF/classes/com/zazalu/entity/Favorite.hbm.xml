@@ -9,8 +9,8 @@
 		<id name="FavoriteId">
 			<generator class="native"></generator>
 		</id>
-        <many-to-one name="UserId" class="com.zazalu.entity.User" column="UserId" unique="true"> </many-to-one>
-        <many-to-one name="GoodId" class="com.zazalu.entity.Good" column="GoodId" unique="true"> </many-to-one>
+        <many-to-one name="UserId" class="com.zazalu.entity.User" column="UserId" unique="true" lazy="false"> </many-to-one>
+        <many-to-one name="GoodId" class="com.zazalu.entity.Good" column="GoodId" unique="true" lazy="false"> </many-to-one>
 	</class>
 
 </hibernate-mapping>

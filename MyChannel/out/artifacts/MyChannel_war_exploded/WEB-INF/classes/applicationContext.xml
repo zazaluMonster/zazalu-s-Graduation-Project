@@ -154,6 +154,7 @@
 
     <bean id="addressAction" class="com.zazalu.action.AddressAction" scope="prototype">
         <property name="addressService" ref="addressService"></property>
+        <property name="userService" ref="userService"></property>
         <property name="hibernateTemplate" ref="hibernateTemplate"></property>
     </bean>
 
@@ -169,7 +170,7 @@
             <tx:method name="addEvaluate" />
             <tx:method name="addAdvertisement" />
             <tx:method name="addAddress" />
-            <tx:method name="*" />
+            <tx:method name="*"  />
 		</tx:attributes>
 	</tx:advice>
 

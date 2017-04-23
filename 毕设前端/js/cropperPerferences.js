@@ -161,6 +161,7 @@ $(document).ready(function () {
             var formData = new FormData();
 
             //修改第一个参数 即可在java后台生成对应的图片名
+            console.log($("#inputImage").val);
             formData.append('croppedImage', blob);
 
             $.ajax('/TestCrop/testCrop', {

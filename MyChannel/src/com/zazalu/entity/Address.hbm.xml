@@ -14,7 +14,7 @@
 		<property name="AddressTel" column="AddressTel"></property>
 		<property name="RewardPeople" column="RewardPeople"></property>
 		<property name="isDefault" column="isDefault"></property>
-        <many-to-one name="UserId" class="com.zazalu.entity.User" column="UserId" unique="true"> </many-to-one>
+        <many-to-one name="UserId" class="com.zazalu.entity.User" column="UserId" unique="true" lazy="false"> </many-to-one>
 	</class>
 
 </hibernate-mapping>

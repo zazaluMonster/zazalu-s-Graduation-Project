@@ -44,4 +44,11 @@ public class UserDaoImpl implements UserDao{
 		return user;
 	}
 
+	@Override
+	public Integer getUserIdByName(String userName) {
+		Session session =  hibernateTemplate.getSessionFactory().getCurrentSession();
+		SQLQuery sqlQuery =  session.createSQLQuery("SELECT UserId FROM User WHERE UserName =  '" + userName + "'");
+		return (Integer) sqlQuery.list().get(0);
+	}
+
 }

@@ -25,4 +25,6 @@ $(document).ready(function(){
         $("#headList").fadeIn(800,"swing");
         $(this).animate({width:"100px"},600,"swing");
     });
+
+//    alert
 });

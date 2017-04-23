@@ -17,7 +17,7 @@ public interface UserService {
 
 	void sendPasswordMail(String userEmail);
 
-
+	Integer getUserIdByName(String userName);
 
 
 }

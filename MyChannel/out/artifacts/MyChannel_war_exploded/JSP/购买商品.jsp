@@ -1,0 +1,454 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Matrix Admin</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="css/matrix-style.css" />
+  <link rel="stylesheet" href="css/matrix-media.css" />
+  <link rel="stylesheet" href="css/shouyeCss.css" />
+  <link rel="stylesheet" href="css/userPageCss.css" />
+  <link rel="stylesheet" href="css/goodsPageCss.css" />
+  <link rel="stylesheet" href="css/replydowndiv.css" />
+  <link rel="stylesheet" href="css/select2.min.css" />
+  <link rel="stylesheet" href="css/foot.css" />
+  <link rel="stylesheet" href="css/zazaluhead.css" />
+  <!--头像裁剪的依赖css-->
+  <link href="css/cropper.css" rel="stylesheet">
+
+  <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+  <!--遮罩-part-->
+  <div id="zhezhao">
+    <div class="zazalu page-header">
+      <h3 id="zhezhaoId">推您喜欢
+        <small>根据您最近购买或者收藏夹的内容来智能为你推荐的商品</small>
+      </h3>
+    </div>
+    <ul id="zhezhaoLike">
+      <li class="zhezhaoLikeLi">
+        <div>
+          <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/gallery/imgbox3.jpg" alt=""></div>
+          <div class="zhezhaoLIkeDescrible">
+            <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
+            <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+          </div>
+        </div>
+      </li>
+      <li class="zhezhaoLikeLi">
+        <div>
+          <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/gallery/imgbox3.jpg" alt=""></div>
+          <div class="zhezhaoLIkeDescrible">
+            <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
+            <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+          </div>
+        </div>
+      </li>
+      <li class="zhezhaoLikeLi">
+        <div>
+          <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/gallery/imgbox3.jpg" alt=""></div>
+          <div class="zhezhaoLIkeDescrible">
+            <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
+            <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!--Header-part-->
+  <div id="header">
+    <h1><a href="dashboard.html">Matrix Admin</a></h1>
+  </div>
+  <!--close-Header-part-->
+
+  <!--top-Header-menu-->
+  <!--top-Header-menu-->
+  <div id="user-nav" class="navbar navbar-inverse">
+    <ul class="nav" id="headList">
+      <li class="dropdown" id="profile-messages"><a title="" href="#" data-toggle="dropdown"
+                                                    data-target="#profile-messages" class="dropdown-toggle"><i
+              class="icon icon-user"></i> <span class="text">Welcome User</span><b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="买方个人信息.jsp" id="user-nav-userHeadA">
+              <img id="user-nav-userHeadImg" src="${sessionScope.user.userHeadUrl60}"/>
+              <div id="user-nav-userHeadDescrible">
+                <div id="user-nav-userHeadId">${sessionScope.user.userName}</div>
+                <div id="user-nav-userHeadWelcome">Mychanel欢迎您</div>
+              </div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
+          <li class="divider"></li>
+          <li><a href="#"><i class="icon-heart-empty"></i> My Favorites</a></li>
+          <li class="divider"></li>
+          <li><a href="${pageContext.request.contextPath}/userAction_userLogOut.action"><i class="icon-key"></i> Log Out</a></li>
+        </ul>
+      </li>
+      <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages"
+                                                 class="dropdown-toggle"><i class="icon icon-envelope"></i> <span
+              class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a class="sAdd" title="" href="#"><i class="icon-plus"></i> new message</a></li>
+          <li class="divider"></li>
+          <li><a class="sInbox" title="" href="#"><i class="icon-envelope"></i> inbox</a></li>
+          <li class="divider"></li>
+          <li><a class="sOutbox" title="" href="#"><i class="icon-arrow-up"></i> outbox</a></li>
+          <li class="divider"></li>
+          <li><a class="sTrash" title="" href="#"><i class="icon-trash"></i> trash</a></li>
+        </ul>
+      </li>
+      <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+      <li class=""><a title="" href="login.jsp"><i class="icon icon-question-sign"></i> <span
+              class="text">Support</span></a></li>
+      <li class=""><a title="" href="login.jsp"><i class="icon icon-heart"></i> <span class="text">About</span></a>
+      </li>
+      <li class=""><a title="" href="${pageContext.request.contextPath}/userAction_userLogOut.action"><i class="icon icon-share-alt"></i> <span
+              class="text">Logout</span></a></li>
+      <li class="">
+        <a title="" href="#" id="headMusicA">
+          <i class="icon icon-music" id="headMusicI"></i>
+          <span class="text" id="headMusicSpan">music</span>
+          <span id="headMusicProgress" style="display: none"></span>
+          <span id="headMusicCircle" style="display: none"></span>
+          <span id="headMusicTitle" style="display: none">GIRAFFE BLUES ~Freyja Solo~ - 鈴木みのり</span>
+          <audio id="headMusic">
+            <source src="audio/audio1.mp3" type="audio/mpeg"/>
+          </audio>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!--start-top-serch-->
+  <div id="search">
+    <input type="text" placeholder="Search here..." id="headSearch" />
+    <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+  </div>
+  <!--close-top-serch-->
+
+  <!--商品展示页-->
+  <div id="goodsInfomationDiv">
+    <!--start leftDiv-->
+    <div id="goodsInformationLeftDiv">
+      <div id="goodsInformationImgDiv" style="cursor: pointer">
+        <div id="goodsInformationImgBox">
+          <img id="goodsInformationImg" src="img/goods/good1/goodImg430.jpg"></img>
+        </div>
+      </div>
+      <div class="goodsInformationImgSmallBox">
+        <img id="goodsInformationImg" src="img/goods/good1/goodImg430.jpg"></img>
+      </div>
+      <div class="goodsInformationImgSmallBox">
+        <img id="goodsInformationImg" src="img/goods/good1/goodImg2_430.jpg"></img>
+      </div>
+      <div class="goodsInformationImgSmallBox">
+        <img id="goodsInformationImg" src="img/goods/good1/goodImg3_430.jpg"></img>
+      </div>
+      <div class="goodsInformationImgSmallBox">
+        <img id="goodsInformationImg" src="img/goods/good1/goodImg4_430.jpg"></img>
+      </div>
+
+      <div id="goodsInfomationFavorites">
+        <div class="heart"></div>
+        <span>收藏商品</span>
+      </div>
+    </div>
+    <!--end leftDIv-->
+    <!--start middle Div-->
+    <div id="goodsInformationMiddleDiv">
+      <!--宝贝详情div-->
+      <div id="goodsInfomationMiddleDiv-first">
+        <div id="goodsInformationMiddleDiv-first-Head">宝贝详情</div>
+      </div>
+      <!--评论div-->
+      <div id="goodsInfomationMiddleDiv-second">
+        <div id="goodsInformationMiddleDiv-second-Head">累计评论
+          <div class="goodsInformation-quantity">99+</div>
+        </div>
+      </div>
+    </div>
+    <!--end middle Div-->
+
+
+    <!--start rightDiv-->
+    <div id="goodsInformationRightDiv">
+
+      <div id="goodsInformationRightDiv-first">
+        <div class="goodsInformationTitle">
+          芬尚女士香水秘密50ml 香水女士持久淡香清新 买1送7专柜正品包邮
+          <p class="goodsInformationSubTitle">热销16万瓶清新淡香 精美礼盒 送4小样</p>
+        </div>
+      </div>
+
+      <div id="goodsInformationRightDiv-second">
+        <div class="goodsInformationPriceDiv">
+          <div class="goodsInfomationPrice">
+            价格: <span class="goodsInfomationPriceSpan"> ¥159.00</span>
+          </div>
+          <div class="goodsInformationDiscount">
+            促销价: <span class="goodsInfomationDiscountSpan"> ¥89.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="goodsInformationRightDiv-third">
+        <ul class="tm-ind-panel">
+          <li class="tm-ind-item tm-ind-sellCount " data-label="月销量">
+            <div class="tm-indcon"><span class="tm-label">库存</span><span class="tm-count">4874</span></div>
+          </li>
+          <li class="tm-ind-item tm-ind-reviewCount canClick tm-line3" id="J_ItemRates">
+            <div class="tm-indcon"><span class="tm-label">累计评价</span><span class="tm-count">85466</span></div>
+          </li>
+          <li class="tm-ind-item tm-ind-emPointCount" data-spm="1000988">
+            <div class="tm-indcon"><a href="//vip.tmall.com/vip/index.htm" target="_blank"><span class="tm-label">送Chanel积分</span><span class="tm-count">66</span></a></div>
+          </li>
+        </ul>
+      </div>
+
+      <div id="goodsInformationRightDiv-fourth">
+        <div class="goodsInformationSelectStyleDiv">
+          <div class="goodsInformationNetWeight" style="user-select: none;">
+            <span style="font-size: 15px;margin-left: 15px;">净含量: </span>
+            <ul style="list-style: none;margin-left: 52px;">
+              <li class="NetWeightLi">50ml</li>
+              <li class="NetWeightLi">100ml</li>
+              <li class="NetWeightLi">200ml</li>
+            </ul>
+          </div>
+          <div class="goodsInformationColor">
+            <span style="font-size: 15px;margin-left: 15px;">颜色分类: </span>
+            <ul style="list-style: none;margin-left: 52px;">
+              <li class="ColorLi" style="background-color: gray"></li>
+              <li class="ColorLi" style="background-color: darkcyan"></li>
+              <li class="ColorLi" style="background-color: pink"></li>
+            </ul>
+          </div>
+          <div class="goodsInformationBuyQuantityDiv">
+            <span style="font-size: 15px;margin-left: 15px;">购买数量: </span>
+            <div class="goodsInformationChangeQuantityDiv" style="margin-left: 60px;">
+              <div class="goodsInformationBuyQuantity">1</div>
+              <div class="goodsInformationBuyQuantityAdd">+</div>
+              <div class="goodsInformationBuyQuantityReduce">-</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="goodsInformationRightDiv-fifth">
+        <div>
+          <ul class="quick-actions">
+            <li class="bg_lo" style="margin-right: 61px;">
+              <a href="#"> <i class="icon-shopping-cart"></i> 加 入 购 物 车</a>
+            </li>
+            <li class="bg_lo">
+              <a href="#"> <i class="icon-barcode"></i> 立 刻 购 买</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--隐藏的form表单-->
+      <form id="" name="" action="" method="post" target="">
+        <input type="hidden" name="goodsId" value="">
+        <input type="hidden" name="goodsNetWeight" value="">
+        <input type="hidden" name="goodsColor" value="">
+        <input type="hidden" name="goodsBuyQuantity" value="">
+      </form>
+    </div>
+    <!--end rightDiv-->
+
+
+    <!--一开始隐藏的累计评论的RightDiv-->
+    <div id="goodsEvaluateRightDiv" style="display: none">
+      <ul class="goodsEvaluateUl" style="overflow: scroll;height: 534px;">
+        <!--一个楼层的单例-->
+        <li class="goodsEvaluateLi">
+          <div class="goodsEvaluateliLeftDiv">
+            <a>
+              <img src="img/user/user1/personalInformationHeadImg60.png" style="float: left;margin: 12px;" />
+            </a>
+            <div class="goodsEvaluateUserName">zazalu</div>
+            <div class="goodsEvaluateCreatedTime">2017.3.29 11:46:00</div>
+            <div class="goodsEvaluateContent">這款是我去年的時候喜歡的 同事用過 一直很喜歡 這次買了果真沒失望 味道超級好聞 淡淡的清香 有三種味道的 剛噴出的味道比較濃 兩小時之後很好聞 超喜歡 物流也挺快的 剛好3.8到的算是送自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道
+            </div>
+            <div class="goodsEvaluateReplyButton">回复</div>
+            <div class="goodsEvaluateContent">
+              <ul class="goodsEvaluateImgUl">
+                <li class="goodsEvaluateImgLi">
+                  <img src="img/gallery/imgbox3.jpg" class="goodsEvaluateImg" />
+                </li>
+                <li class="goodsEvaluateImgLi">
+                  <img src="img/gallery/imgbox4.jpg" class="goodsEvaluateImg" />
+                </li>
+                <li class="goodsEvaluateImgLi">
+                  <img src="img/gallery/imgbox5.jpg" class="goodsEvaluateImg" />
+                </li>
+              </ul>
+              <div class="goodsEvaluateImgViewDiv">
+                <img style="width: 0%;padding-left: 12px;padding-bottom: 12px;display: none" />
+              </div>
+            </div>
+            <!--回复楼层的ul-->
+            <ul class="goodsEvaluateReplyUl">
+              <li class="goodsEvaluateReplyLi">
+                <div>
+                  <a>
+                    <img src="img/user/user1/personalInformationHeadImg60.png" style="float: left;margin: 12px;" />
+                  </a>
+                  <div class="goodsEvaluateUserName">zazalu</div>
+                  <div class="goodsEvaluateCreatedTime">2017.3.29 11:46:00</div>
+                  <div class="goodsEvaluateContent">這款是我去年的時候喜歡的 同事用過 一直很喜歡 這次買了果真沒失望 味道超級好聞 淡淡的清香 有三種味道的 剛噴出的味道比較濃 兩小時之後很好聞 超喜歡 物流也挺快的 剛好3.8到的算是送自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道
+                  </div>
+                  <div class="goodsEvaluateReplyButton">回复</div>
+                </div>
+              </li>
+              <li class="goodsEvaluateReplyLi">
+                <div>
+                  <a>
+                    <img src="img/user/user1/personalInformationHeadImg60.png" style="float: left;margin: 12px;" />
+                  </a>
+                  <div class="goodsEvaluateUserName">zazalu</div>
+                  <div class="goodsEvaluateCreatedTime">2017.3.29 11:46:00</div>
+                  <div class="goodsEvaluateContent">這款是我去年的時候喜歡的 同事用過 一直很喜歡 這次買了果真沒失望 味道超級好聞 淡淡的清香 有三種味道的 剛噴出的味道比較濃 兩小時之後很好聞 超喜歡 物流也挺快的 剛好3.8到的算是送自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道
+                  </div>
+                  <div class="goodsEvaluateReplyButton">回复</div>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </li>
+        <!--一个楼层结束-->
+        <!--更多例子-->
+        <li class="goodsEvaluateLi">
+          <div class="goodsEvaluateliLeftDiv">
+            <a>
+              <img src="img/user/user1/personalInformationHeadImg60.png" style="float: left;margin: 12px;" />
+            </a>
+            <div class="goodsEvaluateUserName">zazalu</div>
+            <div class="goodsEvaluateCreatedTime">2017.3.29 11:46:00</div>
+            <div class="goodsEvaluateContent">這款是我去年的時候喜歡的 同事用過 一直很喜歡 這次買了果真沒失望 味道超級好聞 淡淡的清香 有三種味道的 剛噴出的味道比較濃 兩小時之後很好聞 超喜歡 物流也挺快的 剛好3.8到的算是送自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道
+            </div>
+            <div class="goodsEvaluateReplyButton">回复</div>
+            <div class="goodsEvaluateContent">
+              <ul class="goodsEvaluateImgUl">
+                <li class="goodsEvaluateImgLi">
+                  <img src="img/gallery/imgbox3.jpg" class="goodsEvaluateImg" />
+                </li>
+                <li class="goodsEvaluateImgLi">
+                  <img src="img/gallery/imgbox4.jpg" class="goodsEvaluateImg" />
+                </li>
+                <li class="goodsEvaluateImgLi">
+                  <img src="img/gallery/imgbox5.jpg" class="goodsEvaluateImg" />
+                </li>
+              </ul>
+              <div class="goodsEvaluateImgViewDiv">
+                <img style="width: 0%;padding-left: 12px;padding-bottom: 12px;display: none" />
+              </div>
+            </div>
+            <!--回复楼层的ul-->
+            <ul class="goodsEvaluateReplyUl">
+              <li class="goodsEvaluateReplyLi">
+                <div>
+                  <a>
+                    <img src="img/user/user1/personalInformationHeadImg60.png" style="float: left;margin: 12px;" />
+                  </a>
+                  <div class="goodsEvaluateUserName">zazalu</div>
+                  <div class="goodsEvaluateCreatedTime">2017.3.29 11:46:00</div>
+                  <div class="goodsEvaluateContent">這款是我去年的時候喜歡的 同事用過 一直很喜歡 這次買了果真沒失望 味道超級好聞 淡淡的清香 有三種味道的 剛噴出的味道比較濃 兩小時之後很好聞 超喜歡 物流也挺快的 剛好3.8到的算是送自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道自己的女王節禮物，下次用完了才看看別的味道
+                  </div>
+                  <div class="goodsEvaluateReplyButton">回复</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!--更多例子结束-->
+      </ul>
+    </div>
+    <!--累积评论的RightDiv结束-->
+
+  </div>
+
+
+  <!--从下方弹出的回复Div-->
+  <form id="goodsEvaluateReplyForm" method="POST" enctype="multipart/form-data">
+    <div class="goodsEvaluateReplyDownDiv">
+      <div class="goodsEvaluateReplyDownDiv-first"><span id="goodsEvaluateReplyDownDiv-first-span">回复: zazalu</span> <a id="goodsEvaluateReplyDownDiv-first-a2" href="javascript:">关闭</a>
+        <a id="goodsEvaluateReplyDownDiv-first-a1" href="javascript:">发送</a>
+      </div>
+      <div class="goodsEvaluateReplyDownDiv-uploadPicture" style="height: 0px">
+        <ul style="height: inherit;" id="goodsEvaluateReplyDownDiv-uploadPicture-Ul">
+
+        </ul>
+      </div>
+      <div class="goodsEvaluateReplyDownDiv-second">
+        <textarea id="goodsEvaluateReplyDownDiv-second-textarea"></textarea>
+        <div id="goodsEvaluateReplyDownDiv-second-addPictureDiv">
+          <i class="icon-camera icon-2x" id="goodsEvaluateReplyDownDiv-second-addPicture">
+          <input type="file" name="replyPicture[]" id="goodsEvaluateReplyDownDiv-second-addPictureInput" />
+        </i>
+        </div>
+      </div>
+    </div>
+  </form>
+  <!--回复Div结束-->
+  <!--弹出回复栏时候的遮罩-->
+  <div id="replyZheZhao"></div>
+
+
+
+  <!--Footer-part-->
+  <div class="row-fluid">
+    <ul class="footul">
+      <li style="padding-left: 250px">
+        <span class="foot add-on bg_lg"><i class="icon-phone icon-2x"></i></span>
+        <div class="footdivone">
+          <p>000-000-0000 / 000-000-0000</p>
+          <p style="font-size: 11px">普通话7*24小时</p>
+        </div>
+      </li>
+      <li>
+        <span class="foot add-on bg_lg"><i class="icon-comments icon-2x"></i></span>
+        <div class="footdivone">
+          <p>xxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+          <p style="font-size: 11px">微信公众号</p>
+        </div>
+      </li>
+      <li>
+        <span class="foot add-on bg_lg"><i class="icon-headphones icon-2x"></i></span>
+        <div class="footdivone">
+          <p>xxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+          <p style="font-size: 11px">在线客服</p>
+        </div>
+      </li>
+    </ul>
+    <div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in/">Themedesigner.in</a></div>
+  </div>
+  <!--end-Footer-part-->
+  <script src="js/jquery.js"></script>
+  <!--<script src="js/jquery.min.js"></script>-->
+  <script src="js/jquery.ui.custom.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/matrix.js"></script>
+  <script src="js/shouyeAdsPicture.js"></script>
+  <script src="js/zazaluMusic.js"></script>
+  <script src="js/zazaluSearch.js"></script>
+  <script src="js/goodsPageJs.js"></script>
+  <script src="js/replydowndiv.js"></script>
+</body>
+
+</html>

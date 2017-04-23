@@ -10,4 +10,8 @@ public interface UserDao {
 	User getByName(String userName);
 
 	User getByEmail(String emailName);
+
+	Integer getUserIdByName(String userName);
+
+
 }

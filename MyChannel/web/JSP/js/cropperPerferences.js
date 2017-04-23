@@ -29,7 +29,7 @@ $(document).ready(function () {
             console.log(e.scaleY);
         },
         ready: function () {
-            $("#image").cropper('setCropBoxData', {width: 164, height: 164});
+            $("#image").cropper('setCropBoxData', {left: 218, top: 118,width: 164, height: 164});
         }
     };
     var uploadedImageURL;
@@ -57,7 +57,7 @@ $(document).ready(function () {
             console.log(e.scaleY);
         },
         ready: function () {
-            $("#image").cropper('setCropBoxData', {width: 164, height: 164});
+            $("#image").cropper('setCropBoxData', {left: 218, top: 118,width: 164, height: 164});
         }
     });
     //用法参考https://segmentfault.com/q/1010000000267088
@@ -188,62 +188,68 @@ $(document).ready(function () {
 
     $("#controlCropBoxSaveButtons").click(function () {
         //上传164x164版本
-        $("#image").cropper('getCroppedCanvas').toBlob(function (blob) {
+        $("#image").cropper('getCroppedCanvas', {width: 164, height: 164}).toBlob(function (blob) {
             var formData = new FormData();
 
             //修改第一个参数 即可在java后台生成对应的图片名
-            formData.append('personalInformationHeadImg164', blob);
+            formData.append('personalImgHead164', blob);
             formData.append('userName', $("#user-nav-userHeadId").text());
+            formData.append('pixel', '164');
 
             $.ajax('/MyChannel/personalImgServlet', {
                 method: "POST",
                 data: formData,
                 processData: false,
                 contentType: false,
-                success: function () {
-                    console.log('Upload success');
-                },
-                error: function () {
-                    console.log('Upload error');
-                }
-            });
-        });
+                success: function (msg) {
+                    console.log(msg);
+                    //上传60x60版本
+                    $("#image").cropper('getCroppedCanvas', {width: 60, height: 60}).toBlob(function (blob) {
+                        var formData = new FormData();
+                        //修改第一个参数 即可在java后台生成对应的图片名
+                        formData.append('personalImgHead60', blob);
+                        formData.append('userName', $("#user-nav-userHeadId").text());
+                        formData.append('pixel','60');
 
-        //上传60x60版本
-        $("#image").cropper('getCroppedCanvas', {width: 60, height: 60}).toBlob(function (blob) {
-            var formData = new FormData();
-            //修改第一个参数 即可在java后台生成对应的图片名
-            formData.append('personalInformationHeadImg60', blob);
-            formData.append('userName', $("#user-nav-userHeadId").text());
+                        $.ajax('/MyChannel/personalImgServlet', {
+                            method: "POST",
+                            data: formData,
+                            processData: false,
+                            contentType: false,
+                            success: function (msg) {
+                                console.log(msg);
+                                //上传30x30版本
+                                $("#image").cropper('getCroppedCanvas', {width: 30, height: 30}).toBlob(function (blob) {
+                                    var formData = new FormData();
+                                    //修改第一个参数 即可在java后台生成对应的图片名
+                                    formData.append('personalImgHead30', blob);
+                                    formData.append('userName', $("#user-nav-userHeadId").text());
+                                    formData.append('pixel', '30');
 
-            $.ajax('/MyChannel/personalImgServlet', {
-                method: "POST",
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function () {
-                    console.log('Upload success');
-                },
-                error: function () {
-                    console.log('Upload error');
-                }
-            });
-        });
-
-        //上传30x30版本
-        $("#image").cropper('getCroppedCanvas', {width: 30, height: 30}).toBlob(function (blob) {
-            var formData = new FormData();
-            //修改第一个参数 即可在java后台生成对应的图片名
-            formData.append('personalInformationHeadImg30', blob);
-            formData.append('userName', $("#user-nav-userHeadId").text());
-
-            $.ajax('/MyChannel/personalImgServlet', {
-                method: "POST",
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function () {
-                    console.log('Upload success');
+                                    $.ajax('/MyChannel/personalImgServlet', {
+                                        method: "POST",
+                                        data: formData,
+                                        processData: false,
+                                        contentType: false,
+                                        success: function (msg) {
+                                            console.log(msg);
+                                            //因为是ajax请求 所以ajax请求成功后 修改了图片后 在java后台是不能使用repsonse的sendRidect返回的 必须在这里用js进行跳转
+                                            if (msg === "upload success"){
+                                                alert("信息保存成功，正在跳转回之前的页面");
+                                                window.location.href='http://localhost:8080/MyChannel/JSP/买方个人信息.jsp?usermessageincomplete=1';
+                                            }
+                                        },
+                                        error: function () {
+                                            console.log('Upload error');
+                                        }
+                                    });
+                                });
+                            },
+                            error: function () {
+                                console.log('Upload error');
+                            }
+                        });
+                    });
                 },
                 error: function () {
                     console.log('Upload error');

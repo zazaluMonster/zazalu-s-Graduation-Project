@@ -20,6 +20,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -41,7 +42,7 @@ public class personalImgServlet extends HttpServlet {
     }
 
     //存储图片的Map
-    private static HashMap<Integer,String> hashMapPicture = new HashMap<>();
+    private static HashMap<String,String> hashMapPicture = new HashMap<>();
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
      */
@@ -55,35 +56,49 @@ public class personalImgServlet extends HttpServlet {
         try {
             List<FileItem> items = upload.parseRequest(request);
             String userName = items.get(1).getString();
+            String pixel = items.get(2).getString();
             for (Object object : items) {
                 FileItem fileItem = (FileItem) object;
                 if (fileItem.isFormField()) {
+                    System.out.println(fileItem.getFieldName());
                 } else {
-
+                    System.out.println(fileItem.getFieldName());
                     String picturename = fileItem.getFieldName() + ".png";
                     //可以用File.separator 兼容不同系统的文件系统分隔符
-                    String path = "/Users/zazalu/Desktop/MyChannel/web/JSP/img/user/" + userName +
+                    String path = "/Users/zazalu/Documents/MyChannelImg/img/user/" + userName +
                             "/" + picturename;
-                    String docPath = "/Users/zazalu/Desktop/MyChannel/web/JSP/img/user/" + userName;
+                    String docPath = "/Users/zazalu/Documents/MyChannelImg/img/user/" + userName;
                     File file = new File(docPath);
+                    if(!file.exists()){
+                        file.mkdir();
+                    }
+                    //存放在web项目外的一个文件夹中 所以用的是绝对路径 这个文件夹是一个tomcat虚拟目录
                     fileItem.write(new File(path));
-                    String relativePath = "img/user/" + userName +
+                    //映射到虚拟目录的相对路径写法
+                    String relativePath = "/zazaluImg/img/user/" + userName +
                             "/" + picturename;
-                    Integer i = Integer.parseInt(String.valueOf(picturename.charAt(26)));
-                    hashMapPicture.put(i,relativePath);
+                    hashMapPicture.put(pixel,relativePath);
                     System.out.println("personal img save success!");
                 }
             }
             //存图片路径
             if(hashMapPicture.size() == 3){
-                System.out.println("只会执行一次");
+                System.out.println("do once!");
                 user = userService.verifyByName(userName);
-                user.setUserHeadUrl164(hashMapPicture.get(1));
-                user.setUserHeadUrl60(hashMapPicture.get(6));
-                user.setUserHeadUrl30(hashMapPicture.get(3));
+                user.setUserHeadUrl164(hashMapPicture.get("164"));
+                user.setUserHeadUrl60(hashMapPicture.get("60"));
+                user.setUserHeadUrl30(hashMapPicture.get("30"));
                 userService.update(user);
+                //修改session 这样刷新后才能显示正确的修改过后的图片
+                user = userService.verifyByName(userName);
+                //将用户id存入session中
+                HttpSession httpSession =  request.getSession();
+                httpSession.setAttribute("user",user);
+                //修改成功 跳转到个人页面
+                System.out.println("save Img success");
+                response.getWriter().write("upload success");
             }
-            //修改session 这样刷新后才能显示正确的修改过后的图片
+
         } catch (FileUploadException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -91,8 +106,6 @@ public class personalImgServlet extends HttpServlet {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-        System.out.println("save Img success");
 
     }
 

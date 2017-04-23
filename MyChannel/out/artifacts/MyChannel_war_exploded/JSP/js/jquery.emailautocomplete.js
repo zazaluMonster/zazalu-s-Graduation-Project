@@ -155,6 +155,6 @@
             }
 
         });
-    }
+    };
     $.fn.emailautocomplete.defaults = defaults;
 })(jQuery);
