@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="css/matrix-media.css" />
   <link rel="stylesheet" href="css/shouyeCss.css" />
   <link rel="stylesheet" href="css/userPageCss.css" />
+  <link rel="stylesheet" href="css/replydowndiv.css" />
   <link rel="stylesheet" href="css/select2.min.css" />
   <link rel="stylesheet" href="css/foot.css" />
   <link rel="stylesheet" href="css/zazaluhead.css" />
@@ -516,6 +517,31 @@
 
   </div>
 
+  <!--从下方弹出的回复Div-->
+  <form id="goodsEvaluateReplyForm" method="POST" enctype="multipart/form-data">
+    <div class="goodsEvaluateReplyDownDiv">
+      <div class="goodsEvaluateReplyDownDiv-first"><span id="goodsEvaluateReplyDownDiv-first-span">回复: zazalu</span> <a id="goodsEvaluateReplyDownDiv-first-a2" href="javascript:;">关闭</a>
+        <a id="goodsEvaluateReplyDownDiv-first-a1" href="javascript:;">发送</a>
+      </div>
+      <div class="goodsEvaluateReplyDownDiv-uploadPicture" style="height: 0px">
+        <ul style="height: inherit;" id="goodsEvaluateReplyDownDiv-uploadPicture-Ul">
+
+        </ul>
+      </div>
+      <div class="goodsEvaluateReplyDownDiv-second">
+        <textarea id="goodsEvaluateReplyDownDiv-second-textarea"></textarea>
+        <div id="goodsEvaluateReplyDownDiv-second-addPictureDiv">
+          <i class="icon-camera icon-2x" id="goodsEvaluateReplyDownDiv-second-addPicture">
+          <input type="file" name="replyPicture[]" id="goodsEvaluateReplyDownDiv-second-addPictureInput" />
+        </i>
+        </div>
+      </div>
+    </div>
+  </form>
+  <!--回复Div结束-->
+  <!--弹出回复栏时候的遮罩-->
+  <div id="replyZheZhao" ></div>
+
   <!--Footer-part-->
   <div class="row-fluid">
     <ul class="footul">
@@ -547,12 +573,14 @@
   <script src="js/jquery.js"></script>
   <!--<script src="js/jquery.min.js"></script>-->
   <script src="js/jquery.ui.custom.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/matrix.js"></script>
   <script src="js/shouyeAdsPicture.js"></script>
   <script src="js/zazaluMusic.js"></script>
   <script src="js/zazaluSearch.js"></script>
   <script src="js/personalPage.js"></script>
+  <script src="js/replydowndiv.js"></script>
   <script src="js/select2.min.js"></script>
   <!--头像裁剪的依赖js-->
   <script src="js/cropper.js"></script>

@@ -51,4 +51,14 @@ public class GoodServiceImpl implements GoodService {
     public Integer getGoodNumber() {
         return goodDao.getGoodNumber();
     }
+
+    @Override
+    public List<Good> getGoodListByGoodName(String goodName) {
+        return goodDao.getGoodListByGoodName(goodName);
+    }
+
+    @Override
+    public void updateGood(Good good) {
+        goodDao.updateGood(good);
+    }
 }

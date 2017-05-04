@@ -7,22 +7,27 @@
 	<constant name="struts.devMode" value="true"></constant>
 	<package name="default" namespace="/" extends="struts-default">
 		<action name="userAction_*" class="userAction" method="{1}">
-			<result name="success">/JSP/shouye.jsp</result>
+			<result name="success" type="redirect">/JSP/shouye.jsp</result>
             <result name="passwordWrong">/wrongPassword.jsp</result>
             <result name="messageIncomplete">/messageIncomplete.jsp</result>
             <result name="userDisabled">/userDisabled.jsp</result>
             <result name="changePasswordSuccess">/changePasswordSuccess.jsp</result>
             <result name="successLogOut">/successLogOut.jsp</result>
-            <result name="toManagePageSelect">/JSP/forwardPage/toManagePageSelect.jsp</result>
+            <result name="toManagePageSelect" type="redirect">/JSP/forwardPage/toManagePageSelect.jsp</result>
+            <result name="registerSuccess">/JSP/forwardPage/registerSuccess.jsp</result>
+            <result name="quickRegisterWait">/JSP/forwardPage/quickRegisterWait.jsp</result>
+
 		</action>
         <action name="userActionNoModelDriven_*" class="userActionNoModelDriven" method="{1}">
             <result name="success">/messageFlashSuccess.jsp</result>
         </action>
         <action name="goodAction_*" class="goodAction" method="{1}">
             <result name="success">/index.jsp</result>
+            <result name="toGoodPage" type="redirect">/JSP/GoodPage.jsp</result>
         </action>
-        <action name="ordersAction_newOrder" class="ordersAction" method="newOrder">
+        <action name="ordersAction_*" class="ordersAction" method="{1}">
             <result name="success">/index.jsp</result>
+            <result name="payOrderSuccess">/JSP/forwardPage/payOrderSuccess.jsp</result>
         </action>
 		<action name="favoriteAction_*" class="favoriteAction" method="{1}">
 			<result name="success">/index.jsp</result>

@@ -50,6 +50,7 @@
  top:77px; 
  display:none; 
  z-index:-1; 
+ overflow: scroll;
 }
 
 #zhezhaoId {
@@ -65,31 +66,36 @@
 .zhezhaoLikeLi {
     display: block;
     height: auto;
-    width: 1150px;
-    padding-bottom: 156px;
+    width: 100%;
+    padding-bottom: 7%;
+    padding-top: 7%;
 }
 
 .zhezhaoLikePicture {
-    float: left;
+        float: left;
+    width: 125px;
+    height: 125px;
 }
 
 .zhezhaoLIkeDescrible {
-    float: left;
-    padding-top: 50px;
-    margin-left: -180px;
+        position: relative;
+    margin-left: 48%;
+    width: 100%;
+    padding-bottom: 20px;
 }
 
 .zhezhaoLikeImg {
-    width: 36%;
+    width: 100%;
 }
 
 .zhezhaoLIkeDescribleSmall {
     font-size: large;
+    word-break: break-all;
 }
 
 .zhezhaoLIkeDescribleTitle {
     font-size: xx-large;
     margin-bottom: 41px;
-    margin-top: -27px;    
+    margin-top: 27px;   
 }
 

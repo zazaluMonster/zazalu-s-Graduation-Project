@@ -1,7 +1,8 @@
 package com.zazalu.service;
 
 import com.zazalu.entity.User;
-import org.hibernate.Session;
+
+import java.util.List;
 
 public interface UserService {
 	
@@ -18,6 +19,10 @@ public interface UserService {
 	void sendPasswordMail(String userEmail);
 
 	Integer getUserIdByName(String userName);
+
+	List<User> getUserList();
+
+	void deleteUserByName(String userName);
 
 
 }

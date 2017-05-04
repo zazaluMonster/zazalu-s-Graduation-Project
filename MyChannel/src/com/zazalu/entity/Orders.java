@@ -16,9 +16,19 @@ public class Orders {
     private String GoodColor;
     private Integer isPay;
     private Integer isUnSubscribe;
+    private Integer isFaHuo;
+    private Integer isEvaluate;
     private Date OrderTime;
 
     private Set<Evaluate> evaluateSet = new HashSet<>();
+
+    public Integer getIsEvaluate() {
+        return isEvaluate;
+    }
+
+    public void setIsEvaluate(Integer isEvaluate) {
+        this.isEvaluate = isEvaluate;
+    }
 
     public Set<Evaluate> getEvaluateSet() {
         return evaluateSet;
@@ -26,6 +36,14 @@ public class Orders {
 
     public void setEvaluateSet(Set<Evaluate> evaluateSet) {
         this.evaluateSet = evaluateSet;
+    }
+
+    public Integer getIsFaHuo() {
+        return isFaHuo;
+    }
+
+    public void setIsFaHuo(Integer isFaHuo) {
+        this.isFaHuo = isFaHuo;
     }
 
     public Integer getOrdersId() {

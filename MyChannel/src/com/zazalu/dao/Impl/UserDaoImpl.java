@@ -7,6 +7,8 @@ import org.springframework.orm.hibernate4.HibernateTemplate;
 import com.zazalu.dao.UserDao;
 import com.zazalu.entity.User;
 
+import java.util.List;
+
 public class UserDaoImpl implements UserDao{
 	
 //	在Spring中我们要使用Hibernate的session去做CRUD操作的时候，我们要使用Spring的HibernateTemplate
@@ -49,6 +51,21 @@ public class UserDaoImpl implements UserDao{
 		Session session =  hibernateTemplate.getSessionFactory().getCurrentSession();
 		SQLQuery sqlQuery =  session.createSQLQuery("SELECT UserId FROM User WHERE UserName =  '" + userName + "'");
 		return (Integer) sqlQuery.list().get(0);
+	}
+
+	@Override
+	public List<User> getUserList() {
+		Session session =  hibernateTemplate.getSessionFactory().getCurrentSession();
+		SQLQuery sqlQuery =  session.createSQLQuery("SELECT * FROM User");
+		sqlQuery.addEntity(User.class);
+		List<User> userList = sqlQuery.list();
+		return userList;
+	}
+
+	@Override
+	public void deleteUserByName(String userName) {
+		User user = getByName(userName);
+		hibernateTemplate.delete(user);
 	}
 
 }

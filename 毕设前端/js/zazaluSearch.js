@@ -15,14 +15,15 @@ $(document).ready(function(){
             $("#zhezhao").css("display","block");
             $("#zhezhao").css("z-index","1000");
         });
+        
     });
-    $("#headSearch").blur(function(){
-        $("#zhezhao").animate({opacity:0},800,"swing",function(){
+    // $("#headSearch").blur(function(){
+    //     $("#zhezhao").animate({opacity:0},800,"swing",function(){
 
-        $("#zhezhao").css("display","none");
-        $("#zhezhao").css("z-index","-1");
-        });
-        $("#headList").fadeIn(800,"swing");
-        $(this).animate({width:"100px"},600,"swing");
-    });
+    //     $("#zhezhao").css("display","none");
+    //     $("#zhezhao").css("z-index","-1");
+    //     });
+    //     $("#headList").fadeIn(800,"swing");
+    //     $(this).animate({width:"100px"},600,"swing");
+    // });
 });

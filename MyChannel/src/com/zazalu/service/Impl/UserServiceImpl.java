@@ -6,6 +6,8 @@ import com.zazalu.entity.User;
 import com.zazalu.service.UserService;
 import org.hibernate.Session;
 
+import java.util.List;
+
 public class UserServiceImpl implements UserService {
 	
 	private UserDao userDao;
@@ -41,7 +43,7 @@ public class UserServiceImpl implements UserService {
     public void sendMail(String userEmail) {
 	    String strTitle = "MyChannel";
 	    String strUrl = "<a href='http://localhost:8080/MyChannel/userAction_quicksetupReceiveMail' target='_blank'/>" +
-                "localhost:8080/MyChannel/userAction_quicksetupReceiveMail<a>";
+                "localhost:8080/MyChannel/userAction_quicksetupReceiveMail.action<a>";
         String strText = "欢迎来到MyChannel!<hr/>你好 " + userEmail +"先生.<hr/> 您的激活链接" + strUrl;
         System.out.println("mail-content is ready!");
         QQmailService.send_qqmail(userEmail,strTitle,strText);
@@ -66,6 +68,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public Integer getUserIdByName(String userName) {
 	     return userDao.getUserIdByName(userName);
+    }
+
+    @Override
+    public List<User> getUserList() {
+	    return userDao.getUserList();
+    }
+
+    @Override
+    public void deleteUserByName(String userName) {
+        userDao.deleteUserByName(userName);
     }
 
 }

@@ -1,126 +1,96 @@
 
 $(document).ready(function () {
 
-    /**
-     * 处理待发货待评价待付款界面的js开始
-     */
-    //我的收藏夹
-    $("#getDaiFaHuo").click(function () {
-        //修改待发货的按钮的颜色，同时修改其它按钮颜色
-        $(this).css("color", "rgba(63, 183, 114, 1)");
-        $("#getDaiFuKuan").css("color", "#666");
-        $("#getDaiPingJia").css("color", "#666");
-        $("#getJiFenGoods").css("color", "#666");
-        //使用Ajax查询 得到该用户待发货的数据
+    //ajax请求获取该用户的收藏夹商品列表
+    $.ajax({
+        url: '/MyChannel/favoriteAction_getUserFavorite.action',
+        type: 'GET',
+        timeout: 1000,
+        cache: false,
+        crossDomain: true,
+        beforeSend: LoadFunction, //加载执行方法
+        error: erryFunction,  //错误执行方法
+        success: succFunction //成功执行方法
+    });
 
-        //模拟下获取到的JSON数据
-        var JSONObject = [
-            {
-                "goodsName": "goods1",
-                "goodsPictureUrl": "img/gallery/164_164_goodsPicture/goods1.png",
-                "goodsPrice": 3000,
-                "LikeTime": "2017-3-17 21:36",
-                "goodsStock": "3",
-                "goodsId": 3092608431813507,
-                "goodsDescrible": "徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计",
-            },
-            {
-                "goodsName": "goods2",
-                "goodsPictureUrl": "img/gallery/164_164_goodsPicture/goods2.png",
-                "goodsPrice": 4500,
-                "LikeTime": "2017-3-17 21:41",
-                "goodsStock": "3",
-                "goodsId": 4012398971233122,
-                "goodsDescrible": "徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计",
-            }];
+    function LoadFunction() {
+        //在请求数据的时候 要显示请求中字样告知用户等待片刻
+        console.log("loading...");
+    }
 
+    function erryFunction() {
+        console.log("error!");
+    }
+
+    function succFunction(tt) {
         //将拿到的数据，写一个for循环，循环的把数据放入
         //先删除所有的li
         if ($(".personalInformationRightDivDown").length != 0) {
             $(".personalInformationRightDivDown").remove();
         }
-        //先判断是否有li了 有li说明已经进行过数据的查询了，不需要再添加
-        if ($(".personalInformationRightDivDown").length == 0) {
-            var i = 0;
-            JSONObject.forEach(function (element) {
-                $("#personalInformationRightDivUl").append(
-                    "<li class='personalInformationRightDivDown' id='" + "personalInformationRightDivDown" + i + "'>" +
-                    " <div class='personalInformation-goodsDiv'>" +
-                    "<div class='personalInformation-goodsId'>商品名: " + element.goodsName + "</div>" +
-                    "<div class='personalInformation-goodsdescrible'>商品描述: " + element.goodsDescrible + "</div>" +
-                    "</div>" +
-                    "<div class='personalInformation-buttons-div'>" +
-                    "<div class='personalInformation-buttons' id='woyaocuidan" + i + "' ><i class='icon icon-star-empty' style='margin-right: 8px;'></i>购买此物</div>" +
-                    "<div class='personalInformation-buttons' id='woyaocuidan" + i + "' ><i class='icon icon-star-empty' style='margin-right: 8px;'></i>删除此物</div>" +
-                    "</div>" +
-                    "</li>");
-                //为所有条目添加click事件，使得起点击后可以修改左边详细信息的一些数据
-                $("#personalInformationRightDivDown" + i).click(function () {
-                    $("#personalInformationLeftDiv").fadeOut(500, "swing", function () {
-                        $("#personalInformationHeadImg").attr("src", element.goodsPictureUrl);
-                        $("#personalInformationLevel").text(element.goodsName);
-                        $("#personalInformationLeftDivDown-first").text("商品价格: " + element.goodsPrice);
-                        $("#personalInformationLeftDivDown-second").text("购买数量: " + element.goodsStock);
-                        $("#personalInformationLeftDivDown-third").text("购买时间: " + element.BuyTime);
-                        if (element.isLike == true) {
-                            $("#personalInformationLeftDivDown-fourth").text("已收藏该商品");
-                        } else {
-                            $("#personalInformationLeftDivDown-fourth").text("没有收藏该商品");
+        var json = eval("(" + tt + ")"); //数组
+        var tt = "";
+        var i = 0;
+        $.each(json.favoriteList, function (index, item) {
+            console.log("处理" + item.GoodId);
+            $("#personalInformationRightDivUl").append(
+                "<li class='personalInformationRightDivDown' id='" + "personalInformationRightDivDown" + i + "'>" +
+                " <div class='personalInformation-goodsDiv'>" +
+                "<div class='personalInformation-goodsId'>商品名: " + item.GoodName + "</div>" +
+                "<div class='personalInformation-goodsdescrible'>商品描述: " + item.GoodDescrible + "</div>" +
+                "</div>" +
+                "<div class='personalInformation-buttons-div'>" +
+                "<div class='personalInformation-buttons' id='goumaiciwu" + i + "' ><i class='icon icon-truck' style='margin-right: 8px;'></i>前往购买</div>" +
+                "<div class='personalInformation-buttons' id='shanchuciwu" + i + "'><i class='icon icon-truck' style='margin-right: 8px;'></i>取消收藏</div>" +
+                "</div>" +
+                "</li>");
+            //为所有条目添加click事件，使得起点击后可以修改左边详细信息的一些数据
+            $("#personalInformationRightDivDown" + i).mouseenter(function () {
+                $("#personalInformationLeftDiv").fadeOut(200, "swing", function () {
+                    $("#personalInformationHeadImg").attr("src", item.GoodImgUrl164);
+                    $("#personalInformationLevel").text(item.GoodName);
+                    $("#personalInformationLeftDivDown-first").text("商品价格: " + item.GoodPrice);
+                    $("#personalInformationLeftDivDown-second").text("商品库存: " + item.GoodStock);
+                    $("#personalInformationLeftDivDown-third").text("打折率: " + item.GoodDiscount);
+                    $("#personalInformationLeftDivDown-fourth").text("已收藏该商品");
+                });
+                $("#personalInformationLeftDiv").fadeIn(200, "swing");
+            });
+            // 购买此物按钮
+            $("#goumaiciwu" + i).click(function () {
+                window.location.href="/MyChannel/goodAction_toGoodPage.action?goodId="+item.GoodId;
+            });
+
+            /***
+             * 取消收藏模块开始
+             */
+
+            $("#shanchuciwu" + i).click(function () {
+                //点击取消收藏 会去删除对应此用户的该收藏
+                //ajax请求
+                $.ajax({
+                    method: "POST",
+                    url: "/MyChannel/favoriteAction_deleteFavorite.action",
+                    data: { userName: $("#user-nav-userHeadId").text() ,goodId: item.GoodId }
+                })
+                    .done(function( msg ) {
+                        if(msg === "deleteFavorite success"){
+                            console.log("删除收藏成功");
+                            //刷新此页面
+                            window.location.reload();
+                        }else {
+                            console.log("删除收藏失败 请检查异常栈 sad" + msg);
                         }
                     });
-                    $("#personalInformationLeftDiv").fadeIn(500, "swing");
-                });
-                //为条目中的"我要xx"按钮添加click事件
-                $("#woyaocuidan" + i).click(function () {
-                    alert(element.goodsId);
-                });
-                $("#woyaotuidan" + i).click(function () {
-                    alert(element.goodsId);
-                });
-                i = i + 1;
-                $(".personalInformationRightDivDown").animate({ opacity: 1 }, 800, "swing");
-
-            }, this);
-        }
-        //
-    });
-
-    $("#getDaiFaHuo").click();
-
-    /**
-    * 处理右边三大界面的切换js
-    */
-
-    $("#personalInformationHeadDiv").click(function () {
-        if ($("#personalInformationRightDiv-ghost").css("display") == "none" && $("#personalInformationRightDiv").css("display") != "none") {
-            $("#personalInformationRightDiv").fadeOut(500, "swing", function () {
-                $("#personalInformationRightDiv").css("display", "none");
-                $("#personalInformationRightDiv-ghost").css("opacity", "0");
-                $("#personalInformationRightDiv-ghost").css("display", "block");
-                $("#personalInformationRightDiv-ghost").animate({ opacity: 1 }, 800, "swing");
+                //ajax请求结束
             });
-        } else if ($("#personalInformationRightDiv-ghost").css("display") == "none" && $("#personalInformationRightDiv").css("display") == "none") {
-            $("#headEditorDiv-third").fadeOut(500, "swing", function () {
-                $("#headEditorDiv-third").css("display", "none");
-                $("#personalInformationRightDiv-ghost").css("opacity", "0");
-                $("#personalInformationRightDiv-ghost").css("display", "block");
-                $("#personalInformationRightDiv-ghost").animate({ opacity: 1 }, 800, "swing");
-            });
-        }
-    });
-
-    $("#headEditorDiv-second").click(function () {
-        $("#personalInformationRightDiv-ghost").fadeOut(500, "swing", function () {
-            $("#personalInformationRightDiv-ghost").css("display", "none");
-            $("#headEditorDiv-third").css("opacity", "0");
-            $("#headEditorDiv-third").css("display", "block");
-            $("#headEditorDiv-third").animate({ opacity: 1 }, 800, "swing");
+            /***
+             * 取消收藏模块结束
+             */
+            i = i + 1;
+            $(".personalInformationRightDivDown").animate({opacity: 1}, 800, "swing");
         });
-    });
-    /**
-     * 到此三大界面切换js结束
-     */
-
+    }
 
 
 });

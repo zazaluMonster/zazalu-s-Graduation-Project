@@ -12,6 +12,7 @@
 		<property name="GoodName" column="GoodName"></property>
 		<property name="GoodDescrible" column="GoodDescrible"></property>
 		<property name="GoodStock" column="GoodStock"></property>
+        <property name="GoodPrice" column="GoodPrice"></property>
 		<property name="GoodNetWeight" column="GoodNetWeight"> </property>
         <property name="GoodColor" column="GoodColor"></property>
         <property name="GoodMessage" column="GoodMessage"></property>

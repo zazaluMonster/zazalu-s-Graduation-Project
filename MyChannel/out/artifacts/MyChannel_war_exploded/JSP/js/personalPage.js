@@ -13,77 +13,91 @@ $(document).ready(function () {
         $("#getDaiPingJia").css("color", "#666");
         $("#getJiFenGoods").css("color", "#666");
         //使用Ajax查询 得到该用户待发货的数据
+        //加载待发货列表
+        $.ajax({
+            url: '/MyChannel/ordersAction_getPayedOrdersList.action',
+            type: 'GET',
+            timeout: 1000,
+            cache: false,
+            crossDomain: true,
+            beforeSend: LoadFunction, //加载执行方法
+            error: erryFunction,  //错误执行方法
+            success: succFunction //成功执行方法
+        });
 
-        //模拟下获取到的JSON数据
-        var JSONObject = [
-            {
-                "goodsName": "goods1",
-                "goodsPictureUrl": "img/gallery/164_164_goodsPicture/goods1.png",
-                "goodsPrice": 3000,
-                "BuyNumbers": 3,
-                "BuyTime": "2017-3-17 21:36",
-                "isLike": true,
-                "goodsId": 3092608431813507,
-                "goodsDescrible": "徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计",
-            },
-            {
-                "goodsName": "goods2",
-                "goodsPictureUrl": "img/gallery/164_164_goodsPicture/goods2.png",
-                "goodsPrice": 4500,
-                "BuyNumbers": 2,
-                "BuyTime": "2017-3-17 21:41",
-                "isLike": false,
-                "goodsId": 4012398971233122,
-                "goodsDescrible": "徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计",
-            }];
-
-        //将拿到的数据，写一个for循环，循环的把数据放入
-        //先删除所有的li
-        if ($(".personalInformationRightDivDown").length != 0) {
-            $(".personalInformationRightDivDown").remove();
+        function LoadFunction() {
+            //在请求数据的时候 要显示请求中字样告知用户等待片刻
+            console.log("loading...");
         }
-        //先判断是否有li了 有li说明已经进行过数据的查询了，不需要再添加
-        if ($(".personalInformationRightDivDown").length == 0) {
+        function erryFunction() {
+            console.log("error!");
+        }
+
+        function succFunction(tt) {
+            //将拿到的数据，写一个for循环，循环的把数据放入
+            //先删除所有的li
+            if ($(".personalInformationRightDivDown").length != 0) {
+                $(".personalInformationRightDivDown").remove();
+            }
+            var json = eval("("+tt+")"); //数组
+            var tt = "";
             var i = 0;
-            JSONObject.forEach(function (element) {
+            $.each(json.payedOrdersList , function (index,item) {
+                console.log("处理" + item.OrdersId);
                 $("#personalInformationRightDivUl").append(
                     "<li class='personalInformationRightDivDown' id='" + "personalInformationRightDivDown" + i + "'>" +
                     " <div class='personalInformation-goodsDiv'>" +
-                    "<div class='personalInformation-goodsId'>订单号: " + element.goodsId + "</div>" +
-                    "<div class='personalInformation-goodsdescrible'>商品描述: " + element.goodsDescrible + "</div>" +
+                    "<div class='personalInformation-goodsId'>订单号: " + item.OrdersId + "</div>" +
+                    "<div class='personalInformation-goodsdescrible'>商品描述: "+item.GoodDescrible+ "</div>" +
                     "</div>" +
                     "<div class='personalInformation-buttons-div'>" +
-                    "<div class='personalInformation-buttons' id='woyaocuidan" + i + "' ><i class='icon icon-truck' style='margin-right: 8px;'></i>我要催单</div>" +
                     "<div class='personalInformation-buttons' id='woyaotuidan" + i + "'><i class='icon icon-truck' style='margin-right: 8px;'></i>我要退单</div>" +
                     "</div>" +
                     "</li>");
                 //为所有条目添加click事件，使得起点击后可以修改左边详细信息的一些数据
-                $("#personalInformationRightDivDown" + i).click(function () {
-                    $("#personalInformationLeftDiv").fadeOut(500, "swing", function () {
-                        $("#personalInformationHeadImg").attr("src", element.goodsPictureUrl);
-                        $("#personalInformationLevel").text(element.goodsName);
-                        $("#personalInformationLeftDivDown-first").text("商品价格: " + element.goodsPrice);
-                        $("#personalInformationLeftDivDown-second").text("购买数量: " + element.BuyNumbers);
-                        $("#personalInformationLeftDivDown-third").text("购买时间: " + element.BuyTime);
-                        if (element.isLike == true) {
+                $("#personalInformationRightDivDown" + i).mouseenter(function () {
+                    $("#personalInformationLeftDiv").fadeOut(100, "swing", function () {
+                        $("#personalInformationHeadImg").attr("src", item.GoodImg164);
+                        $("#personalInformationLevel").text(item.GoodName);
+                        $("#personalInformationLeftDivDown-first").text("商品价格: " + item.GoodPrice);
+                        $("#personalInformationLeftDivDown-second").text("购买数量: " + item.GoodNumber);
+                        $("#personalInformationLeftDivDown-third").text("购买时间: " + item.OrderTime);
+                        if (item.isLike === "1") {
                             $("#personalInformationLeftDivDown-fourth").text("已收藏该商品");
                         } else {
                             $("#personalInformationLeftDivDown-fourth").text("没有收藏该商品");
                         }
                     });
-                    $("#personalInformationLeftDiv").fadeIn(500, "swing");
+                    $("#personalInformationLeftDiv").fadeIn(100, "swing");
                 });
-                //为条目中的"我要xx"按钮添加click事件
-                $("#woyaocuidan" + i).click(function () {
-                    alert(element.goodsId);
-                });
+
+                // //为条目中的"我要xx"按钮添加click事件
+                // $("#woyaocuidan" + i).click(function () {
+                //     //点击我要催单 然后后台
+                //
+                // });
                 $("#woyaotuidan" + i).click(function () {
-                    alert(element.goodsId);
+                    //点击我要退单后修改该订单的isUnSubscribe为1 表明是退订了
+                    //ajax请求
+                    $.ajax({
+                        method: "POST",
+                        url: "/MyChannel/ordersAction_unSubscribeOrder.action",
+                        data: { orderId: item.OrdersId }
+                    })
+                        .done(function( msg ) {
+                            if(msg === "unSubscribe Order success!"){
+                                console.log("退订成功");
+                                //刷新此页面
+                                window.location.reload();
+                            }else {
+                                console.log("退订失败 请检查异常栈 sad" + msg);
+                            }
+                        });
+                    //ajax请求结束
                 });
                 i = i + 1;
                 $(".personalInformationRightDivDown").animate({ opacity: 1 }, 800, "swing");
-
-            }, this);
+            });
         }
         //
     });
@@ -95,70 +109,149 @@ $(document).ready(function () {
         $("#getDaiFaHuo").css("color", "#666");
         $("#getDaiPingJia").css("color", "#666");
         $("#getJiFenGoods").css("color", "#666");
-        //使用Ajax查询 得到该用户待发货的数据
+        //加载待付款列表
+        $.ajax({
+            url: '/MyChannel/ordersAction_getUnPayOrdersList.action',
+            type: 'GET',
+            timeout: 1000,
+            cache: false,
+            crossDomain: true,
+            beforeSend: LoadFunction, //加载执行方法
+            error: erryFunction,  //错误执行方法
+            success: succFunction //成功执行方法
+        });
 
-        var JSONObject = [
-            {
-                "goodsName": "goods1",
-                "goodsPictureUrl": "img/gallery/164_164_goodsPicture/goods1.png",
-                "goodsPrice": 3000,
-                "BuyNumbers": 3,
-                "BuyTime": "2017-3-17 21:36",
-                "isLike": true,
-                "goodsId": 3092608431813507,
-                "goodsDescrible": "徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计",
-            },
-            {
-                "goodsName": "goods2",
-                "goodsPictureUrl": "img/gallery/164_164_goodsPicture/goods2.png",
-                "goodsPrice": 4500,
-                "BuyNumbers": 2,
-                "BuyTime": "2017-3-17 21:41",
-                "isLike": false,
-                "goodsId": 4012398971233122,
-                "goodsDescrible": "徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计",
-            }];
-
-        //将拿到的数据，写一个for循环，循环的把数据放入
-        //先删除所有的li
-        if ($(".personalInformationRightDivDown").length != 0) {
-            $(".personalInformationRightDivDown").remove();
+        function LoadFunction() {
+            //在请求数据的时候 要显示请求中字样告知用户等待片刻
+            console.log("loading...");
         }
-        //先判断是否有li了 有li说明已经进行过数据的查询了，不需要再添加
-        if ($(".personalInformationRightDivDown").length == 0) {
+        function erryFunction() {
+            console.log("error!");
+        }
+
+        function succFunction(tt) {
+            //将拿到的数据，写一个for循环，循环的把数据放入
+            //先删除所有的li
+            if ($(".personalInformationRightDivDown").length != 0) {
+                $(".personalInformationRightDivDown").remove();
+            }
+            var json = eval("("+tt+")"); //数组
+            var tt = "";
             var i = 0;
-            JSONObject.forEach(function (element) {
+            $.each(json.unPayOrdersList , function (index,item) {
+                console.log("处理" + item.OrdersId);
                 $("#personalInformationRightDivUl").append(
                     "<li class='personalInformationRightDivDown' id='" + "personalInformationRightDivDown" + i + "'>" +
                     " <div class='personalInformation-goodsDiv'>" +
-                    "<div class='personalInformation-goodsId'>订单号: " + element.goodsId + "</div>" +
-                    "<div class='personalInformation-goodsdescrible'>商品描述: " + element.goodsDescrible + "</div>" +
+                    "<div class='personalInformation-goodsId'>订单号: " + item.OrdersId + "</div>" +
+                    "<div class='personalInformation-goodsdescrible'>商品描述: "+item.GoodDescrible+ "</div>" +
                     "</div>" +
                     "<div class='personalInformation-buttons-div'>" +
-                    "<div class='personalInformation-buttons'><i class='icon icon-truck' style='margin-right: 8px;'></i>我要付款</div>" +
-                    "<div class='personalInformation-buttons'><i class='icon icon-truck' style='margin-right: 8px;'></i>取消订单</div>" +
+                    "<div class='personalInformation-buttons' id='zhifu" + i + "'><i class='icon icon-truck' style='margin-right: 8px;'></i>支付</div>" +
                     "</div>" +
                     "</li>");
                 //为所有条目添加click事件，使得起点击后可以修改左边详细信息的一些数据
-                $("#personalInformationRightDivDown" + i).click(function () {
-                    $("#personalInformationLeftDiv").fadeOut(500, "swing", function () {
-                        $("#personalInformationHeadImg").attr("src", element.goodsPictureUrl);
-                        $("#personalInformationLevel").text(element.goodsName);
-                        $("#personalInformationLeftDivDown-first").text("商品价格: " + element.goodsPrice);
-                        $("#personalInformationLeftDivDown-second").text("购买数量: " + element.BuyNumbers);
-                        $("#personalInformationLeftDivDown-third").text("购买时间: " + element.BuyTime);
-                        if (element.isLike == true) {
+                $("#personalInformationRightDivDown" + i).mouseenter(function () {
+                    $("#personalInformationLeftDiv").fadeOut(100, "swing", function () {
+                        $("#personalInformationHeadImg").attr("src", item.GoodImg164);
+                        $("#personalInformationLevel").text(item.GoodName);
+                        $("#personalInformationLeftDivDown-first").text("商品价格: " + item.GoodPrice);
+                        $("#personalInformationLeftDivDown-second").text("购买数量: " + item.GoodNumber);
+                        $("#personalInformationLeftDivDown-third").text("购买时间: " + item.OrderTime);
+                        if (item.isLike === "1") {
                             $("#personalInformationLeftDivDown-fourth").text("已收藏该商品");
                         } else {
                             $("#personalInformationLeftDivDown-fourth").text("没有收藏该商品");
                         }
                     });
-                    $("#personalInformationLeftDiv").fadeIn(500, "swing");
+                    $("#personalInformationLeftDiv").fadeIn(100, "swing");
+                });
+
+                // //为条目中的"我要xx"按钮添加click事件
+                // $("#woyaocuidan" + i).click(function () {
+                //     //点击我要催单 然后后台
+                //
+                // });
+                $("#zhifu" + i).click(function () {
+                    var userBuyQuantity = item.GoodNumber;
+                    var userSelectNetWeight = item.GoodNetWeight;
+                    var userBuyGoodName = item.GoodName;
+                    var userSelectColor = item.GoodColor;
+                    var userBuyGoodId = item.GoodId;
+                    // 实现点击立即购买后 弹出对话框
+                    $("#replyZheZhao").css("display", "block");
+                    $("#replyZheZhao").animate({opacity: ".6"}, 800, "easeInOutQuart", function () {
+                        $(".goodsBuyDiv").css("display", "block");
+                        $(".goodsBuyDiv").animate({opacity: "1"}, 400, "easeInOutQuart");
+                    });
+
+                    //填写隐藏表单
+                    $("#goodId").val(userBuyGoodId);
+                    $("#goodName").val(userBuyGoodName);
+                    $("#goodNetWeight").val(userSelectNetWeight);
+                    $("#goodColor").val(userSelectColor);
+                    $("#ordersId").val(item.OrdersId);
+                    $("#goodBuyQuantity").val(userBuyQuantity);
+                    console.log("隐藏表单填写完毕!");
+
+                    // 实现将对话框中的订单信息显示
+                    //取出所有的信息
+                    var howMuchMoney;
+                    var goodPrice = item.GoodPrice;
+                    var goodDiscount = item.GoodDiscount;
+                    if (goodDiscount !== "10") {
+                        howMuchMoney = Math.round(Number(userBuyQuantity) * (Number(goodPrice)) * (Number(goodDiscount)) * 0.1);
+
+                    } else {
+                        howMuchMoney = Math.round(Number(userBuyQuantity) * (Number(goodPrice)));
+                    }
+                    //填入对话框中对应内容
+                    $(".good-info").text(" 商品名: " + userBuyGoodName + " / 净含量: " + userSelectNetWeight + " / 购买数量: " + userBuyQuantity + " ");
+                    $(".good-info").next().text("价格: " + howMuchMoney + "¥");
+
+                    // 点击遮罩 取消g购买
+                    $("#replyZheZhao , .goodsBuyDiv-fourth").click(function () {
+                        //将支付弹出框隐藏
+                        $(".goodsBuyDiv").animate({opacity: "0"}, 800, "easeInOutQuart", function () {
+                            $(".goodsBuyDiv").css("display", "none");
+                        });
+                        $("#replyZheZhao").animate({opacity: "0"}, 800, "easeInOutQuart", function () {
+                            $("#replyZheZhao").css("display", "none");
+                        });
+                    });
+                    //支付按钮
+                    $(".goodsBuyDiv-third").click(function () {
+                        //先查看此订单是否也存在于购物车中
+                        if(item.shoppingCartId === "0"){
+                            //说明不存在 所以不需要删除
+                            console.log("此订单不在购物车中");
+                        }else {
+                            //ajax请求
+                            $.ajax({
+                                method: "POST",
+                                url: "/MyChannel/ordersAction_deleteShoppingCart.action",
+                                data: { ShoppingcartId: item.shoppingCartId ,deleteOrderTo: "no"}
+
+                            })
+                                .done(function( msg ) {
+                                    if(msg === "delete shoppingcart suceess"){
+                                        console.log("在购物车內支付完毕 删除该购物车栏完毕 准备将此订单转变为待发货状态");
+                                    }else {
+                                        console.log("删除购物车栏失败 请检查异常栈 sad" + msg);
+                                    }
+                                });
+                            //ajax请求结束
+                        }
+
+                        //生成已付款未发货订单
+                        $("#goodBuyForm").submit();
+                        //转到支付完成页面 然后再转到买方的个人信息 待发货页面
+
+                    });
                 });
                 i = i + 1;
                 $(".personalInformationRightDivDown").animate({ opacity: 1 }, 800, "swing");
-
-            }, this);
+            });
         }
     });
 
@@ -169,71 +262,212 @@ $(document).ready(function () {
         $("#getDaiFuKuan").css("color", "#666");
         $("#getDaiFaHuo").css("color", "#666");
         $("#getJiFenGoods").css("color", "#666");
-        //使用Ajax查询 得到该用户待发货的数据
+        //使用Ajax查询 得到该用户待评价的数据
+        //加载待评价列表
+        $.ajax({
+            url: '/MyChannel/ordersAction_getUnEvaluateOrdersList.action',
+            type: 'GET',
+            timeout: 1000,
+            cache: false,
+            crossDomain: true,
+            beforeSend: LoadFunction, //加载执行方法
+            error: erryFunction,  //错误执行方法
+            success: succFunction //成功执行方法
+        });
 
-        var JSONObject = [
-            {
-                "goodsName": "goods1",
-                "goodsPictureUrl": "img/gallery/164_164_goodsPicture/goods1.png",
-                "goodsPrice": 3000,
-                "BuyNumbers": 3,
-                "BuyTime": "2017-3-17 21:36",
-                "isLike": true,
-                "goodsId": 3092608431813507,
-                "goodsDescrible": "徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计",
-            },
-            {
-                "goodsName": "goods2",
-                "goodsPictureUrl": "img/gallery/164_164_goodsPicture/goods2.png",
-                "goodsPrice": 4500,
-                "BuyNumbers": 2,
-                "BuyTime": "2017-3-17 21:41",
-                "isLike": false,
-                "goodsId": 4012398971233122,
-                "goodsDescrible": "徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计",
-            }];
-
-        //将拿到的数据，写一个for循环，循环的把数据放入
-        //先删除所有的li
-        if ($(".personalInformationRightDivDown").length != 0) {
-            $(".personalInformationRightDivDown").remove();
+        function LoadFunction() {
+            //在请求数据的时候 要显示请求中字样告知用户等待片刻
+            console.log("loading...");
         }
-        //先判断是否有li了 有li说明已经进行过数据的查询了，不需要再添加
-        if ($(".personalInformationRightDivDown").length == 0) {
+        function erryFunction() {
+            console.log("error!");
+        }
+
+        function succFunction(tt) {
+            //将拿到的数据，写一个for循环，循环的把数据放入
+            //先删除所有的li
+            if ($(".personalInformationRightDivDown").length != 0) {
+                $(".personalInformationRightDivDown").remove();
+            }
+            var json = eval("("+tt+")"); //数组
+            var tt = "";
             var i = 0;
-            JSONObject.forEach(function (element) {
+            $.each(json.unEvaluateOrdersList , function (index,item) {
+                console.log("处理" + item.OrdersId);
                 $("#personalInformationRightDivUl").append(
                     "<li class='personalInformationRightDivDown' id='" + "personalInformationRightDivDown" + i + "'>" +
                     " <div class='personalInformation-goodsDiv'>" +
-                    "<div class='personalInformation-goodsId'>订单号: " + element.goodsId + "</div>" +
-                    "<div class='personalInformation-goodsdescrible'>商品描述: " + element.goodsDescrible + "</div>" +
+                    "<div class='personalInformation-goodsId'>订单号: " + item.OrdersId + "</div>" +
+                    "<div class='personalInformation-goodsdescrible'>商品描述: "+item.GoodDescrible+ "</div>" +
                     "</div>" +
                     "<div class='personalInformation-buttons-div'>" +
-                    "<div class='personalInformation-buttons'><i class='icon icon-truck' style='margin-right: 8px;'></i>我要评价</div>" +
+                    "<div class='personalInformation-buttons' id='pingjia" + i + "'><i class='icon icon-truck' style='margin-right: 8px;'></i>评价</div>" +
                     "</div>" +
                     "</li>");
                 //为所有条目添加click事件，使得起点击后可以修改左边详细信息的一些数据
-                $("#personalInformationRightDivDown" + i).click(function () {
-                    $("#personalInformationLeftDiv").fadeOut(500, "swing", function () {
-                        $("#personalInformationHeadImg").attr("src", element.goodsPictureUrl);
-                        $("#personalInformationLevel").text(element.goodsName);
-                        $("#personalInformationLeftDivDown-first").text("商品价格: " + element.goodsPrice);
-                        $("#personalInformationLeftDivDown-second").text("购买数量: " + element.BuyNumbers);
-                        $("#personalInformationLeftDivDown-third").text("购买时间: " + element.BuyTime);
-                        if (element.isLike == true) {
+                $("#personalInformationRightDivDown" + i).mouseenter(function () {
+                    $("#personalInformationLeftDiv").fadeOut(100, "swing", function () {
+                        $("#personalInformationHeadImg").attr("src", item.GoodImg164);
+                        $("#personalInformationLevel").text(item.GoodName);
+                        $("#personalInformationLeftDivDown-first").text("商品价格: " + item.GoodPrice);
+                        $("#personalInformationLeftDivDown-second").text("购买数量: " + item.GoodNumber);
+                        $("#personalInformationLeftDivDown-third").text("购买时间: " + item.OrderTime);
+                        if (item.isLike === "1") {
                             $("#personalInformationLeftDivDown-fourth").text("已收藏该商品");
                         } else {
                             $("#personalInformationLeftDivDown-fourth").text("没有收藏该商品");
                         }
                     });
-                    $("#personalInformationLeftDiv").fadeIn(500, "swing");
+                    $("#personalInformationLeftDiv").fadeIn(100, "swing");
                 });
 
+                // //为条目中的"我要xx"按钮添加click事件
+                // $("#woyaocuidan" + i).click(function () {
+                //     //点击我要催单 然后后台
+                //
+                // });
+                $("#pingjia" + i).click(function () {
+                    //弹出对话框
+                    $("#replyZheZhao").css("display", "block");
+                    $("#replyZheZhao").animate({ opacity: ".6" }, 800, "easeInOutQuart");
+                    $(".goodsEvaluateReplyDownDiv").animate({ bottom: "0%" }, 800, "easeInOutQuart");
+
+                    // 全局Fromdata 封装了用户的所有想法送的数据
+                    var godFormData = new FormData();
+                    jed = "easeOutElastic";
+                    var is = 0;
+
+
+                    // 添加图片
+                    $("#goodsEvaluateReplyDownDiv-second-addPictureInput").change(function () {
+                        var fr = false;
+                        if (typeof window.FileReader === 'undefined') {
+                            alert("抱歉你的浏览器不支持FileReader");
+                        } else {
+                            if ($(".goodsEvaluateReplyDownDiv-uploadPicture").css("height") == "0px") {
+                                $(".goodsEvaluateReplyDownDiv-uploadPicture").animate({ height: "145px" }, 800, jed);
+                            }
+                            fr = new FileReader();
+                            godFormData.append('goodsEvaluateReplyImg' + is, document.getElementById('goodsEvaluateReplyDownDiv-second-addPictureInput').files[0]);
+                            fr.readAsDataURL(document.getElementById('goodsEvaluateReplyDownDiv-second-addPictureInput').files[0]);
+                            fr.onload = function (p_fr) {
+                                var imgs = new Image();
+                                imgs.src = p_fr.target.result;
+                                //因为上一步的imgs.src是异步的 所以浏览器执行太快了 也许高宽还没来得及读入 就已经开始下面的代码了 所以为了保证下面的imgs.width等能够正常工作而不是返回0 所以就在onload里写
+                                imgs.onload = function () {
+                                    if (imgs.width < imgs.height) {
+                                        // 宽度小于高度情况
+                                        var prop = 127 / imgs.width;
+                                        var height = Math.round(imgs.height * prop);
+                                        var marginTop = (height - 127) / 2;
+                                        $("#goodsEvaluateReplyDownDiv-uploadPicture-Ul").append(
+                                            "<li class='goodsEvaluateReplyDownDiv-uploadPicture-li'>" +
+                                            "<div class='deletePictureDiv'><i class='icon-remove-sign icon-2x' id='" + "icon-remove-sign" + is + "' ></i></div>" +
+                                            "<img id='goodsEvaluateReplyImg" + is + "' style='width: 127px;height: " + height + "px;margin-top: -" + marginTop + "px'  src='" + p_fr.target.result + "' />" +
+                                            "</li>"
+                                        );
+                                        console.log("图片id = goodsEvaluateReplyImg" + is + "生成完毕");
+                                    } else {
+                                        // 高度小于宽度情况
+                                        var prop = 127 / imgs.height;
+                                        var width = Math.round(imgs.width * prop);
+                                        var marginLeft = (width - 127) / 2;
+                                        $("#goodsEvaluateReplyDownDiv-uploadPicture-Ul").append(
+                                            "<li class='goodsEvaluateReplyDownDiv-uploadPicture-li'>" +
+                                            "<div class='deletePictureDiv'><i class='icon-remove-sign icon-2x' id='" + "icon-remove-sign" + is + "' ></i></div>" +
+                                            "<img id='goodsEvaluateReplyImg" + is + "' style='max-width: none;height: 127px;width: " + width + "px;margin-left: -" + marginLeft + "px'  src='" + p_fr.target.result + "' />" +
+                                            "</li>"
+                                        );
+                                        console.log("图片id = goodsEvaluateReplyImg" + is + "生成完毕");
+                                    }
+                                    // 删除图片
+                                    $("#icon-remove-sign" + is).click(function () {
+                                        $(this).parent().parent().remove();
+                                        var getId = $(this).parent().next().attr("id");
+                                        godFormData.delete(getId);
+                                        console.log("成功删除  图片id = " + getId);
+                                        is = is - 1;
+                                        if ($(".goodsEvaluateReplyDownDiv-uploadPicture-li").length == 0) {
+                                            $(".goodsEvaluateReplyDownDiv-uploadPicture").animate({ height: "0px" }, 800, "easeInElastic");
+                                        }
+                                        // 只能上传四张图片
+                                        if (is != 4) {
+                                            $("#goodsEvaluateReplyDownDiv-second-addPictureInput").removeAttr("disabled");
+                                            $("#goodsEvaluateReplyDownDiv-second-addPicture").css("opacity", "1");
+                                        }
+                                    });
+                                    // 改变图片id
+                                    is = is + 1;
+                                    // 只能上传四张图片
+                                    if (is == 4) {
+                                        $("#goodsEvaluateReplyDownDiv-second-addPictureInput").attr("disabled", "disabled");
+                                        $("#goodsEvaluateReplyDownDiv-second-addPicture").css("opacity", "0.2");
+                                    }
+                                }
+
+
+                            };
+                        }
+                    });
+
+
+
+                    $("#goodsEvaluateReplyDownDiv-first-a1").click(function () {
+                        if (document.getElementById('goodsEvaluateReplyDownDiv-second-addPictureInput').files[0] === 'undefined') {
+                            console.log("您不想上传一些图片吗？");
+                        }
+                        if ($("#goodsEvaluateReplyDownDiv-second-textarea").val().trim() == "" || $("#goodsEvaluateReplyDownDiv-second-textarea").val() == null) {
+                            alert("评价内容不能为空");
+                        } else {
+                            godFormData.append('goodsEvaluateReplyForm', encodeURI($('#goodsEvaluateReplyDownDiv-second-textarea').val()));
+                            //OrdersId
+                            godFormData.append('evaluateOrderId', item.OrdersId);
+                            //表示是初始回复 没有父评论
+                            godFormData.append('hasFatherEvaluate', "0");
+                            $.ajax('/MyChannel/addEvaluateServlet', {
+                                method: "POST",
+                                data: godFormData,
+                                processData: false,
+                                contentType: false,
+                                success: function (msg) {
+                                    if(msg === "add evaluate success"){
+                                        //评论发表成功 刷新
+                                        window.location.href = "http://localhost:8080/MyChannel/JSP/买方个人信息.jsp?usermessageincomplete=0&userchangepassword=0&ShouHuoAddress=0&daipingjia=1"
+                                    }else {
+                                        //已经连接到后台 然后跑到这里 说明后台报错 代码没跑完
+                                        console.log("后台报错 请查看异常栈信息" + msg)
+                                    }
+                                },
+                                error: function () {
+                                    //无法连接上
+                                    alert("评论失败 请查看是否联网");
+                                }
+                            });
+                        }
+                    });
+
+                })
+                ;
                 i = i + 1;
                 $(".personalInformationRightDivDown").animate({ opacity: 1 }, 800, "swing");
-
-            }, this);
+            });
         }
+
+    });
+
+    //回复框取消动作实现
+    // 点击遮罩 取消回复 删除所有内容
+    $("#replyZheZhao,#goodsEvaluateReplyDownDiv-first-a2").click(function () {
+        $(".goodsEvaluateReplyDownDiv").animate({ bottom: "-50%" }, 800, "easeInOutQuart");
+        $("#replyZheZhao").animate({ opacity: "0" }, 800, "easeInOutQuart", function () {
+
+            $("#replyZheZhao").css("display", "none");
+            $("#goodsEvaluateReplyDownDiv-second-textarea").val("");
+            $(".goodsEvaluateReplyDownDiv-uploadPicture-li").remove();
+            if ($(".goodsEvaluateReplyDownDiv-uploadPicture-li").length == 0) {
+                $(".goodsEvaluateReplyDownDiv-uploadPicture").animate({ height: "0px" }, 800, "easeInElastic");
+            }
+        });
     });
 
     //积分商城模块
@@ -679,6 +913,7 @@ $(document).ready(function () {
     */
 
     $("#personalInformationHeadDiv").click(function () {
+        $("body").css("min-width","1280px");
         if ($("#personalInformationRightDiv-ghost").css("display") == "none" && $("#personalInformationRightDiv").css("display") != "none") {
             $("#personalInformationRightDiv").fadeOut(500, "swing", function () {
                 $("#personalInformationRightDiv").css("display", "none");
@@ -697,6 +932,8 @@ $(document).ready(function () {
     });
 
     $("#headEditorDiv-second").click(function () {
+        $("body").css("min-width","1600px");
+
         $("#personalInformationRightDiv-ghost").fadeOut(500, "swing", function () {
             $("#personalInformationRightDiv-ghost").css("display", "none");
             $("#headEditorDiv-third").css("opacity", "0");
@@ -721,6 +958,10 @@ $(document).ready(function () {
     if(getShouHuoAddress == 1){
         //跳到收货地址页面
         $("#getShouHuoDiZhi").click();
+    }
+    var getDaiPingJia = getUrlParamArray[3].split('=')[1];
+    if(getDaiPingJia == 1){
+        $("#getDaiPingJia").click();
     }
     /**
      * 到此三大界面切换js结束

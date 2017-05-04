@@ -18,63 +18,34 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="goodManage.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/JSP/js/goodManage.js">
+      <file leaf-file-name="BackEnd_month.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/JSP/BackEnd_month.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="86" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shouye.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/JSP/shouye.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="254" column="29" lean-forward="false" selection-start-line="254" selection-start-column="29" selection-end-line="254" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zazaluShouyeLoading.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/JSP/js/zazaluShouyeLoading.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-477">
-              <caret line="40" column="24" lean-forward="true" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GoodAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/zazalu/action/GoodAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="107" column="48" lean-forward="false" selection-start-line="107" selection-start-column="39" selection-end-line="107" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GoodDaoImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/zazalu/dao/Impl/GoodDaoImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+            <state relative-caret-position="238">
+              <caret line="118" column="56" lean-forward="true" selection-start-line="118" selection-start-column="56" selection-end-line="118" selection-end-column="56" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#619#620#0" expanded="false" />
-                <element signature="e#663#664#0" expanded="false" />
-                <marker date="1492918345000" expanded="true" signature="972:1027" ph="SELECT * FRO... Good" />
-                <marker date="1492918345000" expanded="true" signature="1348:1366" ph="SELECT * FRO... Good" />
-                <marker date="1492918345000" expanded="true" signature="1779:1803" ph="select * fro... Good" />
-                <marker date="1492918345000" expanded="true" signature="1779:1804" ph="select * fro... Good" />
-                <marker date="1492918345000" expanded="true" signature="1779:1814" ph="select * fro... Good" />
-                <marker date="1492918345000" expanded="true" signature="1779:1816" ph="select * fro... Good" />
-                <marker date="1492918345000" expanded="true" signature="2457:2482" ph="select count... Good" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monthTrans.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/JSP/js/monthTrans.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrdersAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/zazalu/action/OrdersAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="548" column="40" lean-forward="true" selection-start-line="548" selection-start-column="40" selection-end-line="548" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,34 +62,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>attr('value')</find>
-      <find>OrdersId</find>
-      <find>demo1</find>
-      <find>to-index</find>
-      <find>to-password</find>
-      <find>system.out</find>
+      <find>i</find>
+      <find>Servlet</find>
+      <find>addNewGoodServlet</find>
+      <find>personalInformationTrans</find>
+      <find>personalInformationRightDivUl</find>
+      <find>DAI</find>
+      <find>goodId</find>
+      <find>goodsEvaluateLi</find>
+      <find>evaluateImgUrlArr</find>
+      <find>goodsEvaluateImgUl</find>
+      <find>evaluateImgUrl</find>
+      <find>getEvaluateByOrderId</find>
+      <find>tip-bottom</find>
+      <find>evaluate</find>
+      <find>goodsEvaluateContent</find>
+      <find>text</find>
+      <find>image</find>
+      <find>btn btn-info btn-large</find>
       <find>inputImage</find>
-      <find>??</find>
-      <find>??????</find>
-      <find>userProvince</find>
-      <find>select2-zazaluProvince-container</find>
-      <find>select2-</find>
-      <find>text()</find>
-      <find>getMiMaXiuGai</find>
-      <find>getShouHuoDiZhi</find>
-      <find>personalInformation-buttons</find>
-      <find>update</find>
-      <find>personalInformation-Address</find>
-      <find>addNewAddress</find>
-      <find>addressRewardPeople</find>
-      <find>forms</find>
-      <find>recent-posts</find>
-      <find>adsListA</find>
-      <find>164</find>
-      <find>start to get</find>
-      <find>start</find>
-      <find>thumbnails</find>
-      <find>span2</find>
+      <find>getGoodList</find>
+      <find>tm-count</find>
+      <find>to-index</find>
+      <find>userAction_userLogin</find>
+      <find>sendMail</find>
+      <find>leijipinglun1</find>
+      <find>quicksetupReceiveMail</find>
+      <find>delete</find>
+      <find>headEditorDiv-second</find>
+      <find>personalInformationHeadDiv</find>
+      <find>form-actions</find>
     </findStrings>
     <replaceStrings>
       <replace>val()</replace>
@@ -139,57 +112,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/zazalu/dao/AdvertisementDao.java" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/dao/Impl/AdvertisementDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/entity/Address.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/entity/Evaluate.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/entity/Favorite.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/entity/Orders.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/entity/User.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/entity/Advertisement.hbm.xml" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/entity/Advertisement.java" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/entity/Good.hbm.xml" />
-        <option value="$PROJECT_DIR$/web/JSP/js/addNewAds.js" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/action/AdvertisementAction.java" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/servlet/Servlet.java" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/servlet/addAdsServlet.java" />
-        <option value="$PROJECT_DIR$/web/JSP/后台管理_广告管理.jsp" />
-        <option value="$PROJECT_DIR$/web/messageFlashSuccess.jsp" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/servlet/adsAddServlet.java" />
-        <option value="$PROJECT_DIR$/web/JSP/js/adsManage.js" />
-        <option value="$PROJECT_DIR$/web/JSP/BackEnd_AdsManage.jsp" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/dao/EvaluateDao.java" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/service/EvaluateService.java" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/service/Impl/EvaluateServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/action/EvaluateAction.java" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/dao/Impl/EvaluateDaoImpl.java" />
+        <option value="$PROJECT_DIR$/web/JSP/js/goodsPageJs.js" />
+        <option value="$PROJECT_DIR$/web/JSP/js/matrix.popover.js" />
+        <option value="$PROJECT_DIR$/web/JSP/forwardPage/registerSuccess.jsp" />
+        <option value="$PROJECT_DIR$/web/JSP/forwardPage/quickRegisterWait.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/JSP/forwardPage/toManagePageSelect.jsp" />
-        <option value="$PROJECT_DIR$/web/JSP/GoodManage_Order_Browser.jsp" />
-        <option value="$PROJECT_DIR$/web/JSP/GoodManage_Order_detail.jsp" />
+        <option value="$PROJECT_DIR$/src/struts.xml" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/filter/verifyUserFilter.java" />
+        <option value="$PROJECT_DIR$/web/JSP/js/zazaluShouyeLoading.js" />
+        <option value="$PROJECT_DIR$/web/JSP/css/foot.css" />
+        <option value="$PROJECT_DIR$/web/JSP/css/shouyeCss.css" />
+        <option value="$PROJECT_DIR$/web/JSP/后台管理_账户管理_浏览.jsp" />
+        <option value="$PROJECT_DIR$/web/JSP/js/userManage.js" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/service/Impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/dao/Impl/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/action/UserAction.java" />
+        <option value="$PROJECT_DIR$/web/JSP/js/personalPage.js" />
+        <option value="$PROJECT_DIR$/web/JSP/css/userPageCss.css" />
+        <option value="$PROJECT_DIR$/web/JSP/css/matrix-media.css" />
+        <option value="$PROJECT_DIR$/web/JSP/js/zazaluMusic.js" />
+        <option value="$PROJECT_DIR$/web/JSP/js/changeMinWidth.js" />
+        <option value="$PROJECT_DIR$/web/JSP/GoodManage_AddGood.jsp" />
+        <option value="$PROJECT_DIR$/web/JSP/GoodManage_ChangeGoodMessage_Browser.jsp" />
+        <option value="$PROJECT_DIR$/web/JSP/GoodManage_GoodManage_Success.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/GoodManage_GoodTagManage_AddTag.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/GoodManage_GoodTagManage_Browser.jsp" />
-        <option value="$PROJECT_DIR$/web/JSP/js/bootstrap-colorpicker.js" />
-        <option value="$PROJECT_DIR$/web/JSP/js/addGoodsColorButtonJs.js" />
-        <option value="$PROJECT_DIR$/web/JSP/forwardPage/addNewGoodSuccess.jsp" />
-        <option value="$PROJECT_DIR$/web/JSP/js/addNewGood.js" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/servlet/addNewGoodServlet.java" />
-        <option value="$PROJECT_DIR$/web/JSP/后台管理_广告管理_浏览.jsp" />
-        <option value="$PROJECT_DIR$/web/JSP/GoodManage_ChangeGood.jsp" />
-        <option value="$PROJECT_DIR$/web/JSP/js/changeGood.js" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/servlet/changeGoodServlet.java" />
-        <option value="$PROJECT_DIR$/web/JSP/GoodManage_ChangeGoodMessage_Browser.jsp" />
-        <option value="$PROJECT_DIR$/web/JSP/js/goodManage.js" />
-        <option value="$PROJECT_DIR$/web/JSP/GoodManage_GoodManage_Success.jsp" />
-        <option value="$PROJECT_DIR$/web/JSP/js/shouyeAdsPicture.js" />
-        <option value="$PROJECT_DIR$/web/JSP/js/zazaluSearch.js" />
-        <option value="$PROJECT_DIR$/web/JSP/css/shouyeCss.css" />
-        <option value="$PROJECT_DIR$/web/JSP/js/cropperPerferences.js" />
-        <option value="$PROJECT_DIR$/web/JSP/买方个人信息.jsp" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/action/UserAction.java" />
-        <option value="$PROJECT_DIR$/web/JSP/GoodManage_AddGood.jsp" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/service/GoodService.java" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/service/Impl/GoodServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/dao/GoodDao.java" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/dao/Impl/GoodDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/zazalu/action/GoodAction.java" />
+        <option value="$PROJECT_DIR$/web/JSP/GoodManage_Order_Browser.jsp" />
+        <option value="$PROJECT_DIR$/web/JSP/GoodManage_Order_detail.jsp" />
+        <option value="$PROJECT_DIR$/web/JSP/GoodPage.jsp" />
+        <option value="$PROJECT_DIR$/web/JSP/ShoppingCart.jsp" />
         <option value="$PROJECT_DIR$/web/JSP/shouye.jsp" />
-        <option value="$PROJECT_DIR$/web/JSP/js/zazaluShouyeLoading.js" />
+        <option value="$PROJECT_DIR$/web/JSP/userFavorite.jsp" />
+        <option value="$PROJECT_DIR$/web/JSP/买方个人信息.jsp" />
+        <option value="$PROJECT_DIR$/web/JSP/后台管理_月交易统计.jsp" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/service/OrdersService.java" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/service/Impl/OrdersServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/dao/OrdersDao.java" />
+        <option value="$PROJECT_DIR$/web/JSP/BackEnd_AdsManage.jsp" />
+        <option value="$PROJECT_DIR$/web/JSP/后台管理_广告管理_浏览.jsp" />
+        <option value="$PROJECT_DIR$/web/JSP/BackEnd_UserManage_Browser.jsp" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/dao/Impl/OrdersDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/zazalu/action/OrdersAction.java" />
+        <option value="$PROJECT_DIR$/web/JSP/BackEnd_month.jsp" />
+        <option value="$PROJECT_DIR$/web/JSP/js/monthTrans.js" />
       </list>
     </option>
   </component>
@@ -227,9 +200,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -298,6 +270,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyChannel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyChannel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="JSP" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -334,28 +324,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JSP" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="forwardPage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyChannel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyChannel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -375,28 +343,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="zazalu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyChannel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyChannel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zazalu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="servlet" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -445,28 +391,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyChannel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyChannel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zazalu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -542,6 +466,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -552,17 +477,19 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/zazalu/Desktop/MyChannel/src/com/zazalu/action/EvaluateAction.java" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zazalu.entity" />
       <recent name="com.zazalu.action" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web/JSP/js" />
-      <recent name="$PROJECT_DIR$/web/JSP" />
       <recent name="$PROJECT_DIR$/web/JSP/forwardPage" />
-      <recent name="$PROJECT_DIR$/web" />
-      <recent name="$PROJECT_DIR$/web/JSP/json" />
+      <recent name="$PROJECT_DIR$/web/JSP/css" />
+      <recent name="$PROJECT_DIR$/src/com/zazalu/entity" />
+      <recent name="$PROJECT_DIR$/web/JSP/img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1004,7 +931,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_MyChannel_11" />
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_MyChannel_12" />
         <option name="DEPLOY_TOMCAT_APPS" value="true" />
       </server-settings>
       <predefined_log_file id="Tomcat" enabled="true" />
@@ -1014,7 +941,7 @@
       <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="51864" />
+        <option name="DEBUG_PORT" value="51972" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -1062,6 +989,7 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <method>
+        <option name="MakeProject" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="MyChannel:war exploded" />
         </option>
@@ -1121,6 +1049,33 @@
       <workItem from="1492911216067" duration="842000" />
       <workItem from="1492912447969" duration="7295000" />
       <workItem from="1492956638723" duration="1581000" />
+      <workItem from="1492994384872" duration="8851000" />
+      <workItem from="1493014176173" duration="10902000" />
+      <workItem from="1493030067162" duration="3118000" />
+      <workItem from="1493080591202" duration="10621000" />
+      <workItem from="1493100669906" duration="10237000" />
+      <workItem from="1493114816783" duration="623000" />
+      <workItem from="1493116771556" duration="9188000" />
+      <workItem from="1493130656590" duration="1626000" />
+      <workItem from="1493167382474" duration="10404000" />
+      <workItem from="1493187138691" duration="10340000" />
+      <workItem from="1493202204477" duration="10577000" />
+      <workItem from="1493253744363" duration="244000" />
+      <workItem from="1493254182190" duration="8121000" />
+      <workItem from="1493273508773" duration="8389000" />
+      <workItem from="1493288747775" duration="1991000" />
+      <workItem from="1493291181322" duration="141000" />
+      <workItem from="1493291443483" duration="369000" />
+      <workItem from="1493339835659" duration="8648000" />
+      <workItem from="1493359534964" duration="9452000" />
+      <workItem from="1493373091940" duration="664000" />
+      <workItem from="1493686131478" duration="4910000" />
+      <workItem from="1493693711908" duration="155000" />
+      <workItem from="1493693922905" duration="72000" />
+      <workItem from="1493694016672" duration="531000" />
+      <workItem from="1493694579553" duration="561000" />
+      <workItem from="1493695330521" duration="1273000" />
+      <workItem from="1493707693108" duration="8480000" />
     </task>
     <servers />
   </component>
@@ -1157,7 +1112,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202713000" />
+    <option name="totallyTimeSpent" value="343201000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1174,7 +1129,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329927" sideWeight="0.51944894" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.52917343" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1192,10 +1147,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.48055106" order="2" side_tool="false" content_ui="tabs" x="25" y="298" width="1234" height="226" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.47082657" order="2" side_tool="false" content_ui="tabs" x="25" y="298" width="1234" height="226" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2439222" sideWeight="0.4948905" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22528364" sideWeight="0.4948905" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22690438" sideWeight="0.5051095" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1204,7 +1159,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.49675852" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1215,7 +1170,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1224,385 +1179,443 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/matrix.popover.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3785">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/replydowndiv.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/personalPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6670">
-          <caret line="668" column="20" lean-forward="false" selection-start-line="668" selection-start-column="20" selection-end-line="668" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/wysihtml5-0.3.0.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/zazaluMusic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/forwardPage/toManagePageSelect.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="41" column="30" lean-forward="false" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/addNewAds.js">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_Order_Browser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="103" column="21" lean-forward="false" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
+          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_Order_detail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="102" column="21" lean-forward="false" selection-start-line="102" selection-start-column="21" selection-end-line="102" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_GoodTagManage_AddTag.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="96" column="7" lean-forward="false" selection-start-line="96" selection-start-column="7" selection-end-line="96" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_GoodTagManage_Browser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="101" column="8" lean-forward="false" selection-start-line="101" selection-start-column="8" selection-end-line="101" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/servlet/personalImgServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/bootstrap-colorpicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="539" column="8" lean-forward="true" selection-start-line="539" selection-start-column="8" selection-end-line="539" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/select2.min.js">
+    <entry file="file://$PROJECT_DIR$/web/JSP/font-awesome/css/font-awesome.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/addGoodsColorButtonJs.js">
+    <entry file="file://$PROJECT_DIR$/src/struts.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="48" lean-forward="false" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/addNewGood.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/forwardPage/addNewGoodSuccess.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        <state relative-caret-position="240">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/entity/Good.java">
+    <entry file="file://$PROJECT_DIR$/src/com/zazalu/filter/verifyUserFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="11" column="33" lean-forward="true" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        <state relative-caret-position="765">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/entity/Tag.java">
+    <entry file="file://$PROJECT_DIR$/web/JSP/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="-16807">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/adsManage.js">
+    <entry file="file://$PROJECT_DIR$/web/JSP/js/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="55" lean-forward="false" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/BackEnd_AdsManage.jsp">
+    <entry file="file://$PROJECT_DIR$/out/artifacts/MyChannel_war_exploded/JSP/css/foot.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="674">
-          <caret line="193" column="0" lean-forward="true" selection-start-line="193" selection-start-column="0" selection-end-line="194" selection-end-column="50" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/后台管理_广告管理_浏览.jsp">
+    <entry file="file://$PROJECT_DIR$/web/JSP/js/zazaluShouyeLoading.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="176" column="2" lean-forward="false" selection-start-line="176" selection-start-column="2" selection-end-line="176" selection-end-column="42" />
-          <folding />
+        <state relative-caret-position="1230">
+          <caret line="82" column="31" lean-forward="false" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/dao/Impl/EvaluateDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/web/JSP/css/foot.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/action/AdvertisementAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="90" column="4" lean-forward="true" selection-start-line="90" selection-start-column="4" selection-end-line="99" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/dao/Impl/AdvertisementDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="34" column="7" lean-forward="true" selection-start-line="34" selection-start-column="7" selection-end-line="35" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/servlet/changeGoodServlet.java" />
-    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_ChangeGood.jsp" />
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/changeGood.js" />
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/servlet/addNewGoodServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-564">
-          <caret line="38" column="23" lean-forward="false" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/servlet/adsAddServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="40" lean-forward="true" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_ChangeGoodMessage_Browser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="94" column="2" lean-forward="true" selection-start-line="94" selection-start-column="2" selection-end-line="94" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_GoodManage_Success.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="101" column="35" lean-forward="true" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/css/zazaluhead.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/apache-tomcat-8.0.43/conf/server.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="137" column="76" lean-forward="false" selection-start-line="137" selection-start-column="76" selection-end-line="137" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/买方个人信息.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3345">
-          <caret line="227" column="58" lean-forward="true" selection-start-line="227" selection-start-column="58" selection-end-line="227" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/cropperPerferences.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-586">
-          <caret line="199" column="31" lean-forward="true" selection-start-line="199" selection-start-column="31" selection-end-line="199" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/zazaluSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="28" column="11" lean-forward="false" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+        <state relative-caret-position="195">
+          <caret line="13" column="50" lean-forward="false" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/css/shouyeCss.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/shouyeAdsPicture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/struts.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/action/UserAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="129" column="45" lean-forward="false" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/goodManage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="86" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/dao/Impl/GoodDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="54" column="23" lean-forward="false" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#619#620#0" expanded="false" />
-            <element signature="e#663#664#0" expanded="false" />
-            <marker date="1492918345000" expanded="true" signature="972:1027" ph="SELECT * FRO... Good" />
-            <marker date="1492918345000" expanded="true" signature="1348:1366" ph="SELECT * FRO... Good" />
-            <marker date="1492918345000" expanded="true" signature="1779:1803" ph="select * fro... Good" />
-            <marker date="1492918345000" expanded="true" signature="1779:1804" ph="select * fro... Good" />
-            <marker date="1492918345000" expanded="true" signature="1779:1814" ph="select * fro... Good" />
-            <marker date="1492918345000" expanded="true" signature="1779:1816" ph="select * fro... Good" />
-            <marker date="1492918345000" expanded="true" signature="2457:2482" ph="select count... Good" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_AddGood.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="188" column="45" lean-forward="false" selection-start-line="188" selection-start-column="45" selection-end-line="188" selection-end-column="45" />
-          <folding>
-            <marker date="1492918157000" expanded="false" signature="14366:14377" ph="..." />
-            <marker date="1492918157000" expanded="false" signature="14690:14701" ph="..." />
-            <marker date="1492918157000" expanded="false" signature="15014:15025" ph="..." />
-            <marker date="1492918157000" expanded="false" signature="15278:15295" ph="..." />
-            <marker date="1492918157000" expanded="false" signature="15403:15430" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/dao/GoodDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="55" lean-forward="false" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/service/Impl/GoodServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="36" column="55" lean-forward="false" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
-          <folding>
-            <element signature="e#1088#1089#0" expanded="false" />
-            <element signature="e#1134#1135#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/zazalu/service/GoodService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="55" lean-forward="false" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/zazalu.github.io/blog/themes/next/source/js/src/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="49" />
+        <state relative-caret-position="375">
+          <caret line="97" column="1" lean-forward="true" selection-start-line="97" selection-start-column="1" selection-end-line="97" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/zazalu/action/GoodAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="107" column="48" lean-forward="false" selection-start-line="107" selection-start-column="39" selection-end-line="107" selection-end-column="48" />
+        <state relative-caret-position="210">
+          <caret line="43" column="8" lean-forward="false" selection-start-line="43" selection-start-column="8" selection-end-line="79" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zazalu/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zazalu/service/Impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="79" column="32" lean-forward="false" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="32" />
+          <folding>
+            <element signature="e#2281#2282#0" expanded="false" />
+            <element signature="e#2322#2323#0" expanded="false" />
+            <element signature="e#2389#2390#0" expanded="false" />
+            <element signature="e#2439#2440#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zazalu/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="43" lean-forward="false" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zazalu/dao/Impl/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+          <folding>
+            <marker date="1493708591000" expanded="true" signature="984:1039" ph="SELECT * FRO... User" />
+            <marker date="1493708591000" expanded="true" signature="1312:1369" ph="SELECT * FRO... User" />
+            <marker date="1493708591000" expanded="true" signature="1661:1721" ph="SELECT UserI... User" />
+            <marker date="1493708591000" expanded="true" signature="1945:1963" ph="SELECT * FRO... User" />
+            <marker date="1493708591000" expanded="true" signature="1945:1965" ph="SELECT * FRO... User" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zazalu/action/UserAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="267" column="33" lean-forward="true" selection-start-line="267" selection-start-column="33" selection-end-line="267" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/js/userManage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14">
+          <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/forwardPage/toManagePageSelect.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="36" column="8" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/js/cropperPerferences.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="true" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/css/userPageCss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="157" column="1" lean-forward="true" selection-start-line="157" selection-start-column="1" selection-end-line="157" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/js/personalPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="916" column="57" lean-forward="true" selection-start-line="916" selection-start-column="57" selection-end-line="916" selection-end-column="57" />
+          <folding>
+            <marker date="1493710996000" expanded="true" signature="2176:2194" ph="..." />
+            <marker date="1493710996000" expanded="true" signature="6563:6581" ph="..." />
+            <marker date="1493710996000" expanded="true" signature="14002:14020" ph="..." />
+            <marker date="1493710996000" expanded="true" signature="18008:18078" ph="..." />
+            <marker date="1493710996000" expanded="true" signature="19098:19185" ph="..." />
+            <marker date="1493710996000" expanded="true" signature="26470:26488" ph="..." />
+            <marker date="1493710996000" expanded="true" signature="32840:32858" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/css/matrix-media.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/js/zazaluMusic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/js/changeMinWidth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="3" lean-forward="true" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_ChangeGoodMessage_Browser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_GoodManage_Success.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_GoodTagManage_AddTag.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_GoodTagManage_Browser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_Order_Browser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_Order_detail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/GoodPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/ShoppingCart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/userFavorite.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/js/adsManage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-691">
+          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/js/addNewAds.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-467">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/js/addNewGood.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-796">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/js/goodBuy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="48" column="16" lean-forward="false" selection-start-line="48" selection-start-column="16" selection-end-line="54" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zazalu/service/OrdersService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="39" column="41" lean-forward="false" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zazalu/service/Impl/OrdersServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="92" column="49" lean-forward="false" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zazalu/dao/OrdersDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="39" column="76" lean-forward="false" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/BackEnd_AdsManage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="93" column="39" lean-forward="false" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/后台管理_广告管理_浏览.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="86" column="24" lean-forward="true" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/BackEnd_UserManage_Browser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="86" column="24" lean-forward="false" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2680">
+          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/买方个人信息.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="752" column="0" lean-forward="false" selection-start-line="752" selection-start-column="0" selection-end-line="752" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/JSP/shouye.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="254" column="29" lean-forward="false" selection-start-line="254" selection-start-column="29" selection-end-line="254" selection-end-column="29" />
+        <state relative-caret-position="-1975">
+          <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/JSP/js/zazaluShouyeLoading.js">
+    <entry file="file://$PROJECT_DIR$/web/JSP/GoodManage_AddGood.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-477">
-          <caret line="40" column="24" lean-forward="true" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+        <state relative-caret-position="65">
+          <caret line="299" column="2" lean-forward="false" selection-start-line="299" selection-start-column="2" selection-end-line="299" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zazalu/dao/Impl/OrdersDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="131" column="50" lean-forward="true" selection-start-line="131" selection-start-column="50" selection-end-line="131" selection-end-column="50" />
+          <folding>
+            <marker date="1493717013000" expanded="true" signature="902:995" ph="SELECT * FRO... Orders" />
+            <marker date="1493717013000" expanded="true" signature="1340:1451" ph="SELECT * FRO... Orders" />
+            <marker date="1493717013000" expanded="true" signature="2353:2412" ph="SELECT * FRO... ShoppingCart" />
+            <marker date="1493717013000" expanded="true" signature="2989:3009" ph="SELECT * FRO... Orders" />
+            <marker date="1493717013000" expanded="true" signature="3356:3418" ph="SELECT * FRO... ShoppingCart" />
+            <marker date="1493717013000" expanded="true" signature="3888:3978" ph="SELECT * FRO... ShoppingCart" />
+            <marker date="1493717013000" expanded="true" signature="4362:4494" ph="SELECT * FRO... Orders" />
+            <marker date="1493717013000" expanded="true" signature="4842:4932" ph="SELECT * FRO... Orders" />
+            <marker date="1493717013000" expanded="true" signature="5353:5395" ph="SELECT * FRO... Orders" />
+            <marker date="1493717013000" expanded="true" signature="5353:5396" ph="SELECT * FRO... Orders" />
+            <marker date="1493717013000" expanded="true" signature="5353:5411" ph="SELECT * FRO... Orders" />
+            <marker date="1493717013000" expanded="true" signature="5353:5413" ph="SELECT * FRO... Orders" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/BackEnd_month.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="118" column="56" lean-forward="true" selection-start-line="118" selection-start-column="56" selection-end-line="118" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/zazalu/action/OrdersAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="548" column="40" lean-forward="true" selection-start-line="548" selection-start-column="40" selection-end-line="548" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JSP/js/monthTrans.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1614,9 +1627,9 @@
         <settings>
           <artifact-editor>
             <show-content>
+              <type id="library" />
               <type id="jpa-descriptors" />
               <type id="javaee-facet-resources" />
-              <type id="library" />
               <type id="artifact" />
             </show-content>
           </artifact-editor>

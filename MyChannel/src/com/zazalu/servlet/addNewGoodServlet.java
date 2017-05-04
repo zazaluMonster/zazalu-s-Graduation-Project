@@ -61,6 +61,8 @@ public class addNewGoodServlet extends HttpServlet{
                         good.setGoodDescrible(fieldString);
                     }else if(fieldName.equals("GoodStock")){
                         good.setGoodStock(Integer.valueOf(fieldString));
+                    }else if(fieldName.equals("GoodPrice")){
+                        good.setGoodPrice(Integer.valueOf(fieldString));
                     }else if(fieldName.equals("GoodNetWeight")){
                         good.setGoodNetWeight(fieldString);
                     }else if(fieldName.equals("GoodColor")){

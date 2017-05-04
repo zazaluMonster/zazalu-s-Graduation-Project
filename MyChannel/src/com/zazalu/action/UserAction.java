@@ -2,6 +2,7 @@ package com.zazalu.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.zazalu.entity.Good;
 import com.zazalu.entity.User;
 import com.zazalu.service.UserService;
 import org.apache.struts2.ServletActionContext;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 public class UserAction extends ActionSupport implements ModelDriven<User>{
 	//	模型驱动
@@ -37,25 +39,35 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 //  业务功能实现
 	public String register(){
 		System.out.println("start to save new user!");
+		HttpSession httpSession = ServletActionContext.getRequest().getSession();
 		try {
-		    //刚注册的用户信息填补不完全 设置帐号可用性为 不可用
-		    user.setSemaphore(0);
+
+		    user.setSemaphore(1);
 		    //为刚注册的用户添加默认的头像
             addUserDefaultHeadImg(user);
 			userService.register(user);
+            httpSession.setAttribute("user",user);
+            //为了实现男女选择框的点亮
+            addUserSexToSession(user,httpSession);
+            //为了实现用户年月份的点亮
+            addUserBirthStringToSession(user,httpSession);httpSession.setAttribute("user",user);
+            //为了实现男女选择框的点亮
+            addUserSexToSession(user,httpSession);
+            //为了实现用户年月份的点亮
+            addUserBirthStringToSession(user,httpSession);
 		} catch (Exception e) {
 			System.out.println("save defeat");
 		}
 		System.out.println("save success!");
-		return "success";
+		return "registerSuccess";
 	}
 //  快速注册
     public String quickRegister(){
-
 	    //邮箱注册我没有做验证是否重复！ 不要忘记了！
         System.out.println("start to save new user from quickRegister!");
+        HttpSession httpSession = ServletActionContext.getRequest().getSession();
         try {
-            //快速注册的用户信息填补不完全 设置账号可用性为 不可用
+            //快速注册的用户没点击之前 账号都处于未激活状态 设置账号可用性为 不可用
             user.setSemaphore(0);
             //设置管理员
             user.setIsManager(0);
@@ -63,14 +75,20 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
             user.setUserName(user.getUserEmail().substring(0,5));
             addUserDefaultHeadImg(user);
             userService.register(user);
+            httpSession.setAttribute("user",user);
+            //为了实现男女选择框的点亮
+            addUserSexToSession(user,httpSession);
+            //为了实现用户年月份的点亮
+            addUserBirthStringToSession(user,httpSession);
             System.out.println("save success!");
             //发送验证邮件
             userService.sendMail(user.getUserEmail());
+
             System.out.println("mail send success");
         } catch (Exception e) {
             System.out.println("send defeat");
         }
-        return "success";
+        return "quickRegisterWait";
     }
 
 //	验证是否有这个用户名  为了方便以后用 把这个方法抽象成从request里面接受两个String  一个表示要去查哪个表，一个表示要查的名字
@@ -110,14 +128,14 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
             addUserSexToSession(user,httpSession);
             //为了实现用户年月份的点亮
             addUserBirthStringToSession(user,httpSession);
+            if (user.getSemaphore() == null || user.getSemaphore() == 0){
+                //到这里说明 帐号被管理员封禁的帐号
+                return "userDisabled";
+            }
             //检测帐号完整性
             if(!testUserMessageComplete(user)){
                 //到这里说明不完整 跳转到 买方个人信息页面 要求其进行填写
                 return "messageIncomplete";
-            }
-            if (user.getSemaphore() == null || user.getSemaphore() == 0){
-                //到这里说明 信息填写完成 帐号被管理员封禁的帐号
-                return "userDisabled";
             }
             //检测是否是管理员巨巨
             if(user.getIsManager() == 1){
@@ -139,7 +157,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 //  用户快速注册成功后跳转至个人信息
 	public String quicksetupReceiveMail(){
 	    //用户点击了激活邮件后转到此方法,这个任务的作用应该是跳转到买方个人信息填充页面
-	    return "success";
+        HttpSession httpSession = ServletActionContext.getRequest().getSession();
+        User user = (User) httpSession.getAttribute("user");
+        user.setSemaphore(1);
+        userService.update(user);
+	    return "registerSuccess";
     }
 //  找回密码
     public String lostPassword(){
@@ -189,6 +211,73 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         HttpSession httpSession = ServletActionContext.getRequest().getSession();
         httpSession.removeAttribute("user");
         return "successLogOut";  // successLogOut.jsp
+    }
+
+    public String getUserList(){
+        System.out.println("start to get User List");
+        HttpServletResponse httpServletResponse = ServletActionContext.getResponse();
+        //获取good列表
+        try {
+            List<User> userList = userService.getUserList();
+            if (userList == null) {
+                httpServletResponse.setHeader("Content-type", "text/html;charset=UTF-8");  //这句话的意思，是告诉servlet用UTF-8转码，而不是用默认的ISO8859
+                httpServletResponse.setCharacterEncoding("UTF-8");
+                httpServletResponse.getWriter().write("no user");
+                return null;
+            }
+            //组装成json数据
+            String jsonLeft = "{\n" +
+                    "    \"user\": [\n";
+            String jsonRight = "    ]\n" +
+                    "}";
+            String json = jsonLeft;
+            for (User item : userList) {
+                String jsonObj = "        {\n" +
+                        "            \"UserId\": " + item.getUserId() + ",\n" +
+                        "            \"UserName\": \"" + item.getUserName() + "\",\n" +
+                        "            \"UserHeadUrl164\": \"" + item.getUserHeadUrl164() + "\",\n" +
+                        "            \"UserSex\": \"" + item.getUserSex() + "\",\n" +
+                        "            \"UserAddress\": \"" + item.getUserAddress() + "\",\n" +
+                        "            \"UserSemaphore\": \"" + item.getSemaphore() + "\",\n" +
+                        "        },\n";
+                json = json + jsonObj;
+            }
+            json = json + jsonRight;
+            System.out.println(json);
+            httpServletResponse.setHeader("Content-type", "text/html;charset=UTF-8");  //这句话的意思，是告诉servlet用UTF-8转码，而不是用默认的ISO8859
+            httpServletResponse.setCharacterEncoding("UTF-8");
+            httpServletResponse.getWriter().write(json);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String userManage() throws IOException {
+        System.out.println("start to manage user ");
+        HttpServletRequest httpServletRequest = ServletActionContext.getRequest();
+        HttpServletResponse httpServletResponse = ServletActionContext.getResponse();
+        String userName = httpServletRequest.getParameter("userName");
+        User user = userService.verifyByName(userName);
+        Integer userToggle = user.getSemaphore();
+        if(userToggle == 1){
+            user.setSemaphore(0);
+        }else {
+            user.setSemaphore(1);
+        }
+        userService.update(user);
+        httpServletResponse.getWriter().write("success");
+        return null;
+    }
+
+    public String deleteUser() throws IOException {
+        System.out.println("start to delete user");
+        HttpServletRequest httpServletRequest = ServletActionContext.getRequest();
+        HttpServletResponse httpServletResponse = ServletActionContext.getResponse();
+        String userName = httpServletRequest.getParameter("userName");
+        userService.deleteUserByName(userName);
+        httpServletResponse.getWriter().write("success");
+        return null;
     }
 
 

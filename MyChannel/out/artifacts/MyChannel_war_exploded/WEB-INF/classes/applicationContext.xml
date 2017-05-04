@@ -130,12 +130,15 @@
 
     <bean id="ordersAction" class="com.zazalu.action.OrdersAction" scope="prototype">
         <property name="ordersService" ref="ordersService"></property>
+        <property name="goodService" ref="goodService"></property>
+        <property name="favoriteService" ref="favoriteService"></property>
         <property name="hibernateTemplate" ref="hibernateTemplate"></property>
     </bean>
 
     <bean id="favoriteAction" class="com.zazalu.action.FavoriteAction" scope="prototype">
         <property name="favoriteService" ref="favoriteService"></property>
-        <property name="hibernateTemplate" ref="hibernateTemplate"></property>
+        <property name="goodService" ref="goodService"></property>
+        <property name="userService" ref="userService"></property>
     </bean>
 
 	<bean id="tagAction" class="com.zazalu.action.TagAction" scope="prototype">
@@ -144,6 +147,7 @@
 
     <bean id="evaluateAction" class="com.zazalu.action.EvaluateAction" scope="prototype">
         <property name="evaluateService" ref="evaluateService"></property>
+        <property name="ordersService" ref="ordersService"></property>
         <property name="hibernateTemplate" ref="hibernateTemplate"></property>
     </bean>
 

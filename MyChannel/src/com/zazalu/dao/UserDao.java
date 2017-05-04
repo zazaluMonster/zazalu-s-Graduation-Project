@@ -2,6 +2,8 @@ package com.zazalu.dao;
 
 import com.zazalu.entity.User;
 
+import java.util.List;
+
 public interface UserDao {
 	void save(User user);
 
@@ -13,5 +15,8 @@ public interface UserDao {
 
 	Integer getUserIdByName(String userName);
 
+	List<User> getUserList();
+
+	void deleteUserByName(String userName);
 
 }

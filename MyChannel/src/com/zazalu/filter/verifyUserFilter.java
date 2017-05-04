@@ -13,12 +13,12 @@ import java.io.IOException;
 /**
  * Created by zazalu on 4/14/17.
  */
-public class verifyUserFilter implements Filter{
-
+public class verifyUserFilter implements Filter {
 
 
     //Spring注入HibernateTemplate
     private HibernateTemplate hibernateTemplate;
+
     public void setHibernateTemplate(HibernateTemplate hibernateTemplate) {
         this.hibernateTemplate = hibernateTemplate;
     }
@@ -34,21 +34,39 @@ public class verifyUserFilter implements Filter{
         HttpServletResponse servletResponse1 = (HttpServletResponse) servletResponse;
         String uri = servletRequest1.getRequestURI();
         System.out.println(uri);
-        if(uri.equals("/MyChannel/JSP/login.jsp")){
+        if (uri.equals("/MyChannel/JSP/login.jsp")) {
             filterChain.doFilter(servletRequest, servletResponse);
             return;
         }
-        HttpSession session = servletRequest1.getSession();
-        String userId = (String) session.getAttribute("userId");
-        if (userId == null){
-            returnToLogin(servletResponse1);
-            System.out.println("1");
-            return;
+        //放行资源
+        int i = uri.lastIndexOf(".");
+        if (i != -1) {
+            String houzhui = uri.substring(i);
+            if (houzhui.equals(".js") || houzhui.equals(".css") || houzhui.equals(".png") || houzhui.equals(".jpg")
+                    || houzhui.equals(".mp3") || houzhui.equals(".json")) {
+                System.out.println("d");
+                filterChain.doFilter(servletRequest, servletResponse);
+                return;
+            }
         }
-        User user = hibernateTemplate.get(User.class,userId);
-        if(user == null){
+
+        if (uri.length() > 20) {
+            String uriSub = uri.substring(0, 21);
+            if (uriSub.equals("/MyChannel/userAction")) {
+                filterChain.doFilter(servletRequest, servletResponse);
+                return;
+            }
+            String uriLongSub = uri.substring(0, 25);
+            if (uriLongSub.equals("/MyChannel/JSP/userAction")) {
+                filterChain.doFilter(servletRequest, servletResponse);
+                return;
+            }
+        }
+
+        HttpSession session = servletRequest1.getSession();
+        User user = (User) session.getAttribute("user");
+        if (user == null) {
             returnToLogin(servletResponse1);
-            System.out.println("1");
             return;
         }
         filterChain.doFilter(servletRequest, servletResponse);

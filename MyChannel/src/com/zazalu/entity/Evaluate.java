@@ -9,11 +9,20 @@ public class Evaluate {
     private Integer EvaluateId;
     private String EvaluateMessage;
     private Orders OrdersId;
+    private User UserId;
     private Date EvaluateTime;
     private Integer EvaluateStar;
     private String EvaluateImgUrl;
     private Integer FatherEvaluateId;
     private Integer Semaphore;
+
+    public User getUserId() {
+        return UserId;
+    }
+
+    public void setUserId(User userId) {
+        UserId = userId;
+    }
 
     public Integer getEvaluateId() {
         return EvaluateId;

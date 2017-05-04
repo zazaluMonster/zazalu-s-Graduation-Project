@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="css/shouyeCss.css"/>
     <link rel="stylesheet" href="css/userPageCss.css"/>
     <link rel="stylesheet" href="css/select2.min.css"/>
+    <link rel="stylesheet" href="css/replydowndiv.css" />
+    <link rel="stylesheet" href="css/goodbuydiv.css" />
     <link rel="stylesheet" href="css/foot.css"/>
     <link rel="stylesheet" href="css/zazaluhead.css"/>
     <!--头像裁剪的依赖css-->
@@ -40,14 +42,14 @@
 <!--遮罩-part-->
 <div id="zhezhao">
     <div class="zazalu page-header">
-        <h3 id="zhezhaoId">推您喜欢
-            <small>根据您最近购买或者收藏夹的内容来智能为你推荐的商品</small>
+        <h3 id="zhezhaoId">商品查询
+            <small>根据您输入的内容来查询名称接近的商品</small>
         </h3>
     </div>
     <ul id="zhezhaoLike">
         <li class="zhezhaoLikeLi">
             <div>
-                <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/gallery/imgbox3.jpg" alt=""></div>
+                <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
                 <div class="zhezhaoLIkeDescrible">
                     <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
                     <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
@@ -56,7 +58,7 @@
         </li>
         <li class="zhezhaoLikeLi">
             <div>
-                <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/gallery/imgbox3.jpg" alt=""></div>
+                <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
                 <div class="zhezhaoLIkeDescrible">
                     <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
                     <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
@@ -65,9 +67,45 @@
         </li>
         <li class="zhezhaoLikeLi">
             <div>
-                <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/gallery/imgbox3.jpg" alt=""></div>
+                <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
                 <div class="zhezhaoLIkeDescrible">
                     <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
+                    <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                </div>
+            </div>
+        </li>
+        <li class="zhezhaoLikeLi">
+            <div>
+                <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
+                <div class="zhezhaoLIkeDescrible">
+                    <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
+                    <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                </div>
+            </div>
+        </li>
+        <li class="zhezhaoLikeLi">
+            <div>
+                <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
+                <div class="zhezhaoLIkeDescrible">
+                    <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
+                    <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                </div>
+            </div>
+        </li>
+        <li class="zhezhaoLikeLi">
+            <div>
+                <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
+                <div class="zhezhaoLIkeDescrible">
+                    <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxwx-xxx</a></div>
+                    <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+                </div>
+            </div>
+        </li>
+        <li class="zhezhaoLikeLi" style="padding-bottom: 100px;">
+            <div>
+                <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
+                <div class="zhezhaoLIkeDescrible">
+                    <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxxwd-xxx</a></div>
                     <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
                 </div>
             </div>
@@ -76,7 +114,7 @@
 </div>
 <!--Header-part-->
 <div id="header">
-    <h1><a href="dashboard.html">Matrix Admin</a></h1>
+    <h1><a href="shouye.jsp">Matrix Admin</a></h1>
 </div>
 <!--close-Header-part-->
 
@@ -97,24 +135,11 @@
                     </a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
+                <li><a href="ShoppingCart.jsp"><i class="icon-heart-empty"></i> My ShoppingCart</a></li>
                 <li class="divider"></li>
-                <li><a href="#"><i class="icon-heart-empty"></i> My Favorites</a></li>
+                <li><a href="userFavorite.jsp"><i class="icon-heart-empty"></i> My Favorites</a></li>
                 <li class="divider"></li>
                 <li><a href="${pageContext.request.contextPath}/userAction_userLogOut.action"><i class="icon-key"></i> Log Out</a></li>
-            </ul>
-        </li>
-        <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages"
-                                                   class="dropdown-toggle"><i class="icon icon-envelope"></i> <span
-                class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-                <li><a class="sAdd" title="" href="#"><i class="icon-plus"></i> new message</a></li>
-                <li class="divider"></li>
-                <li><a class="sInbox" title="" href="#"><i class="icon-envelope"></i> inbox</a></li>
-                <li class="divider"></li>
-                <li><a class="sOutbox" title="" href="#"><i class="icon-arrow-up"></i> outbox</a></li>
-                <li class="divider"></li>
-                <li><a class="sTrash" title="" href="#"><i class="icon-trash"></i> trash</a></li>
             </ul>
         </li>
         <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
@@ -142,7 +167,7 @@
 <!--start-top-serch-->
 <div id="search">
     <input type="text" placeholder="Search here..." id="headSearch"/>
-    <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+    <button id="topSearchButton" type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
 </div>
 <!--close-top-serch-->
 
@@ -636,6 +661,63 @@
 
 </div>
 
+<!--从下方弹出的回复Div-->
+<form id="goodsEvaluateReplyForm" method="POST" enctype="multipart/form-data">
+    <div class="goodsEvaluateReplyDownDiv">
+        <div class="goodsEvaluateReplyDownDiv-first"><span id="goodsEvaluateReplyDownDiv-first-span">回复: zazalu</span> <a id="goodsEvaluateReplyDownDiv-first-a2" href="javascript:;">关闭</a>
+            <a id="goodsEvaluateReplyDownDiv-first-a1" href="javascript:;">发送</a>
+        </div>
+        <div class="goodsEvaluateReplyDownDiv-uploadPicture" style="height: 0px">
+            <ul style="height: inherit;" id="goodsEvaluateReplyDownDiv-uploadPicture-Ul">
+
+            </ul>
+        </div>
+        <div class="goodsEvaluateReplyDownDiv-second">
+            <textarea id="goodsEvaluateReplyDownDiv-second-textarea"></textarea>
+            <div id="goodsEvaluateReplyDownDiv-second-addPictureDiv">
+                <i class="icon-camera icon-2x" id="goodsEvaluateReplyDownDiv-second-addPicture">
+                    <input type="file" name="replyPicture[]" id="goodsEvaluateReplyDownDiv-second-addPictureInput" />
+                </i>
+            </div>
+        </div>
+    </div>
+</form>
+<!--回复Div结束-->
+
+<!--购买弹出框-->
+<div class="goodsBuyDiv">
+    <div class="goodsBuyDiv-first">
+        <ul class="recent-posts">
+            <li class="recent-posts-goodsLi">
+                <div class="user-thumb" style="margin-top: -5px;width: 65px;height: 65px"> <img width="65" height="65" alt="User" src="img/goods/good1/goodImg430.jpg"> </div>
+                <div class="article-post" style="margin-left: 47%">
+                    <p class="good-info" style="font-size: 17px;color: white;"> 商品名: john Deo / 净含量: 2  / 颜色: 3  / 购买数量: 0 </p>
+                    <p style="font-size: 15px;color: white;">价格: 648¥</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="goodsBuyDiv-second" style="background-image: url(img/QRCode.png)">
+    </div>
+    <div class="goodsBuyDiv-third">支 付</div>
+    <div class="goodsBuyDiv-fourth">取 消</div>
+</div>
+
+<!--购买弹出框结束-->
+
+<!--隐藏的form表单-->
+<form id="goodBuyForm"  action="ordersAction_payOrders.action" method="post" >
+    <input id="goodId" type="hidden" name="GoodId" value="">
+    <input id="goodName" type="hidden" name="GoodName" value="">
+    <input id="goodNetWeight" type="hidden" name="GoodNetWeight" value="">
+    <input id="goodColor" type="hidden" name="GoodColor" value="">
+    <input id="goodBuyQuantity" type="hidden" name="GoodBuyQuantity" value="">
+    <input id="ordersId" type="hidden" name="OrdersId" value="">
+</form>
+
+<!--弹出回复栏时候的遮罩-->
+<div id="replyZheZhao" ></div>
+
 <!--Footer-part-->
 <div class="row-fluid">
     <ul class="footul">
@@ -668,6 +750,7 @@
 <script src="js/jquery.js"></script>
 <!--<script src="js/jquery.min.js"></script>-->
 <script src="js/jquery.ui.custom.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/matrix.js"></script>
 <script src="js/shouyeAdsPicture.js"></script>

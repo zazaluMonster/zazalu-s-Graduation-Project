@@ -22,5 +22,9 @@ public interface GoodService {
 
     Integer getGoodNumber();
 
+    List<Good> getGoodListByGoodName(String goodName);
+
+    void updateGood(Good good);
+
 
 }

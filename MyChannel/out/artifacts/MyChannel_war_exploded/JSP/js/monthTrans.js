@@ -1,80 +1,62 @@
 
 $(document).ready(function () {
+    //
 
-    //月交易统计
-    //使用Ajax查询 得到该用户待发货的数据
 
-    //模拟下获取到的JSON数据
-    var JSONObject = [
-        {
-            "month": "1",
-            "money": 894123,
-        },
-        {
-            "month": "2",
-            "money": 2234123,
-        },
-        {
-            "month": "3",
-            "money": 984123,
-        },
-        {
-            "month": "4",
-            "money": 1434123,
-        },
-        {
-            "month": "5",
-            "money": 1734123,
-        },
-        {
-            "month": "6",
-            "money": 1834123,
-        },
-        {
-            "month": "7",
-            "money": 2034123,
-        },
-        {
-            "month": "8",
-            "money": 1934123,
-        },
-        {
-            "month": "9",
-            "money": 1134123,
-        },
-        {
-            "month": "10",
-            "money": 1334123,
-        },
-        {
-            "month": "11",
-            "money": 1234123,
-        },
-        {
-            "month": "12",
-            "money": 1034123,
+    $("#yearSelect").change(function () {
+        var selectedYear = $(this).children('option:selected').val();
+        alert($(this).children('option:selected').val());
+
+        //获取所选年份的交易额
+        $.ajax({
+            url: '/MyChannel/ordersAction_getYearMoney.action',
+            type: 'GET',
+            timeout: 1000,
+            data: {selectedYear: selectedYear},
+            cache: false,
+            crossDomain: true,
+            beforeSend: LoadFunction, //加载执行方法
+            error: erryFunction,  //错误执行方法
+            success: succFunction //成功执行方法
+        });
+
+        function LoadFunction() {
+            //在请求数据的时候 要显示请求中字样告知用户等待片刻
+            console.log("loading...");
         }
-    ];
-    //将拿到的数据，写一个for循环，循环的把数据放入
-    //先删除所有的li
-    if ($(".recent-posts-goodsLi").length != 0) {
-        $(".recent-posts-goodsLi").remove();
-    }
-    var maxMoney = 0;
-    JSONObject.forEach(function (element) {
-        if (element.money > maxMoney) {
-            maxMoney = element.money;
+        function erryFunction(msg) {
+            console.log("error!" + msg);
         }
-    }, this);
-    //先判断是否有li了 有li说明已经进行过数据的查询了，不需要再添加
-    if ($(".recent-posts-goodsLi").length == 0) {
-        JSONObject.forEach(function (element) {
-            var bili = element.money / maxMoney;
-            bili = bili.toFixed(2);
-            $(".form-actions").before(
-                "<li class='recent-posts-goodsLi'><div class='article-post'><p>" + element.month + "月 / 交易额 : " + element.money + "¥</p></div></li>"
-            );
-            $(".form-actions").prev().animate({width: 1000*bili+"px"},1000,"swing");
-        }, this);
-    }
+
+        function succFunction(tt) {
+            //分析Json 然后动态生成收货地址的各个li
+            //先删除所有的li,从而使得每次都会重新向服务器获取最新的收货地址
+            if ($(".recent-posts-goodsLi").length != 0) {
+                $(".recent-posts-goodsLi").remove();
+            }
+            var maxMoney = 0;
+            var json = eval("("+tt+")"); //数组
+            var tt = "";
+            $.each(json.selectedYear , function (index,item) {
+                if (Number(item.money) > maxMoney) {
+                    maxMoney = Number(item.money);
+                }
+            });
+
+            $.each(json.selectedYear , function (index,item) {
+                var bili = item.money / maxMoney;
+                bili = bili.toFixed(2);
+                $(".form-actions").before(
+                    "<li class='recent-posts-goodsLi'><div class='article-post'><span>" + item.month + "月 / 交易额 : " + item.money + "¥</span></div></li>"
+                );
+                if(1000*bili > 96){
+                    $(".form-actions").prev().animate({width: 1000*bili+"px"},1000,"swing");
+                }else {
+                    $(".form-actions").prev().animate({width: "96px"},1000,"swing");
+                }
+            });
+        }
+
+    });
+
 });

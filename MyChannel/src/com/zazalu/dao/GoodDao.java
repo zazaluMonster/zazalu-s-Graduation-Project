@@ -21,4 +21,8 @@ public interface GoodDao {
     Good getGoodById(Integer goodId);
 
     Integer getGoodNumber();
+
+    List<Good> getGoodListByGoodName(String goodName);
+
+    void updateGood(Good good);
 }

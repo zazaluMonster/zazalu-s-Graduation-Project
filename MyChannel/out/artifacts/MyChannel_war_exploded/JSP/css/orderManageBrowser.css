@@ -1,0 +1,8 @@
+.taskDesc{
+    cursor: pointer;
+}
+
+.taskDesc:hover{
+    color: cornflowerblue;
+}
+

@@ -49,7 +49,7 @@ $(document).ready(function () {
                     "<li class='personalInformationRightDivDown' id='" + "personalInformationRightDivDown" + i + "'>" +
                     " <div class='personalInformation-goodsDiv'>" +
                     "<div class='personalInformation-goodsId'>订单号: " + element.goodsId + "</div>" +
-                    "<div class='personalInformation-goodsdescrible'>商品描述: " + element.goodsDescrible + "</div>" +
+                    "<div class='personalInformation-goodsdescrible'>商品名: " + "dwdwwd" + " 购买数量： " + "wdwd" + "  净含量: " + "wdwd" + " 购买时间: " + "2017-04-20 19:20:00" + "</div>" +
                     "</div>" +
                     "<div class='personalInformation-buttons-div'>" +
                     "<div class='personalInformation-buttons' id='woyaocuidan" + i + "' ><i class='icon icon-truck' style='margin-right: 8px;'></i>我要催单</div>" +
@@ -208,11 +208,11 @@ $(document).ready(function () {
                     "<div class='personalInformation-goodsdescrible'>商品描述: " + element.goodsDescrible + "</div>" +
                     "</div>" +
                     "<div class='personalInformation-buttons-div'>" +
-                    "<div class='personalInformation-buttons'><i class='icon icon-truck' style='margin-right: 8px;'></i>我要评价</div>" +
+                    "<div class='personalInformation-buttons' id='woyaopingjia" + i + "'><i class='icon icon-truck' style='margin-right: 8px;'></i>我要评价</div>" +
                     "</div>" +
                     "</li>");
                 //为所有条目添加click事件，使得起点击后可以修改左边详细信息的一些数据
-                $("#personalInformationRightDivDown" + i).click(function () {
+                $("#personalInformationRightDivDown" + i).mouseenter(function () {
                     $("#personalInformationLeftDiv").fadeOut(500, "swing", function () {
                         $("#personalInformationHeadImg").attr("src", element.goodsPictureUrl);
                         $("#personalInformationLevel").text(element.goodsName);
@@ -227,6 +227,13 @@ $(document).ready(function () {
                     });
                     $("#personalInformationLeftDiv").fadeIn(500, "swing");
                 });
+
+                $("#woyaopingjia" + i).click(function () {
+                    $("#replyZheZhao").css("display", "block");
+                    $("#replyZheZhao").animate({ opacity: ".6" }, 800, "easeInOutQuart");
+                    $(".goodsEvaluateReplyDownDiv").animate({ bottom: "0%" }, 800, "easeInOutQuart");
+                });
+
 
                 i = i + 1;
                 $(".personalInformationRightDivDown").animate({ opacity: 1 }, 800, "swing");
@@ -324,16 +331,16 @@ $(document).ready(function () {
         $("#getShouHuoDiZhi").css("color", "#666");
         $("#getMiMaXiuGai").css("color", "#666");
 
-        if($("#personalInformation-ShouHuoAddress-div").css("display") != "none"){
-            $("#personalInformation-ShouHuoAddress-div").css("display","none");   
+        if ($("#personalInformation-ShouHuoAddress-div").css("display") != "none") {
+            $("#personalInformation-ShouHuoAddress-div").css("display", "none");
         }
 
-        if($("#personalInfromation-ShouHuoAddress-Message").css("display") != "none"){
-            $("#personalInfromation-ShouHuoAddress-Message").css("display","none");   
+        if ($("#personalInfromation-ShouHuoAddress-Message").css("display") != "none") {
+            $("#personalInfromation-ShouHuoAddress-Message").css("display", "none");
         }
 
         if ($("#personalInformation-PasswordChange-Div").css("display") != "none") {
-            $("#personalInformation-PasswordChange-Div").css("display","none");
+            $("#personalInformation-PasswordChange-Div").css("display", "none");
         }
 
         if ($("#personalInformationMessage").css("display") == "none") {
@@ -352,16 +359,16 @@ $(document).ready(function () {
         $("#getGeRenZiLiao").css("color", "#666");
         $("#getMiMaXiuGai").css("color", "#666");
 
-        if($("#personalInformationMessage").css("display") != "none"){
-            $("#personalInformationMessage").css("display","none");
+        if ($("#personalInformationMessage").css("display") != "none") {
+            $("#personalInformationMessage").css("display", "none");
         }
 
-        if($("#personalInformation-ShouHuoAddress-div").css("display") != "none"){
-            $("#personalInformation-ShouHuoAddress-div").css("display","none");
+        if ($("#personalInformation-ShouHuoAddress-div").css("display") != "none") {
+            $("#personalInformation-ShouHuoAddress-div").css("display", "none");
         }
 
         if ($("#personalInformation-PasswordChange-Div").css("display") != "none") {
-            $("#personalInformation-PasswordChange-Div").css("display","none");
+            $("#personalInformation-PasswordChange-Div").css("display", "none");
         }
 
         if ($("#personalInfromation-ShouHuoAddress-Message").css("display") == "none") {
@@ -394,15 +401,15 @@ $(document).ready(function () {
         if ($(".personalInformationRightDivDown").length != 0) {
             $(".personalInformationRightDivDown").remove();
         }
-        
+
         //先判断是否有li
         if ($(".personalInformationRightDivDown").length == 0) {
             var i = 0;
             JSONObject.forEach(function (element) {
                 var s;
-                if(element.isDefault == true){
+                if (element.isDefault == true) {
                     s = "默认地址"
-                }else{
+                } else {
                     s = "设为默认"
                 }
                 $("#personalInformation-ShouHuoAddress-Message-Ul").append(
@@ -412,7 +419,7 @@ $(document).ready(function () {
                     "<div class='personalInformation-ShouHuoAddress-Message-AddressPlace'>所在地区: " + element.AddressPlace + "</div>" +
                     "<div class='personalInformation-ShouHuoAddress-Message-AddressDetail'>详细地址: " + element.AddressDetail + "</div>" +
                     "<div class='personalInformation-ShouHuoAddress-Message-AddressTel'>联系电话: " + element.AddressTel + "</div>" +
-                    "<div id='"+element.isDefault+i+"' class='personalInformation-ShouHuoAddress-Message-isDefault-"+element.isDefault+"'>"+s+"</div>" +
+                    "<div id='" + element.isDefault + i + "' class='personalInformation-ShouHuoAddress-Message-isDefault-" + element.isDefault + "'>" + s + "</div>" +
                     "</div>" +
                     "<div class='personalInformation-buttons-div'>" +
                     "<div class='personalInformation-buttons'><i class='icon icon-wrench' style='margin-right: 8px;'></i>修改</div>" +
@@ -421,32 +428,32 @@ $(document).ready(function () {
                     "</li>");
                 $(".personalInformationRightDivDown").animate({ opacity: 1 }, 800, "swing");
                 var f = "#false" + i;
-                $("#personalInformation-ShouHuoAddress-li" + i).mouseenter(function(){
-                    $(f).animate({opacity: 1},200);
+                $("#personalInformation-ShouHuoAddress-li" + i).mouseenter(function () {
+                    $(f).animate({ opacity: 1 }, 200);
                 });
-                $("#personalInformation-ShouHuoAddress-li"+ i).mouseleave(function(){
-                    $(f).animate({opacity: 0},200);
+                $("#personalInformation-ShouHuoAddress-li" + i).mouseleave(function () {
+                    $(f).animate({ opacity: 0 }, 200);
                 });
                 i = i + 1;
             }, this);
         }
     });
 
-    $("#addNewShouHuoAddressButton").click(function(){
+    $("#addNewShouHuoAddressButton").click(function () {
         if ($("#personalInfromation-ShouHuoAddress-Message").css("display") != "none") {
             $("#personalInfromation-ShouHuoAddress-Message").animate({ opacity: 0 }, 800, "swing");
             $("#personalInfromation-ShouHuoAddress-Message").css("display", "none");
-            $("#personalInformation-ShouHuoAddress-div").css("display","block");
+            $("#personalInformation-ShouHuoAddress-div").css("display", "block");
             $("#personalInformation-ShouHuoAddress-div").animate({ opacity: 1 }, 800, "swing");
         }
     });
 
-    $("#personalInformationChangeForm-cancle-save-button").click(function(){
-        if($("#personalInformation-ShouHuoAddress-div").css("display") != "none"){
+    $("#personalInformationChangeForm-cancle-save-button").click(function () {
+        if ($("#personalInformation-ShouHuoAddress-div").css("display") != "none") {
             $("#personalInformation-ShouHuoAddress-div").animate({ opacity: 0 }, 800, "swing");
             $("#personalInformation-ShouHuoAddress-div").css("display", "none");
-            $("#personalInfromation-ShouHuoAddress-Message").css("display","block");
-            $("#personalInfromation-ShouHuoAddress-Message").animate({ opacity: 1 }, 800, "swing");   
+            $("#personalInfromation-ShouHuoAddress-Message").css("display", "block");
+            $("#personalInfromation-ShouHuoAddress-Message").animate({ opacity: 1 }, 800, "swing");
         }
     });
 
@@ -457,16 +464,16 @@ $(document).ready(function () {
         $("#getShouHuoDiZhi").css("color", "#666");
         $("#getGeRenZiLiao").css("color", "#666");
 
-        if($("#personalInformationMessage").css("display") != "none"){
-            $("#personalInformationMessage").css("display","none");
+        if ($("#personalInformationMessage").css("display") != "none") {
+            $("#personalInformationMessage").css("display", "none");
         }
 
-        if($("#personalInformation-ShouHuoAddress-div").css("display") != "none"){
-            $("#personalInformation-ShouHuoAddress-div").css("display","none");
+        if ($("#personalInformation-ShouHuoAddress-div").css("display") != "none") {
+            $("#personalInformation-ShouHuoAddress-div").css("display", "none");
         }
 
-        if($("#personalInfromation-ShouHuoAddress-Message").css("display") != "none"){
-            $("#personalInfromation-ShouHuoAddress-Message").css("display","none");
+        if ($("#personalInfromation-ShouHuoAddress-Message").css("display") != "none") {
+            $("#personalInfromation-ShouHuoAddress-Message").css("display", "none");
         }
 
         if ($("#personalInformation-PasswordChange-Div").css("display") == "none") {
@@ -515,7 +522,7 @@ $(document).ready(function () {
     var getArray = window.location.href.split('?');
     var getUrlParamArray = getArray[1].split('&');
     var getUserMessageIncomplete = getUrlParamArray[0].split('=')[1];
-    if(getUserMessageIncomplete == 1){
+    if (getUserMessageIncomplete == 1) {
         //说明个人信息还不完整
         $("#personalInformationHeadDiv").click();
     }

@@ -28,9 +28,19 @@
             <one-to-many class="com.zazalu.entity.Orders"></one-to-many>
         </set>
 
+        <set name="evaluateSet" lazy="false">
+            <key column="UserId"></key>
+            <one-to-many class="com.zazalu.entity.Evaluate"></one-to-many>
+        </set>
+
         <set name="favoriteSet" lazy="false">
             <key column="UserId"></key>
             <one-to-many class="com.zazalu.entity.Favorite"></one-to-many>
+        </set>
+
+        <set name="shoppingcartSet" lazy="false">
+            <key column="UserId"></key>
+            <one-to-many class="com.zazalu.entity.ShoppingCart"></one-to-many>
         </set>
 
         <set name="addressSet" lazy="false">

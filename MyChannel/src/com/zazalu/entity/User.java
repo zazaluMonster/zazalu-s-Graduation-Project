@@ -24,7 +24,27 @@ public class User {
 
     private Set<Favorite> favoriteSet = new HashSet<>();
 
+    private Set<Favorite> shoppingcartSet = new HashSet<>();
+
     private Set<Address> addressSet = new HashSet<>();
+
+    private Set<Evaluate> evaluateSet = new HashSet<>();
+
+    public Set<Evaluate> getEvaluateSet() {
+        return evaluateSet;
+    }
+
+    public void setEvaluateSet(Set<Evaluate> evaluateSet) {
+        this.evaluateSet = evaluateSet;
+    }
+
+    public Set<Favorite> getShoppingcartSet() {
+        return shoppingcartSet;
+    }
+
+    public void setShoppingcartSet(Set<Favorite> shoppingcartSet) {
+        this.shoppingcartSet = shoppingcartSet;
+    }
 
     public Set<Address> getAddressSet() {
         return addressSet;

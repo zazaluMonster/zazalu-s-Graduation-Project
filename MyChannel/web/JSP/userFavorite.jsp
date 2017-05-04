@@ -1,9 +1,14 @@
+<%@ page import="java.util.Date" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8" %>
+         pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
+<%--时间戳--%>
+<%
+  request.setAttribute("time","?" + new Date().getTime());
+%>
 
 <head>
   <title>Matrix Admin</title>
@@ -30,14 +35,14 @@ pageEncoding="UTF-8" %>
   <!--遮罩-part-->
   <div id="zhezhao">
     <div class="zazalu page-header">
-      <h3 id="zhezhaoId">推您喜欢
-        <small>根据您最近购买或者收藏夹的内容来智能为你推荐的商品</small>
+      <h3 id="zhezhaoId">商品查询
+        <small>根据您输入的内容来查询名称接近的商品</small>
       </h3>
     </div>
     <ul id="zhezhaoLike">
       <li class="zhezhaoLikeLi">
         <div>
-          <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/gallery/imgbox3.jpg" alt=""></div>
+          <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
           <div class="zhezhaoLIkeDescrible">
             <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
             <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
@@ -46,7 +51,7 @@ pageEncoding="UTF-8" %>
       </li>
       <li class="zhezhaoLikeLi">
         <div>
-          <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/gallery/imgbox3.jpg" alt=""></div>
+          <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
           <div class="zhezhaoLIkeDescrible">
             <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
             <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
@@ -55,9 +60,45 @@ pageEncoding="UTF-8" %>
       </li>
       <li class="zhezhaoLikeLi">
         <div>
-          <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/gallery/imgbox3.jpg" alt=""></div>
+          <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
           <div class="zhezhaoLIkeDescrible">
             <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
+            <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+          </div>
+        </div>
+      </li>
+      <li class="zhezhaoLikeLi">
+        <div>
+          <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
+          <div class="zhezhaoLIkeDescrible">
+            <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
+            <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+          </div>
+        </div>
+      </li>
+      <li class="zhezhaoLikeLi">
+        <div>
+          <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
+          <div class="zhezhaoLIkeDescrible">
+            <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
+            <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+          </div>
+        </div>
+      </li>
+      <li class="zhezhaoLikeLi">
+        <div>
+          <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
+          <div class="zhezhaoLIkeDescrible">
+            <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxwx-xxx</a></div>
+            <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+          </div>
+        </div>
+      </li>
+      <li class="zhezhaoLikeLi" style="padding-bottom: 100px;">
+        <div>
+          <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
+          <div class="zhezhaoLIkeDescrible">
+            <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxxwd-xxx</a></div>
             <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
           </div>
         </div>
@@ -66,7 +107,7 @@ pageEncoding="UTF-8" %>
   </div>
   <!--Header-part-->
   <div id="header">
-    <h1><a href="dashboard.html">Matrix Admin</a></h1>
+    <h1><a href="shouye.jsp">Matrix Admin</a></h1>
   </div>
   <!--close-Header-part-->
 
@@ -80,7 +121,7 @@ pageEncoding="UTF-8" %>
         <ul class="dropdown-menu">
           <li>
             <a href="买方个人信息.jsp" id="user-nav-userHeadA">
-              <img id="user-nav-userHeadImg" src="${sessionScope.user.userHeadUrl60}"/>
+              <img id="user-nav-userHeadImg" src="${sessionScope.user.userHeadUrl60}${requestScope.time}"/>
               <div id="user-nav-userHeadDescrible">
                 <div id="user-nav-userHeadId">${sessionScope.user.userName}</div>
                 <div id="user-nav-userHeadWelcome">Mychanel欢迎您</div>
@@ -88,24 +129,11 @@ pageEncoding="UTF-8" %>
             </a>
           </li>
           <li class="divider"></li>
-          <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
+          <li><a href="ShoppingCart.jsp"><i class="icon-heart-empty"></i> My ShoppingCart</a></li>
           <li class="divider"></li>
-          <li><a href="#"><i class="icon-heart-empty"></i> My Favorites</a></li>
+          <li><a href="userFavorite.jsp"><i class="icon-heart-empty"></i> My Favorites</a></li>
           <li class="divider"></li>
           <li><a href="${pageContext.request.contextPath}/userAction_userLogOut.action"><i class="icon-key"></i> Log Out</a></li>
-        </ul>
-      </li>
-      <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages"
-                                                 class="dropdown-toggle"><i class="icon icon-envelope"></i> <span
-              class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a class="sAdd" title="" href="#"><i class="icon-plus"></i> new message</a></li>
-          <li class="divider"></li>
-          <li><a class="sInbox" title="" href="#"><i class="icon-envelope"></i> inbox</a></li>
-          <li class="divider"></li>
-          <li><a class="sOutbox" title="" href="#"><i class="icon-arrow-up"></i> outbox</a></li>
-          <li class="divider"></li>
-          <li><a class="sTrash" title="" href="#"><i class="icon-trash"></i> trash</a></li>
         </ul>
       </li>
       <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
@@ -133,7 +161,7 @@ pageEncoding="UTF-8" %>
   <!--start-top-serch-->
   <div id="search">
     <input type="text" placeholder="Search here..." id="headSearch" />
-    <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+    <button id="topSearchButton" type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
   </div>
   <!--close-top-serch-->
 
@@ -143,17 +171,17 @@ pageEncoding="UTF-8" %>
     <div id="personalInformationLeftDiv">
       <div id="personalInformationHeadDiv" style="cursor: pointer">
         <div id="personalInformationHead">
-          <img id="personalInformationHeadImg" src="img/user/user1/personalInformationHeadImg.png"></img>
+          <img id="personalInformationHeadImg" src="${sessionScope.user.userHeadUrl164}"></img>
         </div>
         <div id="personalInformationLevel">
-          zazalu
+          ${sessionScope.user.userName}
         </div>
       </div>
       <div>
-        <div class="personalInformationLeftDivDown" id="personalInformationLeftDivDown-first" style="right: 78px;"><i class="icon icon-envelope" style="margin-right: 8px;"></i>hejiajun1432@gmail.com</div>
-        <div class="personalInformationLeftDivDown" id="personalInformationLeftDivDown-second" style="left: 96px;"><i class="icon icon-phone" style="margin-right: 8px;"></i>18767578219</div>
-        <div class="personalInformationLeftDivDown" id="personalInformationLeftDivDown-third" style="right: 78px;"><i class="icon icon-time" style="margin-right: 8px;"></i>Joined June 2015</div>
-        <div class="personalInformationLeftDivDown" id="personalInformationLeftDivDown-fourth" style="left: 96px;"><i class="icon icon-table" style="margin-right: 8px;"></i>Born on November 3, 1994</div>
+        <div class="personalInformationLeftDivDown" id="personalInformationLeftDivDown-first" style="right: 78px;"><i class="icon icon-envelope" style="margin-right: 8px;"></i>${sessionScope.user.userEmail}</div>
+        <div class="personalInformationLeftDivDown" id="personalInformationLeftDivDown-second" style="left: 96px;"><i class="icon icon-phone" style="margin-right: 8px;"></i>${sessionScope.user.userTel}</div>
+        <div class="personalInformationLeftDivDown" id="personalInformationLeftDivDown-third" style="right: 78px;"><i class="icon icon-time" style="margin-right: 8px;"></i>Joined June 2017</div>
+        <div class="personalInformationLeftDivDown" id="personalInformationLeftDivDown-fourth" style="left: 96px;"><i class="icon icon-table" style="margin-right: 8px;"></i>Born on ${sessionScope.user.userBirth}</div>
       </div>
     </div>
     <!--end leftDIv-->

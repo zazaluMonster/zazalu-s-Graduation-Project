@@ -16,6 +16,8 @@
 		<property name="GoodColor" column="GoodColor"> </property>
         <property name="isPay" column="isPay"> </property>
         <property name="isUnSubscribe" column="isUnSubscribe"> </property>
+        <property name="isFaHuo" column="isFaHuo"> </property>
+        <property name="isEvaluate" column="isEvaluate"> </property>
         <property name="OrderTime" column="OrderTime"> </property>
 
 		<set name="evaluateSet" lazy="false">

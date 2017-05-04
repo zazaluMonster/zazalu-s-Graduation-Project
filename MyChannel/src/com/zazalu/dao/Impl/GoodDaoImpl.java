@@ -76,4 +76,18 @@ public class GoodDaoImpl implements GoodDao{
         System.out.println("dddd" + integer1);
         return integer1;
     }
+
+    @Override
+    public List<Good> getGoodListByGoodName(String goodName) {
+        Session session =  hibernateTemplate.getSessionFactory().getCurrentSession();
+        SQLQuery sqlQuery =  session.createSQLQuery("select * from Good WHERE GoodName LIKE '%"+goodName+"%'");
+        sqlQuery.addEntity(Good.class);
+        List<Good> goodList = sqlQuery.list();
+        return goodList;
+    }
+
+    @Override
+    public void updateGood(Good good) {
+        hibernateTemplate.update(good);
+    }
 }

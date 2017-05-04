@@ -11,6 +11,7 @@ public class Good {
     private String GoodName;
     private String GoodDescrible;
     private Integer GoodStock;
+    private Integer GoodPrice;
     private String GoodNetWeight;
     private String GoodColor;
     private String GoodMessage;
@@ -152,5 +153,13 @@ public class Good {
 
     public void setGoodDiscount(Integer goodDiscount) {
         GoodDiscount = goodDiscount;
+    }
+
+    public Integer getGoodPrice() {
+        return GoodPrice;
+    }
+
+    public void setGoodPrice(Integer goodPrice) {
+        GoodPrice = goodPrice;
     }
 }

@@ -15,7 +15,7 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 
 </head>
-<body>
+<body style="min-width: 0px">
 <!--遮罩-part-->
 <div id="zhezhao">
   <div class="zazalu page-header">
@@ -26,7 +26,7 @@
     <ul id="zhezhaoLike">
         <li class="zhezhaoLikeLi"> 
           <div>
-              <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/gallery/imgbox3.jpg" alt="" ></div>
+              <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
               <div class="zhezhaoLIkeDescrible">
                 <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
                 <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
@@ -35,7 +35,7 @@
         </li>
         <li class="zhezhaoLikeLi"> 
           <div>
-              <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/gallery/imgbox3.jpg" alt="" ></div>
+              <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
               <div class="zhezhaoLIkeDescrible">
                 <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
                 <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
@@ -44,9 +44,45 @@
         </li>
         <li class="zhezhaoLikeLi"> 
           <div>
-              <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/gallery/imgbox3.jpg" alt="" ></div>
+              <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
               <div class="zhezhaoLIkeDescrible">
                 <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
+                <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+              </div>
+          </div>
+        </li>
+        <li class="zhezhaoLikeLi"> 
+          <div>
+              <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
+              <div class="zhezhaoLIkeDescrible">
+                <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
+                <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+              </div>
+          </div>
+        </li>
+        <li class="zhezhaoLikeLi"> 
+          <div>
+              <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
+              <div class="zhezhaoLIkeDescrible">
+                <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxx-xxx</a></div>
+                <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+              </div>
+          </div>
+        </li>
+        <li class="zhezhaoLikeLi"> 
+          <div>
+              <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
+              <div class="zhezhaoLIkeDescrible">
+                <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxwx-xxx</a></div>
+                <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
+              </div>
+          </div>
+        </li>
+        <li class="zhezhaoLikeLi" style="padding-bottom: 100px;"> 
+          <div>
+              <div class="zhezhaoLikePicture"><img class="zhezhaoLikeImg" src="img/user/user1/personalInformationHeadImg.png" alt="" ></div>
+              <div class="zhezhaoLIkeDescrible">
+                <div class="zhezhaoLIkeDescribleTitle"><a href="#">xxxwd-xxx</a></div>
                 <div class="zhezhaoLIkeDescribleSmall">xxxxxxxxxxxxxxxxxxxxxxxxxx</div>
               </div>
           </div>
@@ -121,12 +157,12 @@
 <!--首页广告的索引图片-->
 <!--<div id="shouyeAdsIndex"></div>-->
 <!--首页广告-->
-<div id="shouyeAds">
-  <a href="#"><img id="shouyeAdsPicture" src="img/gallery/shouyeAds1.jpg"/></a>
+<div id="shouyeAds" style="background-image: url(img/gallery/shouyeAds1.jpg);background-size: cover;background-position: 0px -47px;" >
+  <!--<a href="#"><img id="shouyeAdsPicture" src="img/gallery/shouyeAds1.jpg"/></a>-->
 </div>
 <!--sidebar-menu-->
 
-<div id="sidebar"> <!--<a href="#" class="visible-phone"><i class="icon icon-file"></i> Addons</a>-->
+<div id="sidebar"style="display:none" > <!--<a href="#" class="visible-phone"><i class="icon icon-file"></i> Addons</a>-->
   <ul>
     <li><a href="index.html"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
     <li><a href="charts.html"><i class="icon icon-signal"></i> <span>Charts &amp; graphs</span></a> </li>
@@ -175,7 +211,7 @@
     </li>
   </ul>
 </div>
-<div id="content">
+<div id="content" style="margin-left: 0px">
   <div id="content-header">
     <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">Sample pages</a> <a href="#" class="current">Gallery</a> </div>
     <!--<h1>Gallery</h1>-->
@@ -189,25 +225,84 @@
           </div>
           <div class="widget-content">
             <ul class="thumbnails">
-              <li class="span2" style="margin-bottom: 6.12766% !important;"> <a> <img src="img/goods/good1/goodImg430.jpg" alt="" > </a>
-                <div class="actions"> <a title="" class="" href="#"><i class="icon-pencil"></i></a> <a class="lightbox_trigger" href="img/gallery/imgbox3.jpg"><i class="icon-search"></i></a> </div>
-                <div class="actions-describe">
-                  <div class="goodsname"><p>xxx-xxx pro</p></div>
-                  <div class="goodsdescribe">徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计</div>
-                </div>
+              <li class="span2" style="margin-bottom: 6.12766% !important;"> <a> 
                 <div class="actions-activity">
                   <p class="actions-activity-first-p">活动中</p>
                   <p class="actions-activity-second-p">68</p>
                   <p class="actions-activity-third-p">仅剩</p>
                 </div>
-              </li>
-              <li class="span2"> <a> <img src="img/goods/good1/goodImg430.jpg" alt="" > </a>
-                <div class="actions"> <a title="" href="#"><i class="icon-pencil"></i></a> <a class="lightbox_trigger" href="img/gallery/imgbox3.jpg"><i class="icon-search"></i></a> </div>
-                <div class="actions-describe">
+                <img src="img/goods/good1/goodImg430.jpg" alt="" > 
+                </a>
+                <div class="actions"> <a title="" class="" href="#"><i class="icon-pencil"></i></a> <a class="lightbox_trigger" href="img/gallery/imgbox3.jpg"><i class="icon-search"></i></a> </div>
+                <div  >
                   <div class="goodsname"><p>xxx-xxx pro</p></div>
                   <div class="goodsdescribe">徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计</div>
                 </div>
               </li>
+              <li class="span2"> <a> <img src="img/goods/good1/goodImg430.jpg" alt="" > </a>
+                <div class="actions"> <a title="" href="#"><i class="icon-pencil"></i></a> <a class="lightbox_trigger" href="img/gallery/imgbox3.jpg"><i class="icon-search"></i></a> </div>
+                <div  >
+                  <div class="goodsname"><p>xxx-xxx pro</p></div>
+                  <div class="goodsdescribe">徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计</div>
+                </div>
+              </li>
+              <li class="span2"> <a> <img src="img/goods/good1/goodImg430.jpg" alt="" > </a>
+                <div class="actions"> <a title="" href="#"><i class="icon-pencil"></i></a> <a class="lightbox_trigger" href="img/gallery/imgbox3.jpg"><i class="icon-search"></i></a> </div>
+                <div  >
+                  <div class="goodsname"><p>xxx-xxx pro</p></div>
+                  <div class="goodsdescribe">徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计</div>
+                </div>
+              </li>
+              <li class="span2"> <a> <img src="img/goods/good1/goodImg430.jpg" alt="" > </a>
+                <div class="actions"> <a title="" href="#"><i class="icon-pencil"></i></a> <a class="lightbox_trigger" href="img/gallery/imgbox3.jpg"><i class="icon-search"></i></a> </div>
+                <div  >
+                  <div class="goodsname"><p>xxx-xxx pro</p></div>
+                  <div class="goodsdescribe">徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计</div>
+                </div>
+              </li>
+              <li class="span2"> <a> <img src="img/goods/good1/goodImg430.jpg" alt="" > </a>
+                <div class="actions"> <a title="" href="#"><i class="icon-pencil"></i></a> <a class="lightbox_trigger" href="img/gallery/imgbox3.jpg"><i class="icon-search"></i></a> </div>
+                <div  >
+                  <div class="goodsname"><p>xxx-xxx pro</p></div>
+                  <div class="goodsdescribe">徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计</div>
+                </div>
+              </li>
+              <li class="span2"> <a> <img src="img/goods/good1/goodImg430.jpg" alt="" > </a>
+                <div class="actions"> <a title="" href="#"><i class="icon-pencil"></i></a> <a class="lightbox_trigger" href="img/gallery/imgbox3.jpg"><i class="icon-search"></i></a> </div>
+                <div  >
+                  <div class="goodsname"><p>xxx-xxx pro</p></div>
+                  <div class="goodsdescribe">徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计</div>
+                </div>
+              </li>
+              <li class="span2"> <a> <img src="img/goods/good1/goodImg430.jpg" alt="" > </a>
+                <div class="actions"> <a title="" href="#"><i class="icon-pencil"></i></a> <a class="lightbox_trigger" href="img/gallery/imgbox3.jpg"><i class="icon-search"></i></a> </div>
+                <div  >
+                  <div class="goodsname"><p>xxx-xxx pro</p></div>
+                  <div class="goodsdescribe">徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计</div>
+                </div>
+              </li>
+              <li class="span2"> <a> <img src="img/goods/good1/goodImg430.jpg" alt="" > </a>
+                <div class="actions"> <a title="" href="#"><i class="icon-pencil"></i></a> <a class="lightbox_trigger" href="img/gallery/imgbox3.jpg"><i class="icon-search"></i></a> </div>
+                <div  >
+                  <div class="goodsname"><p>xxx-xxx pro</p></div>
+                  <div class="goodsdescribe">徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计</div>
+                </div>
+              </li>
+              <li class="span2"> <a> <img src="img/goods/good1/goodImg430.jpg" alt="" > </a>
+                <div class="actions"> <a title="" href="#"><i class="icon-pencil"></i></a> <a class="lightbox_trigger" href="img/gallery/imgbox3.jpg"><i class="icon-search"></i></a> </div>
+                <div  >
+                  <div class="goodsname"><p>xxx-xxx pro</p></div>
+                  <div class="goodsdescribe">徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计</div>
+                </div>
+              </li>
+              <li class="span2"> <a> <img src="img/goods/good1/goodImg430.jpg" alt="" > </a>
+                <div class="actions"> <a title="" href="#"><i class="icon-pencil"></i></a> <a class="lightbox_trigger" href="img/gallery/imgbox3.jpg"><i class="icon-search"></i></a> </div>
+                <div  >
+                  <div class="goodsname"><p>xxx-xxx pro</p></div>
+                  <div class="goodsdescribe">徕卡SUMMILUX高端镜头，金属钻雕工艺，多彩外观设计</div>
+                </div>
+              </li>
+              
             </ul>
           </div>
         </div>
@@ -235,7 +330,7 @@
 <!--Footer-part-->
 <div class="row-fluid">
   <ul class="footul">
-      <li style="padding-left: 250px">
+      <li style="padding-left: 25.5%;">
         <span class="foot add-on bg_lg"><i class="icon-phone icon-2x"></i></span>
         <div class="footdivone">
           <p>000-000-0000 / 000-000-0000</p>

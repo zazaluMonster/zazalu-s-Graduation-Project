@@ -7,7 +7,7 @@ ul {
     padding-left: 84px;
     color: #0593d3;
     cursor: pointer;
-    width: 26px;
+    width: 60px;
 }
 
 .heart {
@@ -87,6 +87,7 @@ ul {
 }
 
 .goodsEvaluateLi {
+    opacity: 0;
 }
 
 .goodsEvaluateUl {
@@ -276,7 +277,6 @@ ul {
 
 .goodsInfomationPriceSpan {
     padding-left: 68px;
-    text-decoration: line-through;
 }
 
 .goodsInfomationPrice {
@@ -291,7 +291,7 @@ ul {
     margin-top: 15px;
     background-color: #e9e9e9;
     background-repeat: no-repeat;
-    background-image: url(/Users/zazalu/Desktop/毕设前端/img/gallery/goodsInformationPriceBackground.png);
+    background-image: url(/Users/zazalu/Desktop/MyChannel文档/毕设前端/img/gallery/goodsInformationPriceBackground.png);
 }
 
 .goodsInformationSubTitle{

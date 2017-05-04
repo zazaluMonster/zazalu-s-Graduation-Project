@@ -79,11 +79,11 @@ img {
 #personalInformationLeftDiv {
     position: relative;
     top: 114px;
-    left: 211px;
+    left: 10%;
     float: left;
     height: 472px;
     border-right-style: ridge;
-    padding-right: 118px;
+    padding-right: 8%;
 }
 
 #personalInformationHeadDiv {
@@ -142,7 +142,8 @@ img {
 #personalInformationRightDiv {
     position: relative;
     top: 114px;
-    left: 211px;
+    left: 9%;
+    width: 67%;
     float: left;
     height: 472px;
     /*border-right-style: ridge;*/
@@ -151,9 +152,9 @@ img {
 #personalInformationRightDiv-ghost {
     position: relative;
     top: 114px;
-    left: 211px;
+    left: 9%;
     float: left;
-    height: 472px;   
+    height: 472px;  
 }
 
 #headEditorDiv-second {
@@ -171,7 +172,7 @@ img {
 #headEditorDiv-third {
     position: relative;
     top: 114px;
-    left: 211px;
+    left: 9%;
     float: left;
     height: 472px;
     margin-left: 31px;

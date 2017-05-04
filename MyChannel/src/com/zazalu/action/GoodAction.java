@@ -150,6 +150,19 @@ public class GoodAction extends ActionSupport implements ModelDriven<Good>{
         return null;
     }
 
+    public String toGoodPage(){
+        System.out.println("start to redirect to good page by goodid");
+        HttpServletRequest httpServletRequest = ServletActionContext.getRequest();
+        HttpSession httpSession = httpServletRequest.getSession();
+        Integer goodId = Integer.valueOf(httpServletRequest.getParameter("goodId"));
+        Good good = goodService.getGoodById(goodId);
+        //刷新session中的Good信息
+        httpSession.setAttribute("good",good);
+        System.out.println("ready to redirect to goodPage!");
+        //重定向至商品详细页面
+        return "toGoodPage";   // /MyChannel/JSP/GoodPage.jsp
+    }
+
 
     public String getGoodNumber() throws IOException {
 		System.out.println("Start to get Good Number");
@@ -158,4 +171,60 @@ public class GoodAction extends ActionSupport implements ModelDriven<Good>{
 		httpServletResponse.getWriter().write(""+goodNumber);
 		return null;
 	}
+
+	public String getGoodListByGoodName(){
+        System.out.println("start to get GoodList by good name");
+        HttpServletRequest httpServletRequest = ServletActionContext.getRequest();
+        HttpServletResponse httpServletResponse =ServletActionContext.getResponse();
+        String goodName = httpServletRequest.getParameter("goodName");
+        //获取good列表
+        try {
+            List<Good> goodList = goodService.getGoodListByGoodName(goodName);
+            if (goodList == null) {
+                httpServletResponse.getWriter().write("no this good");
+                return null;
+            }
+            //组装成json数据
+            String jsonLeft = "{\n" +
+                    "    \"good\": [\n";
+            String jsonRight = "    ]\n" +
+                    "}";
+            String json = jsonLeft;
+            Good good;
+            for (Good item : goodList) {
+                String jsonObj = "        {\n" +
+                        "            \"GoodId\": " + item.getGoodId() + ",\n" +
+                        "            \"GoodName\": \"" + item.getGoodName() + "\",\n" +
+                        "            \"GoodDescrible\": \"" + item.getGoodDescrible() + "\",\n" +
+                        "            \"GoodStock\": \"" + item.getGoodStock() + "\",\n" +
+                        "            \"GoodImgUrl164\": \"" + item.getGoodImgUrl164() + "\",\n" +
+                        "            \"GoodDiscount\": \"" + item.getGoodDiscount() + "\",\n" +
+                        "        },\n";
+                json = json + jsonObj;
+            }
+            json = json + jsonRight;
+            System.out.println(json);
+            httpServletResponse.setHeader("Content-type", "text/html;charset=UTF-8");  //这句话的意思，是告诉servlet用UTF-8转码，而不是用默认的ISO8859
+            httpServletResponse.setCharacterEncoding("UTF-8");
+            httpServletResponse.getWriter().write(json);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+    public String verifyGoodName() throws IOException {
+        System.out.println("start to verify goodName");
+        HttpServletRequest httpServletRequest = ServletActionContext.getRequest();
+        HttpServletResponse httpServletResponse = ServletActionContext.getResponse();
+        String goodName = httpServletRequest.getParameter("goodName");
+        Good good = goodService.getGoodByName(goodName);
+        if(good!= null){
+            httpServletResponse.getWriter().write("already have this good");
+        }else {
+            httpServletResponse.getWriter().write("no this good");
+        }
+        return null;
+    }
 }

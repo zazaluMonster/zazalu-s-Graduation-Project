@@ -65,12 +65,10 @@
 }
 
 .actions-activity {
-        position: relative;
-    bottom: 101px;
+    position: absolute;
+    float: left;
     background-color: rgba(255, 24, 0, 0.75);
-    height: 68px;
     width: 55px;
-    left: 0px;
 }
 
 .actions-activity-first-p {
@@ -78,21 +76,22 @@
     position: relative;
     left: 10px;
     top: 4px;
+    margin-bottom: 0px;
 }
 
 .actions-activity-second-p {
     color: white;
     position: relative;
     left: 17px;
-    top: -1px;
     font-size: large;
+    margin-bottom: 0px;
 }
 
 .actions-activity-third-p {
     color: white;
     position: relative;
     left: 15px;
-    top: -9px;
+    margin-bottom: 0px;
 }
 
 #user-nav-userHeadImg {

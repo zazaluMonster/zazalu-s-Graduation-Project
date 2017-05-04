@@ -1,7 +1,5 @@
 
 $(document).ready(function () {
-    //加载广告
-
     //加载菜单项
 
     //加载总商品数量
@@ -50,9 +48,7 @@ $(document).ready(function () {
                     success: succFunction //成功执行方法
                 });
             });
-            console.log("获取第一页");
             $("#firstPage").click();
-            console.log("获取第一页");
 
 
         });
@@ -75,12 +71,13 @@ $(document).ready(function () {
         $.each(json.good , function (index,item) {
             console.log("处理" + item.GoodName);
             //看是否是打折商品
-            if(item.GoodDiscount != 0){
+            if(item.GoodDiscount == 10){
+
                 //没打折
                 console.log("商品"+item.GoodName + "打折率" + item.GoodDiscount);
                 $(".thumbnails").append("<li class='span2'> <a> <img src='"+item.GoodImgUrl430+"'> </a> " +
-                    "<div class='actions'> <a  href='#'><i class='icon-pencil'></i></a> <a class='lightbox_trigger' href='img/gallery/imgbox3.jpg'><i class='icon-search'></i></a> </div> " +
-                    "<div class='actions-describe'>" +
+                    "<div class='actions'><a class='lightbox_trigger' href='/MyChannel/goodAction_toGoodPage.action?goodId="+item.GoodId+"'><i class='icon-search'></i></a> </div> " +
+                    "<div >" +
                     " <div class='goodsname'><p>"+item.GoodName+"</p></div>" +
                     " <div class='goodsdescribe'>"+item.GoodDescrible+"</div> " +
                     "</div> " +
@@ -89,17 +86,20 @@ $(document).ready(function () {
             }else {
                 //打折的
                 console.log("商品"+item.GoodName + "打折率" + item.GoodDiscount);
-                $(".thumbnails").append("<li class='span2'> <a> <img src='"+item.GoodImgUrl430+"'> </a> " +
-                    "<div class='actions'> <a  href='#'><i class='icon-pencil'></i></a> <a class='lightbox_trigger' href='img/gallery/imgbox3.jpg'><i class='icon-search'></i></a> </div> " +
-                    "<div class='actions-describe'>" +
-                    " <div class='goodsname'><p>"+item.GoodName+"</p></div>" +
-                    " <div class='goodsdescribe'>"+item.GoodDescrible+"</div> " +
-                    "</div> " +
+                $(".thumbnails").append("<li class='span2'> " +
+                    "<a> " +
                     "<div class='actions-activity'>" +
                     "<p class='actions-activity-first-p'>活动中</p>" +
                     "<p class='actions-activity-second-p'>"+item.GoodStock+"</p>" +
                     "<p class='actions-activity-third-p'>仅剩</p>" +
                     "</div>" +
+                    "<img src='"+item.GoodImgUrl430+"'> " +
+                    "</a> " +
+                    "<div class='actions'><a class='lightbox_trigger' href='/MyChannel/goodAction_toGoodPage.action?goodId="+item.GoodId+"'><i class='icon-search'></i></a> </div> " +
+                    "<div >" +
+                    " <div class='goodsname'><p>"+item.GoodName+"</p></div>" +
+                    " <div class='goodsdescribe'>"+item.GoodDescrible+"</div> " +
+                    "</div> " +
                     "</li>"
                 );
 

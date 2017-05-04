@@ -2,7 +2,7 @@
 $(document).ready(function () {
     // 全局Fromdata 封装了用户的所有想法送的数据
     var godFormData = new FormData();
-    jQuery.easing.def = "easeOutElastic";
+    jed = "easeOutElastic";
     var i = 0;
 
 
@@ -13,7 +13,7 @@ $(document).ready(function () {
             alert("抱歉你的浏览器不支持FileReader");
         } else {
             if ($(".goodsEvaluateReplyDownDiv-uploadPicture").css("height") == "0px") {
-                $(".goodsEvaluateReplyDownDiv-uploadPicture").animate({ height: "145px" }, 800, jQuery.easing.def);
+                $(".goodsEvaluateReplyDownDiv-uploadPicture").animate({ height: "145px" }, 800, jed);
             }
             fr = new FileReader();
             godFormData.append('goodsEvaluateReplyImg' + i, document.getElementById('goodsEvaluateReplyDownDiv-second-addPictureInput').files[0]);
@@ -34,6 +34,7 @@ $(document).ready(function () {
                             "<img id='goodsEvaluateReplyImg" + i + "' style='width: 127px;height: " + height + "px;margin-top: -" + marginTop + "px'  src='" + p_fr.target.result + "' />" +
                             "</li>"
                         );
+                        console.log("图片id = goodsEvaluateReplyImg" + i + "生成完毕");
                     } else {
                         // 高度小于宽度情况
                         var prop = 127 / imgs.height;
@@ -45,15 +46,22 @@ $(document).ready(function () {
                             "<img id='goodsEvaluateReplyImg" + i + "' style='max-width: none;height: 127px;width: " + width + "px;margin-left: -" + marginLeft + "px'  src='" + p_fr.target.result + "' />" +
                             "</li>"
                         );
+                        console.log("图片id = goodsEvaluateReplyImg" + i + "生成完毕");
                     }
                     // 删除图片
                     $("#icon-remove-sign" + i).click(function () {
                         $(this).parent().parent().remove();
                         var getId = $(this).parent().next().attr("id");
                         godFormData.delete(getId);
-                        alert("成功删除");
+                        console.log("成功删除  图片id = " + getId);
+                        i = i - 1;
                         if ($(".goodsEvaluateReplyDownDiv-uploadPicture-li").length == 0) {
                             $(".goodsEvaluateReplyDownDiv-uploadPicture").animate({ height: "0px" }, 800, "easeInElastic");
+                        }
+                        // 只能上传四张图片
+                        if (i != 4) {
+                            $("#goodsEvaluateReplyDownDiv-second-addPictureInput").removeAttr("disabled");
+                            $("#goodsEvaluateReplyDownDiv-second-addPicture").css("opacity", "1");
                         }
                     });
                     // 改变图片id
@@ -107,7 +115,7 @@ $(document).ready(function () {
 
     // 点击遮罩 取消回复
     $("#replyZheZhao,#goodsEvaluateReplyDownDiv-first-a2").click(function () {
-        $(".goodsEvaluateReplyDownDiv").animate({ bottom: "-21%" }, 800, "easeInOutQuart");
+        $(".goodsEvaluateReplyDownDiv").animate({ bottom: "-50%" }, 800, "easeInOutQuart");
         $("#replyZheZhao").animate({ opacity: "0" }, 800, "easeInOutQuart", function () {
 
             $("#replyZheZhao").css("display", "none");
