@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -173,8 +174,9 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
             System.out.println("mail send success");
         } catch (Exception e) {
             System.out.println("send defeat");
+            e.printStackTrace();
         }
-        return "success";
+        return "getPassword";
     }
 
     public String verifyUserPassword() throws IOException {
@@ -220,6 +222,50 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         try {
             List<User> userList = userService.getUserList();
             if (userList == null) {
+                httpServletResponse.setHeader("Content-type", "text/html;charset=UTF-8");  //这句话的意思，是告诉servlet用UTF-8转码，而不是用默认的ISO8859
+                httpServletResponse.setCharacterEncoding("UTF-8");
+                httpServletResponse.getWriter().write("no user");
+                return null;
+            }
+            //组装成json数据
+            String jsonLeft = "{\n" +
+                    "    \"user\": [\n";
+            String jsonRight = "    ]\n" +
+                    "}";
+            String json = jsonLeft;
+            for (User item : userList) {
+                String jsonObj = "        {\n" +
+                        "            \"UserId\": " + item.getUserId() + ",\n" +
+                        "            \"UserName\": \"" + item.getUserName() + "\",\n" +
+                        "            \"UserHeadUrl164\": \"" + item.getUserHeadUrl164() + "\",\n" +
+                        "            \"UserSex\": \"" + item.getUserSex() + "\",\n" +
+                        "            \"UserAddress\": \"" + item.getUserAddress() + "\",\n" +
+                        "            \"UserSemaphore\": \"" + item.getSemaphore() + "\",\n" +
+                        "        },\n";
+                json = json + jsonObj;
+            }
+            json = json + jsonRight;
+            System.out.println(json);
+            httpServletResponse.setHeader("Content-type", "text/html;charset=UTF-8");  //这句话的意思，是告诉servlet用UTF-8转码，而不是用默认的ISO8859
+            httpServletResponse.setCharacterEncoding("UTF-8");
+            httpServletResponse.getWriter().write(json);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String getUserByName(){
+        HttpServletRequest request = ServletActionContext.getRequest();
+        HttpServletResponse httpServletResponse = ServletActionContext.getResponse();
+        String userName = request.getParameter("userName");
+        try {
+            User user = userService.getUserByName(userName);
+            List<User> userList = new ArrayList<>();
+            if(user != null){
+                userList.add(user);
+            }
+            if (userList.size() == 0) {
                 httpServletResponse.setHeader("Content-type", "text/html;charset=UTF-8");  //这句话的意思，是告诉servlet用UTF-8转码，而不是用默认的ISO8859
                 httpServletResponse.setCharacterEncoding("UTF-8");
                 httpServletResponse.getWriter().write("no user");

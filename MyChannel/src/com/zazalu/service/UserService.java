@@ -24,5 +24,7 @@ public interface UserService {
 
 	void deleteUserByName(String userName);
 
+	User getUserByName(String userName);
+
 
 }

@@ -220,9 +220,12 @@ public class GoodAction extends ActionSupport implements ModelDriven<Good>{
         HttpServletResponse httpServletResponse = ServletActionContext.getResponse();
         String goodName = httpServletRequest.getParameter("goodName");
         Good good = goodService.getGoodByName(goodName);
+        System.out.println("wdwd");
         if(good!= null){
+            System.out.println("already have this good");
             httpServletResponse.getWriter().write("already have this good");
         }else {
+            System.out.println("no this good");
             httpServletResponse.getWriter().write("no this good");
         }
         return null;

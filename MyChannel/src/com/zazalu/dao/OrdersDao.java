@@ -38,4 +38,10 @@ public interface OrdersDao {
     List<Orders> getOrdersListByGoodId(Integer goodId);
 
     List<Orders> getOrdersListByYearMonth(String selectedYear,String month);
+
+    void deleteShoppingCartByUserId(Integer userId);
+
+    List<Orders> getOrdersListByTime(String time);
+
+    List<Orders> getOrdersListByUserId(Integer userId);
 }

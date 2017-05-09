@@ -5,6 +5,7 @@ import com.zazalu.entity.*;
 import com.zazalu.service.FavoriteService;
 import com.zazalu.service.GoodService;
 import com.zazalu.service.OrdersService;
+import com.zazalu.service.UserService;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -40,6 +42,12 @@ public class OrdersAction extends ActionSupport{
     private FavoriteService favoriteService;
     public void setFavoriteService(FavoriteService favoriteService) {
         this.favoriteService = favoriteService;
+    }
+
+    //Spring注入
+    private UserService userService;
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 
     //  业务功能实现
@@ -384,6 +392,28 @@ public class OrdersAction extends ActionSupport{
         return null;
     }
 
+    public String deleteAllShoppingCart() throws IOException {
+        System.out.println("start to delete all shoppingcart");
+        HttpServletRequest httpServletRequest = ServletActionContext.getRequest();
+        HttpServletResponse httpServletResponse = ServletActionContext.getResponse();
+        String userName = httpServletRequest.getParameter("userName");
+        Integer userId = userService.getUserIdByName(userName);
+        //把所有的订单进行支付
+        List<ShoppingCart> shoppingCartList = ordersService.getShoppingCartList(userId);
+        for (ShoppingCart item :
+                shoppingCartList) {
+            Orders orders = ordersService.getOrderByOrderId(item.getOrdersId().getOrdersId());
+            orders.setIsPay(1);
+            ordersService.updateOrder(orders);
+        }
+        //再删除所有的购物车
+        ordersService.deleteShoppingCartByUserId(userId);
+
+        System.out.println("all buy success!");
+        httpServletResponse.getWriter().write("all buy success!");
+        return null;
+    }
+
     public String unSubscribeOrder() throws IOException {
         System.out.println("start to unSubscribeOrder");
         HttpServletRequest httpServletRequest = ServletActionContext.getRequest();
@@ -593,6 +623,73 @@ public class OrdersAction extends ActionSupport{
             e.printStackTrace();
         }
         return null;
+    }
+
+
+    public String searchOrdersByType(){
+        System.out.println("start to search by time");
+        HttpServletRequest httpServletRequest = ServletActionContext.getRequest();
+        HttpServletResponse httpServletResponse = ServletActionContext.getResponse();
+        String searchType = httpServletRequest.getParameter("searchType");
+        String searchValue = httpServletRequest.getParameter("searchValue");
+        System.out.println("要搜索的是:" + searchType );
+        List<Orders> ordersList = new ArrayList<>();
+        if(searchType.equals("时间")){
+            ordersList = ordersService.getOrdersListByTime(searchValue);
+        }else if (searchType.equals("买方")){
+            ordersList = ordersService.getOrdersListByUserId(userService.getUserIdByName(searchValue));
+        }else if(searchType.equals("订单号")){
+            Orders orders = ordersService.getOrderByOrderId(Integer.valueOf(searchValue));
+            ordersList.add(orders);
+        }
+        //orderslist
+        try {
+            if (ordersList.size() == 0) {
+                httpServletResponse.getWriter().write("no orders in mychannel");
+                return null;
+            }
+            //组装成json数据
+            String jsonLeft = "{\n" +
+                    "    \"searchOrdersResult\": [\n";
+            String jsonRight = "    ]\n" +
+                    "}";
+            String json = jsonLeft;
+            Good good;
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            for (Orders item : ordersList) {
+                good = item.getGoodId();
+
+                String jsonObj = "        {\n" +
+                        "            \"OrdersId\": \"" + item.getOrdersId() + "\",\n" +
+                        "            \"UserId\": \"" + item.getUserId().getUserId() + "\",\n" +
+                        "            \"GoodId\": \"" + good.getGoodId() + "\",\n" +
+                        "            \"GoodName\": \"" + good.getGoodName() + "\",\n" +
+                        "            \"UserName\": \"" + item.getUserId().getUserName() + "\",\n" +
+                        "            \"GoodImg164\": \"" + good.getGoodImgUrl164() + "\",\n" +
+                        "            \"GoodPrice\": \"" + good.getGoodPrice() + "\",\n" +
+                        "            \"GoodDescrible\": \"" + good.getGoodDescrible() + "\",\n" +
+                        "            \"GoodNumber\": \"" + item.getGoodNumber() + "\",\n" +
+                        "            \"GoodNetWeight\": \"" + item.getGoodNetWeight() + "\",\n" +
+                        "            \"GoodColor\": \"" + item.getGoodColor() + "\",\n" +
+                        "            \"GoodDiscount\": \"" + good.getGoodDiscount() + "\",\n" +
+                        "            \"isPay\": \"" + item.getIsPay() + "\",\n" +
+                        "            \"isUnSubscribe\": \"" + item.getIsUnSubscribe() + "\",\n" +
+                        "            \"isFaHuo\": \"" + item.getIsFaHuo() + "\",\n" +
+                        "            \"isEvaluate\": \"" + item.getIsEvaluate() + "\",\n" +
+                        "            \"OrderTime\": \"" + formatter.format(item.getOrderTime()) + "\",\n" +
+                        "        },\n";
+                json = json + jsonObj;
+            }
+            json = json + jsonRight;
+            System.out.println(json);
+            httpServletResponse.setHeader("Content-type", "text/html;charset=UTF-8");  //这句话的意思，是告诉servlet用UTF-8转码，而不是用默认的ISO8859
+            httpServletResponse.setCharacterEncoding("UTF-8");
+            httpServletResponse.getWriter().write(json);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+
     }
 
 }

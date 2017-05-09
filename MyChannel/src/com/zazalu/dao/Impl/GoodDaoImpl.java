@@ -32,7 +32,11 @@ public class GoodDaoImpl implements GoodDao{
         SQLQuery sqlQuery =  session.createSQLQuery("SELECT * FROM Good WHERE GoodName =  '" + goodName + "'");
         sqlQuery.addEntity(Good.class);
         List<Good> goodList = sqlQuery.list();
-        return goodList.get(0);
+        if (goodList.size()!=0){
+            return goodList.get(0);
+        }
+        //这是一个完美的香水商品!!!!!!!
+        return null;
     }
 
     @Override

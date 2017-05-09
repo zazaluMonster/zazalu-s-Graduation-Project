@@ -8,6 +8,7 @@
 	<package name="default" namespace="/" extends="struts-default">
 		<action name="userAction_*" class="userAction" method="{1}">
 			<result name="success" type="redirect">/JSP/shouye.jsp</result>
+			<result name="getPassword" type="redirect">/JSP/forwardPage/getPasswordMailSuccess.jsp</result>
             <result name="passwordWrong">/wrongPassword.jsp</result>
             <result name="messageIncomplete">/messageIncomplete.jsp</result>
             <result name="userDisabled">/userDisabled.jsp</result>

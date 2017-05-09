@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-    <title>Matrix Admin</title>
+    <title>MyChannel</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -26,7 +26,7 @@
             <div class="controls">
                 <div class="main_input_box">
                     <span class="add-on bg_lg"><i class="icon-envelope-alt"></i></span><input type="text"
-                                                                                              placeholder="UserName"
+                                                                                              placeholder="用户名"
                                                                                               id="to-username"
                                                                                               name="UserName"
                                                                                               data-content="请输入您的用户名"
@@ -40,7 +40,7 @@
             <div class="controls">
                 <div class="main_input_box">
                     <span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password"
-                                                                                      placeholder="Password"
+                                                                                      placeholder="密码"
                                                                                       id="to-password"
                                                                                       name="UserPassword"
                                                                                       data-content="请小心翼翼地输入您的密码哦"
@@ -54,30 +54,29 @@
             <span class="pull-left" style="padding-bottom: 100px"><a href="#" class="btn btn-info" id="to-setup"
                                                                      data-content="如果您还没有帐号，请点击Setup"
                                                                      data-placement="right"
-                                                                     data-toggle="popover"> Setup</a></span>
+                                                                     data-toggle="popover"> 注册</a></span>
             <span class="pull-left" style="padding-bottom: 100px"><a href="#" class="btn btn-primary"
                                                                      id="to-quick-setup" data-content="可以使用邮箱来快速注册哦!"
-                                                                     data-placement="right" data-toggle="popover"> E-mail Setup</a></span>
+                                                                     data-placement="right" data-toggle="popover"> 邮箱注册</a></span>
             <span class="pull-left" style="padding-bottom: 100px"><a href="#" class="btn btn-danger"
                                                                      id="to-lostpassword"
                                                                      data-content="核实您的真实身份后我们会提供给您修改密码的权利"
-                                                                     data-placement="right" data-toggle="popover">Lost Password</a></span>
+                                                                     data-placement="right" data-toggle="popover">密码找回</a></span>
             <span class="pull-right"><a class="btn btn-success" id="to-index"
                                         data-content="输完帐号密码了？赶紧点击Login，进行您的香水采购吧！" data-placement="left"
-                                        data-toggle="popover">Login</a></span>
+                                        data-toggle="popover">登录</a></span>
         </div>
     </form>
     <!--找回密码的form-->
     <form id="recoverform" action="userAction_lostPassword.action" class="form-vertical">
         <div class="control-group normal_text"><h3><img src="img/logo.png" alt="Logo"/></h3></div>
-        <p class="normal_text">Enter your e-mail address below and we will send you instructions how to recover a
-            password.</p>
+        <p class="normal_text">填写您的注册邮箱，随后我们会发送验证邮箱给您</p>
 
         <div class="controls">
             <div class="main_input_box">
                 <span class="add-on bg_lo"><i class="icon-envelope"></i></span><input type="text"
                                                                                       name="lostPasswordEmail"
-                                                                                      placeholder="E-mail address"
+                                                                                      placeholder="邮箱名"
                                                                                       id="to-lost-password"
                                                                                       data-content="请输入您的注册邮箱，我们会发生一则带有您密码的验证邮件给您"
                                                                                       data-placement="top"
@@ -86,8 +85,8 @@
         </div>
 
         <div class="form-actions">
-            <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login-recover">&laquo; Back to login</a></span>
-            <span class="pull-right"><a id="lostPasswordRecoverButton" class="btn btn-info">Recover</a></span>
+            <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login-recover">&laquo; 返回登录</a></span>
+            <span class="pull-right"><a id="lostPasswordRecoverButton" class="btn btn-info">发送</a></span>
         </div>
     </form>
     <!--注册的form-->
@@ -98,7 +97,7 @@
             <div class="controls">
                 <div class="main_input_box">
                     <span class="add-on bg_lg"><i class="icon-user"></i></span><input type="text" name="UserName"
-                                                                                      placeholder="Username"
+                                                                                      placeholder="用户名"
                                                                                       id="setup-username"
                                                                                       data-content="请输入您的用户名 6位英文或者数字，允许的特殊符号_"
                                                                                       data-placement="top"
@@ -111,7 +110,7 @@
                 <div class="main_input_box">
                     <span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password"
                                                                                       name="UserPassword"
-                                                                                      placeholder="Password"
+                                                                                      placeholder="密码"
                                                                                       id="setup-password"
                                                                                       data-content="密码6～16位，必须含有至少一个特殊字符!@#$%^&*_和数字0-9"
                                                                                       data-placement="top"
@@ -123,7 +122,7 @@
             <div class="controls">
                 <div class="main_input_box">
                     <span class="add-on bg_lv"><i class="icon-lock"></i></span><input type="password"
-                                                                                      placeholder="Password"
+                                                                                      placeholder="确认密码"
                                                                                       id="doublecheck-password"
                                                                                       data-content="请再输入一次您的密码"
                                                                                       data-placement="top"
@@ -135,7 +134,7 @@
             <div class="controls">
                 <div class="main_input_box">
                     <span class="add-on bg_lo"><i class="icon-phone"></i></span><input type="text" name="UserTel"
-                                                                                       placeholder="Mobile-phone"
+                                                                                       placeholder="手机号"
                                                                                        id="mobile-phone"
                                                                                        data-content="手机是我们联系您的唯一保证，至少快递员是"
                                                                                        data-placement="top"
@@ -145,8 +144,8 @@
         </div>
         <input type="hidden" name="isManager" value="0">
         <div class="form-actions">
-            <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login-setup">&laquo; Back to login</a></span>
-            <span class="pull-right"><a id="setupFormSubmitButton" class="btn btn-info">Confirm</a></span>
+            <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login-setup">&laquo; 返回登录</a></span>
+            <span class="pull-right"><a id="setupFormSubmitButton" class="btn btn-info">注册</a></span>
         </div>
     </form>
     <!--快速注册的表单form-->
@@ -158,7 +157,7 @@
                 <div class="main_input_box">
                     <span class="add-on bg_lr"><i class="icon-envelope-alt"></i></span><input type="text"
                                                                                               name="UserEmail"
-                                                                                              placeholder="E-mail"
+                                                                                              placeholder="邮箱名"
                                                                                               id="quicksetup-username"
                                                                                               data-content="请输入您的邮箱名，确认后我们会发送验证邮箱，注意查收"
                                                                                               data-placement="top"
@@ -171,7 +170,7 @@
                 <div class="main_input_box">
                     <span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password"
                                                                                       name="UserPassword"
-                                                                                      placeholder="Password"
+                                                                                      placeholder="密码"
                                                                                       id="quicksetup-password"
                                                                                       data-content="密码6～16位，必须含有至少一个特殊字符!@#$%^&*_和数字0-9"
                                                                                       data-placement="top"
@@ -180,8 +179,8 @@
             </div>
         </div>
         <div class="form-actions">
-            <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login-quicksetup">&laquo; Back to login</a></span>
-            <span class="pull-right"><a id="quicksetupFormSubmitButton" class="btn btn-info">Confirm</a></span>
+            <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login-quicksetup">&laquo; 返回登录</a></span>
+            <span class="pull-right"><a id="quicksetupFormSubmitButton" class="btn btn-info">注册</a></span>
         </div>
     </form>
 </div>

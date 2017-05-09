@@ -18,5 +18,4 @@ public interface UserDao {
 	List<User> getUserList();
 
 	void deleteUserByName(String userName);
-
 }

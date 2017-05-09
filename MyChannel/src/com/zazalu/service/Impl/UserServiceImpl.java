@@ -42,9 +42,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void sendMail(String userEmail) {
 	    String strTitle = "MyChannel";
-	    String strUrl = "<a href='http://localhost:8080/MyChannel/userAction_quicksetupReceiveMail' target='_blank'/>" +
-                "localhost:8080/MyChannel/userAction_quicksetupReceiveMail.action<a>";
-        String strText = "欢迎来到MyChannel!<hr/>你好 " + userEmail +"先生.<hr/> 您的激活链接" + strUrl;
+	    String userName = userEmail.substring(0,5);
+	    String strUrl = "<a href='http://localhost:8080/MyChannel/userAction_quicksetupReceiveMail.action' target='_blank'/>" +
+                "点击激活<a>";
+        String strText = "欢迎来到MyChannel!<hr/>你好 " + userEmail +"先生.<hr/>您的账号名为 "+userName+"<hr/> 您的激活链接" + strUrl;
         System.out.println("mail-content is ready!");
         QQmailService.send_qqmail(userEmail,strTitle,strText);
     }
@@ -78,6 +79,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUserByName(String userName) {
         userDao.deleteUserByName(userName);
+    }
+
+    @Override
+    public User getUserByName(String userName) {
+        return userDao.getByName(userName);
     }
 
 }

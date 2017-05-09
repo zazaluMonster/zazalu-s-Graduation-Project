@@ -136,4 +136,32 @@ public class OrdersDaoImpl implements OrdersDao {
         List<Orders> ordersList = sqlQuery.list();
         return ordersList;
     }
+
+    @Override
+    public void deleteShoppingCartByUserId(Integer userId) {
+        Session session =  hibernateTemplate.getSessionFactory().getCurrentSession();
+        SQLQuery sqlQuery =  session.createSQLQuery("SELECT * FROM ShoppingCart WHERE UserId =  '" + userId + "'");
+        sqlQuery.addEntity(ShoppingCart.class);
+        List<ShoppingCart> shoppingCartList = sqlQuery.list();
+        for (ShoppingCart item :
+                shoppingCartList) {
+            hibernateTemplate.delete(item);
+        }
+    }
+
+    @Override
+    public List<Orders> getOrdersListByTime(String time) {
+        Session session =  hibernateTemplate.getSessionFactory().getCurrentSession();
+        SQLQuery sqlQuery =  session.createSQLQuery("SELECT * FROM Orders WHERE OrderTime LIKE '%"+time+"%'");
+        sqlQuery.addEntity(Orders.class);
+        return sqlQuery.list();
+    }
+
+    @Override
+    public List<Orders> getOrdersListByUserId(Integer userId) {
+        Session session =  hibernateTemplate.getSessionFactory().getCurrentSession();
+        SQLQuery sqlQuery =  session.createSQLQuery("SELECT * FROM Orders WHERE UserId = '"+userId+"'");
+        sqlQuery.addEntity(Orders.class);
+        return sqlQuery.list();
+    }
 }

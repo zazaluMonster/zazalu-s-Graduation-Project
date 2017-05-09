@@ -17,9 +17,10 @@ $(document).ready(function () {
             })
                 .done(function( msg ) {
                     if(msg === "no this good"){
-
+                        $("#GoodName").next().text("");
                     }else {
                         //表明商品名已经存在
+                        console.log(msg);
                         $("#GoodName").next().text("该商品已经存在");
                     }
                 });

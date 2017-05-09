@@ -21,31 +21,31 @@ $(function ()
     var verifyRegisterInputIsReady = function(){
         if(setupUsernameSem === 1 && setupPasswordSem === 1 && doublecheckPasswordSem === 1 && mobilePhoneSem === 1){
             console.log("进入验证是否全部完成填写方法");
-            $("#setupFormSubmitButton").text("Confirm!");
+            $("#setupFormSubmitButton").text("注册!");
         }else {
             console.log("进入验证是否全部完成填写方法");
-            if($("#setupFormSubmitButton").text() !== "Confirm"){
-                $("#setupFormSubmitButton").text("Confirm");
+            if($("#setupFormSubmitButton").text() !== "注册"){
+                $("#setupFormSubmitButton").text("注册");
             }
         }
     };
 
     var verifyLoginInputIsReady = function () {
         if(loginPasswordSem === 1 && loginUserNameSem === 1){
-            $("#to-index").text("Login!");
+            $("#to-index").text("登录!");
         }else {
-            if($("#to-index").text() !== "Login"){
-                $("#to-index").text("Login");
+            if($("#to-index").text() !== "登录"){
+                $("#to-index").text("登录");
             }
         }
     };
 
     var verifyQuickSetupInputIsReady = function() {
         if(quicksetupEmailSem === 1 && quicksetupPasswordSem === 1){
-            $("#quicksetupFormSubmitButton").text("Confirm!");
+            $("#quicksetupFormSubmitButton").text("注册!");
         }else {
-            if($("#quicksetupFormSubmitButton").text() !== "Confirm"){
-                $("#quicksetupFormSubmitButton").text("Confirm");
+            if($("#quicksetupFormSubmitButton").text() !== "注册"){
+                $("#quicksetupFormSubmitButton").text("注册");
             }
         }
     };

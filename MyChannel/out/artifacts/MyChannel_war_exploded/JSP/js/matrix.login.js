@@ -81,19 +81,19 @@ $(document).ready(function(){
     $("#setupFormSubmitButton").click(function(){
         //保证再点击一次提交后不能在点击,改变文本内容 每次click的时候检查文本内容是不是Confirm...
         //是的话 就说明已经点击过 正在发送请求
-        if($("#setupFormSubmitButton").text() === "Confirm!"){
-            $("#setupFormSubmitButton").text("Confirming...");
+        if($("#setupFormSubmitButton").text() === "注册!"){
+            $("#setupFormSubmitButton").text("注册...");
             $("#setupform").submit();
-        }else if($("#setupFormSubmitButton").text() === "Confirming..."){
+        }else if($("#setupFormSubmitButton").text() === "注册..."){
             alert("正在提交了 网速有点慢 请稍后...");
         }
     });
 
     $("#quicksetupFormSubmitButton").click(function () {
-        if($("#quicksetup-username").val() !== "" && $("#quicksetup-password").val() !== "" && $("#quicksetupFormSubmitButton").text() === "Confirm!"){
+        if($("#quicksetup-username").val() !== "" && $("#quicksetup-password").val() !== "" && $("#quicksetupFormSubmitButton").text() === "注册!"){
             $("#quicksetupform").submit();
-            $("#quicksetupFormSubmitButton").text("Confirm...")
-        }else if ($("#quicksetupFormSubmitButton").text() === "Confirm..."){
+            $("#quicksetupFormSubmitButton").text("注册...")
+        }else if ($("#quicksetupFormSubmitButton").text() === "注册..."){
             alert("请不要重复点击! 并且赶紧去你的验证邮箱中去查看下吧!");
         }
     });
@@ -107,10 +107,10 @@ $(document).ready(function(){
     });
 
     $("#to-index").click(function () {
-        if($("#to-username").val() !== "" && $("#to-password").val() !== "" && $("#to-index").text() === "Login!"){
+        if($("#to-username").val() !== "" && $("#to-password").val() !== "" && $("#to-index").text() === "登录!"){
             $("#loginform").submit();
-            $("#to-index").text("Login...")
-        }else if ($("#to-index").text() === "Login..."){
+            $("#to-index").text("登录...")
+        }else if ($("#to-index").text() === "登录..."){
             alert("正在登录了 网速有点慢 请稍后...");
         }
     });

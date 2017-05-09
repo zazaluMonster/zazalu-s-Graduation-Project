@@ -92,4 +92,19 @@ public class OrdersServiceImpl implements OrdersService {
     public List<Orders> getOrdersListByYearMonth(String selectedYaer, String month) {
         return ordersDao.getOrdersListByYearMonth(selectedYaer,month);
     }
+
+    @Override
+    public void deleteShoppingCartByUserId(Integer userId) {
+        ordersDao.deleteShoppingCartByUserId(userId);
+    }
+
+    @Override
+    public List<Orders> getOrdersListByTime(String time) {
+        return ordersDao.getOrdersListByTime(time);
+    }
+
+    @Override
+    public List<Orders> getOrdersListByUserId(Integer userId) {
+        return ordersDao.getOrdersListByUserId(userId);
+    }
 }

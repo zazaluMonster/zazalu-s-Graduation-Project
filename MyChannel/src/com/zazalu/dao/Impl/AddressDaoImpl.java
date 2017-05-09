@@ -50,7 +50,10 @@ public class AddressDaoImpl implements AddressDao{
         SQLQuery sqlQuery =  session.createSQLQuery("SELECT * FROM Address WHERE isDefault =  1 AND UserId = '" + userId +"'");
         sqlQuery.addEntity(Address.class);
         List<Address> addressList =  sqlQuery.list();
-        return  addressList.get(0);
+        if(addressList.size()!= 0){
+            return  addressList.get(0);
+        }
+        return null;
     }
 
     @Override

@@ -50,7 +50,7 @@ public class verifyUserFilter implements Filter {
             }
         }
 
-        if (uri.length() > 20) {
+        if (uri.length() > 25 ) {
             String uriSub = uri.substring(0, 21);
             if (uriSub.equals("/MyChannel/userAction")) {
                 filterChain.doFilter(servletRequest, servletResponse);

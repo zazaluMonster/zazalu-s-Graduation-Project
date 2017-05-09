@@ -132,6 +132,7 @@
         <property name="ordersService" ref="ordersService"></property>
         <property name="goodService" ref="goodService"></property>
         <property name="favoriteService" ref="favoriteService"></property>
+        <property name="userService" ref="userService"></property>
         <property name="hibernateTemplate" ref="hibernateTemplate"></property>
     </bean>
 

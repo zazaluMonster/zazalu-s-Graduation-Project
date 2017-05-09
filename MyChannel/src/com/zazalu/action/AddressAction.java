@@ -100,9 +100,11 @@ public class AddressAction extends ActionSupport{
         HttpSession httpSession = httpServletRequest.getSession();
         User user = (User) httpSession.getAttribute("user");
         Address defaultAddress = addressService.getDefaultAddress(user.getUserId());
-        defaultAddress.setIsDefault(0);
-        addressService.update(defaultAddress);
-        System.out.println(1);
+        if(defaultAddress!= null){
+            defaultAddress.setIsDefault(0);
+            addressService.update(defaultAddress);
+        }
+        System.out.println("set ord address to not defaut");
         //将要设定的Address设为默认
         Integer addressId = Integer.valueOf(httpServletRequest.getParameter("addressId"));
         System.out.println(addressId);

@@ -12,7 +12,7 @@
 %>
 
 <head>
-  <title>Matrix Admin</title>
+  <title>Mychannel</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/foot.css" />
   <link rel="stylesheet" href="css/zazaluhead.css" />
   <link rel="stylesheet" href="css/uniform.css">
+  <link rel="stylesheet" href="css/select2.min.css" />
   <link rel="stylesheet" href="css/goodsMessageBrowse.css">
   <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
@@ -43,7 +44,7 @@
     <ul class="nav" id="headList">
       <li class="dropdown" id="profile-messages"><a title="" href="#" data-toggle="dropdown"
                                                     data-target="#profile-messages" class="dropdown-toggle"><i
-              class="icon icon-user"></i> <span class="text">Welcome User</span><b class="caret"></b></a>
+              class="icon icon-user"></i> <span class="text">欢迎 管理员</span><b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li>
             <a href="买方个人信息.jsp" id="user-nav-userHeadA">
@@ -55,20 +56,20 @@
             </a>
           </li>
           <li class="divider"></li>
-          <li><a href="${pageContext.request.contextPath}/userAction_userLogOut.action"><i class="icon-key"></i> Log Out</a></li>
+          <li><a href="${pageContext.request.contextPath}/userAction_userLogOut.action"><i class="icon-key"></i> 登出</a></li>
         </ul>
       </li>
-      <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+      <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">设置</span></a></li>
       <li class=""><a title="" href="login.jsp"><i class="icon icon-question-sign"></i> <span
-              class="text">Support</span></a></li>
-      <li class=""><a title="" href="login.jsp"><i class="icon icon-heart"></i> <span class="text">About</span></a>
+              class="text">支持</span></a></li>
+      <li class=""><a title="" href="login.jsp"><i class="icon icon-heart"></i> <span class="text">关于</span></a>
       </li>
       <li class=""><a title="" href="${pageContext.request.contextPath}/userAction_userLogOut.action"><i class="icon icon-share-alt"></i> <span
-              class="text">Logout</span></a></li>
+              class="text">登出</span></a></li>
       <li class="">
         <a title="" href="#" id="headMusicA">
           <i class="icon icon-music" id="headMusicI"></i>
-          <span class="text" id="headMusicSpan">music</span>
+          <span class="text" id="headMusicSpan">音乐</span>
           <span id="headMusicProgress" style="display: none"></span>
           <span id="headMusicCircle" style="display: none"></span>
           <span id="headMusicTitle" style="display: none">GIRAFFE BLUES ~Freyja Solo~ - 鈴木みのり</span>
@@ -109,7 +110,19 @@
         <div class="span12">
           <div class="widget-box">
             <div class="widget-title"> <span class="icon"> <i class="icon-plus"></i> </span>
-              <h5>用户列表</h5>
+              <ul style="list-style: none;padding-top: 4px;">
+                <li style="width: 100px;float: left;">
+                  <select class="searchType" style="width: 98px;" tabindex="-1" aria-hidden="true">
+                    <option value="WY">买方名</option>
+                  </select>
+                </li>
+                <li style="width: 260px;float: left;">
+                  <div>
+                    <input type="text" placeholder="Search here..." id="listSearch">
+                    <button type="button" class="tip-bottom" data-original-title="Search" style="margin-bottom: 10px;"><i class="icon-search icon-white"></i></button>
+                  </div>
+                </li>
+              </ul>
             </div>
             <div class="widget-content">
               <div class="widget-content nopadding">
@@ -158,9 +171,17 @@
   <script src="js/shouyeAdsPicture.js"></script>
   <script src="js/zazaluMusic.js"></script>
   <script src="js/userManage.js"></script>
+  <script src="js/searchUser.js"></script>
   <!--保证文件选择后显示选择图片名的js-->
   <script src="js/jquery.uniform.js"></script>
   <script src="js/matrix.form_common.js"></script>
+  <%--下拉框--%>
+  <script src="js/select2.min.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $(".searchType").select2();
+      });
+  </script>
 
 </body>
 

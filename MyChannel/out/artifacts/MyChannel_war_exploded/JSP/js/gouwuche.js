@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    var userName = $("#user-nav-userHeadId").text();
+
     //使用Ajax查询 得到该用户购物车的数据
     $.ajax({
         url: '/MyChannel/ordersAction_getUserShoppingCartList.action',
@@ -30,8 +32,18 @@ $(document).ready(function () {
         var json = eval("(" + tt + ")"); //数组
         var tt = "";
         var i = 0;
+        var sumMoney = 0;
         $.each(json.shoppingcartList, function (index, item) {
             console.log("处理" + item.OrdersId);
+            var goodPriceForSum = item.GoodPrice;
+            var goodDiscountForSum = item.GoodDiscount;
+            var userBuyQuantityForSum = item.GoodNumber;
+            if (goodDiscountForSum !== "10") {
+                sumMoney = sumMoney + Math.round(Number(userBuyQuantityForSum) * (Number(goodPriceForSum)) * (Number(goodDiscountForSum)) * 0.1);
+
+            } else {
+                sumMoney = sumMoney + Math.round(Number(userBuyQuantityForSum) * (Number(goodPriceForSum)));
+            }
             $("#personalInformationRightDivUl").append(
                 "<li class='personalInformationRightDivDown' id='" + "personalInformationRightDivDown" + i + "'>" +
                 " <div class='personalInformation-goodsDiv'>" +
@@ -45,7 +57,6 @@ $(document).ready(function () {
                 "</li>");
             //为所有条目添加click事件，使得起点击后可以修改左边详细信息的一些数据
             $("#personalInformationRightDivDown" + i).mouseenter(function () {
-                console.log("订单: " + item.OrdersId + "被点击")
                 $("#personalInformationLeftDiv").fadeOut(200, "swing", function () {
                     $("#personalInformationHeadImg").attr("src", item.GoodImg164);
                     $("#personalInformationLevel").text(item.GoodName);
@@ -88,7 +99,6 @@ $(document).ready(function () {
                 $("#ordersId").val(item.OrdersId);
                 $("#goodBuyQuantity").val(userBuyQuantity);
                 console.log("隐藏表单填写完毕!");
-
                 // 实现将对话框中的订单信息显示
                 //取出所有的信息
                 var howMuchMoney;
@@ -178,5 +188,67 @@ $(document).ready(function () {
 
             console.log("处理" + item.OrdersId + "结束");
         });
+
+        //查看是否有订单 有的话 添加一个全部购买的按钮
+        if(json.shoppingcartList.length !== 0){
+            console.log("订单数量: " + json.shoppingcartList.length);
+            $("#personalInformationRightDivUl").append("<div style='margin-top: 20px'> " +
+                "<button id='allBuyButton' type='button' class='btn btn-success'>全部购买</button> " +
+                "</div>");
+
+            //为全部购买添加click事件
+            $("#allBuyButton").click(function () {
+                //发送userName 后台就直接查询到该用户的所有购物车内容 然后在后台直接一起支付 前台就生成一个支付页面
+
+                //生成支付页面
+                // 实现点击立即购买后 弹出对话框
+                $("#replyZheZhao").css("display", "block");
+                $("#replyZheZhao").animate({opacity: ".6"}, 800, "easeInOutQuart", function () {
+                    $(".goodsBuyDiv").css("display", "block");
+                    $(".goodsBuyDiv").animate({opacity: "1"}, 400, "easeInOutQuart");
+                });
+                // 实现将对话框中的订单信息显示
+                //填入对话框中对应内容
+                $(".good-info").next().text("价格: " + sumMoney + "¥");
+
+                // 点击遮罩 取消g购买
+                $("#replyZheZhao , .goodsBuyDiv-fourth").click(function () {
+                    //将支付弹出框隐藏
+                    $(".goodsBuyDiv").animate({opacity: "0"}, 800, "easeInOutQuart", function () {
+                        $(".goodsBuyDiv").css("display", "none");
+                    });
+                    $("#replyZheZhao").animate({opacity: "0"}, 800, "easeInOutQuart", function () {
+                        $("#replyZheZhao").css("display", "none");
+                    });
+                });
+                //支付按钮
+                $(".goodsBuyDiv-third").click(function () {
+                    //删除该用户所有的ShoppingCart
+                    //ajax请求
+                    $.ajax({
+                        method: "POST",
+                        url: "/MyChannel/ordersAction_deleteAllShoppingCart.action",
+                        data: { userName: userName ,deleteOrderTo: "no"}
+
+                    })
+                        .done(function( msg ) {
+                            if(msg === "all buy success!"){
+                                console.log("在购物车內支付完毕 删除该购物车栏完毕 准备将此订单转变为待发货状态");
+                                alert("支付成功!");
+                                window.location.reload();
+                            }else {
+                                console.log("删除购物车栏失败 请检查异常栈 sad" + msg);
+                            }
+                        });
+                    //ajax请求结束
+                });
+
+            });
+
+        }else {
+            console.log("订单数量: 0");
+        }
+
+
     }
 });

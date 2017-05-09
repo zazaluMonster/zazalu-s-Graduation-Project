@@ -40,7 +40,7 @@ public class UserDaoImpl implements UserDao{
 
 	public User getByEmail(String emailName){
 		Session session =  hibernateTemplate.getSessionFactory().getCurrentSession();
-		SQLQuery sqlQuery =  session.createSQLQuery("SELECT * FROM User WHERE UserEmail =  '" + emailName + "'");
+		SQLQuery sqlQuery =  session.createSQLQuery("SELECT * FROM User WHERE UserEmail =  '" + emailName + "' AND Semaphore = '1'");
 		sqlQuery.addEntity(User.class);
 		User user = (User) sqlQuery.uniqueResult();
 		return user;
@@ -67,5 +67,7 @@ public class UserDaoImpl implements UserDao{
 		User user = getByName(userName);
 		hibernateTemplate.delete(user);
 	}
+
+
 
 }

@@ -685,7 +685,7 @@ $(document).ready(function () {
                                 console.log("设定成功");
                                 $("#getShouHuoDiZhi").click(); //重新加载一次收货地址
                             }else {
-                                console.log("设定失败 请查看异常栈信息");
+                                console.log("设定失败 请查看异常栈信息" + msg);
                                 alert("不为人知的错误发生了!请联系后台管理")
                             }
                         });

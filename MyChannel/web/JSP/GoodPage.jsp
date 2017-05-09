@@ -31,7 +31,7 @@
 %>
 
 <head>
-  <title>Matrix Admin</title>
+  <title>MyChannel</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -140,7 +140,7 @@
     <ul class="nav" id="headList">
       <li class="dropdown" id="profile-messages"><a title="" href="#" data-toggle="dropdown"
                                                     data-target="#profile-messages" class="dropdown-toggle"><i
-              class="icon icon-user"></i> <span class="text">Welcome User</span><b class="caret"></b></a>
+              class="icon icon-user"></i> <span class="text">欢迎 用户</span><b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li>
             <a href="买方个人信息.jsp" id="user-nav-userHeadA">
@@ -152,24 +152,24 @@
             </a>
           </li>
           <li class="divider"></li>
-          <li><a href="ShoppingCart.jsp"><i class="icon-heart-empty"></i> My ShoppingCart</a></li>
+          <li><a href="ShoppingCart.jsp"><i class="icon-heart-empty"></i> 我的购物车</a></li>
           <li class="divider"></li>
-          <li><a href="userFavorite.jsp"><i class="icon-heart-empty"></i> My Favorites</a></li>
+          <li><a href="userFavorite.jsp"><i class="icon-heart-empty"></i> 我的收藏夹</a></li>
           <li class="divider"></li>
-          <li><a href="${pageContext.request.contextPath}/userAction_userLogOut.action"><i class="icon-key"></i> Log Out</a></li>
+          <li><a href="${pageContext.request.contextPath}/userAction_userLogOut.action"><i class="icon-key"></i> 登出</a></li>
         </ul>
       </li>
-      <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+      <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">设置</span></a></li>
       <li class=""><a title="" href="login.jsp"><i class="icon icon-question-sign"></i> <span
-              class="text">Support</span></a></li>
-      <li class=""><a title="" href="login.jsp"><i class="icon icon-heart"></i> <span class="text">About</span></a>
+              class="text">支持</span></a></li>
+      <li class=""><a title="" href="login.jsp"><i class="icon icon-heart"></i> <span class="text">关于</span></a>
       </li>
       <li class=""><a title="" href="${pageContext.request.contextPath}/userAction_userLogOut.action"><i class="icon icon-share-alt"></i> <span
-              class="text">Logout</span></a></li>
+              class="text">登出</span></a></li>
       <li class="">
         <a title="" href="#" id="headMusicA">
           <i class="icon icon-music" id="headMusicI"></i>
-          <span class="text" id="headMusicSpan">music</span>
+          <span class="text" id="headMusicSpan">音乐</span>
           <span id="headMusicProgress" style="display: none"></span>
           <span id="headMusicCircle" style="display: none"></span>
           <span id="headMusicTitle" style="display: none">GIRAFFE BLUES ~Freyja Solo~ - 鈴木みのり</span>
@@ -198,16 +198,16 @@
         </div>
       </div>
       <div class="goodsInformationImgSmallBox">
-        <img src="${sessionScope.good.goodImgUrl430}">
+        <img src="/zazaluImg/img/goods/blank.jpg">
       </div>
       <div class="goodsInformationImgSmallBox">
-        <img src="${sessionScope.good.goodImgUrl430}">
+        <img src="/zazaluImg/img/goods/blank.jpg">
       </div>
       <div class="goodsInformationImgSmallBox">
-        <img src="${sessionScope.good.goodImgUrl430}">
+        <img src="/zazaluImg/img/goods/blank.jpg">
       </div>
       <div class="goodsInformationImgSmallBox">
-        <img src="${sessionScope.good.goodImgUrl430}">
+        <img src="/zazaluImg/img/goods/blank.jpg">
       </div>
 
       <div id="goodsInfomationFavorites">
@@ -225,7 +225,7 @@
       <!--评论div-->
       <div id="goodsInfomationMiddleDiv-second">
         <div id="goodsInformationMiddleDiv-second-Head">累计评论
-          <div id="leijipinglun1" class="goodsInformation-quantity">99+</div>
+          <div id="leijipinglun1" class="goodsInformation-quantity">0</div>
         </div>
       </div>
     </div>
@@ -261,7 +261,7 @@
             <div class="tm-indcon"><span class="tm-label">库存</span><span class="tm-count">${sessionScope.good.goodStock}</span></div>
           </li>
           <li class="tm-ind-item tm-ind-reviewCount canClick tm-line3" id="J_ItemRates">
-            <div class="tm-indcon"><span class="tm-label">累计评价</span><span id="leijipinglun2" class="tm-count">85466</span></div>
+            <div class="tm-indcon"><span class="tm-label">累计评价</span><span id="leijipinglun2" class="tm-count">0</span></div>
           </li>
           <li class="tm-ind-item tm-ind-emPointCount" data-spm="1000988">
             <div class="tm-indcon"><a href="//vip.tmall.com/vip/index.htm" target="_blank"><span class="tm-label">送Chanel积分</span><span class="tm-count">${sessionScope.good.goodPoint}</span></a></div>
@@ -425,7 +425,7 @@
   <!--从下方弹出的回复Div-->
   <form id="goodsEvaluateReplyForm" method="POST" enctype="multipart/form-data">
     <div class="goodsEvaluateReplyDownDiv">
-      <div class="goodsEvaluateReplyDownDiv-first"><span id="goodsEvaluateReplyDownDiv-first-span">回复: zazalu</span> <a id="goodsEvaluateReplyDownDiv-first-a2" href="javascript:">关闭</a>
+      <div class="goodsEvaluateReplyDownDiv-first"><span id="goodsEvaluateReplyDownDiv-first-span">回复</span> <a id="goodsEvaluateReplyDownDiv-first-a2" href="javascript:">关闭</a>
         <a id="goodsEvaluateReplyDownDiv-first-a1" href="javascript:">发送</a>
       </div>
       <div class="goodsEvaluateReplyDownDiv-uploadPicture" style="height: 0px">

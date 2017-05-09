@@ -10,7 +10,7 @@
     request.setAttribute("time","?" + new Date().getTime());
 %>
 <head>
-    <title>Matrix Admin</title>
+    <title>MyChannel</title>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -42,7 +42,7 @@
     <ul class="nav" id="headList">
         <li class="dropdown" id="profile-messages"><a title="" href="#" data-toggle="dropdown"
                                                       data-target="#profile-messages" class="dropdown-toggle"><i
-                class="icon icon-user"></i> <span class="text">Welcome User</span><b class="caret"></b></a>
+                class="icon icon-user"></i> <span class="text">欢迎 管理员</span><b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
                     <a href="买方个人信息.jsp" id="user-nav-userHeadA">
@@ -55,21 +55,21 @@
                 </li>
                 <li class="divider"></li>
                 <li><a href="${pageContext.request.contextPath}/userAction_userLogOut.action"><i class="icon-key"></i>
-                    Log Out</a></li>
+                    登出</a></li>
             </ul>
         </li>
-        <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
+        <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">设置</span></a></li>
         <li class=""><a title="" href="login.jsp"><i class="icon icon-question-sign"></i> <span
-                class="text">Support</span></a></li>
-        <li class=""><a title="" href="login.jsp"><i class="icon icon-heart"></i> <span class="text">About</span></a>
+                class="text">支持</span></a></li>
+        <li class=""><a title="" href="login.jsp"><i class="icon icon-heart"></i> <span class="text">关于</span></a>
         </li>
         <li class=""><a title="" href="${pageContext.request.contextPath}/userAction_userLogOut.action"><i
                 class="icon icon-share-alt"></i> <span
-                class="text">Logout</span></a></li>
+                class="text">登出</span></a></li>
         <li class="">
             <a title="" href="#" id="headMusicA">
                 <i class="icon icon-music" id="headMusicI"></i>
-                <span class="text" id="headMusicSpan">music</span>
+                <span class="text" id="headMusicSpan">音乐</span>
                 <span id="headMusicProgress" style="display: none"></span>
                 <span id="headMusicCircle" style="display: none"></span>
                 <span id="headMusicTitle" style="display: none">GIRAFFE BLUES ~Freyja Solo~ - 鈴木みのり</span>

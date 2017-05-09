@@ -5,8 +5,6 @@ $(document).ready(function () {
 
     $("#yearSelect").change(function () {
         var selectedYear = $(this).children('option:selected').val();
-        alert($(this).children('option:selected').val());
-
         //获取所选年份的交易额
         $.ajax({
             url: '/MyChannel/ordersAction_getYearMoney.action',
