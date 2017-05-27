@@ -11,17 +11,18 @@ ul {
 }
 
 .heart {
-  width: 58px;
-  height: 50px;
-  position: absolute;
-  left: 65%;
-  top: 84%;
-  background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
-  background-position: 0 0;
-  background-size: auto 55px;
-  cursor: pointer;
-  transition: background 0.8s steps(28);
+    width: 58px;
+    height: 50px;
+    position: absolute;
+    left: 65%;
+    top: 84%;
+    background: url(../img/heart.png) no-repeat;
+    background-position: 0 0;
+    background-size: auto 55px;
+    cursor: pointer;
+    transition: background 0.8s steps(28);
 }
+
 /*.heart:hover {
   background-position: -1540px 0;
   transition: background 1s steps(28);
@@ -192,7 +193,7 @@ ul {
     margin-left: 24px;
     float: left;
     margin-top: 5px;
-} 
+}
 
 .NetWeightLi-select {
     width: 50px;
@@ -291,10 +292,10 @@ ul {
     margin-top: 15px;
     background-color: #e9e9e9;
     background-repeat: no-repeat;
-    background-image: url(/Users/zazalu/Desktop/MyChannel文档/毕设前端/img/gallery/goodsInformationPriceBackground.png);
+    background-image: url(../img/gallery/goodsInformationPriceBackground.png);
 }
 
-.goodsInformationSubTitle{
+.goodsInformationSubTitle {
     font-size: 14px;
     color: #dd2727;
     margin: 0;
@@ -331,7 +332,6 @@ ul {
     height: 533px;
     border: 0px solid #cfbfb1;
 }
-
 
 #goodsInformationMiddleDiv-first-Head {
     width: initial;
@@ -372,7 +372,6 @@ ul {
 #goodsInfomationMiddleDiv-second {
 }
 
-
 #goodsInformationMiddleDiv {
     position: relative;
     top: 114px;
@@ -390,9 +389,11 @@ ul {
     width: 60px;
 }
 
-
 #goodsInformationImgBox {
-    width: 430px;height: 430px;overflow: hidden;margin: auto;
+    width: 430px;
+    height: 430px;
+    overflow: hidden;
+    margin: auto;
 }
 
 #goodsInformationImgDiv {
@@ -401,7 +402,6 @@ ul {
     border-radius: 4px;
     text-align: center;
 }
-
 
 #goodsInfomationDiv {
     width: auto;

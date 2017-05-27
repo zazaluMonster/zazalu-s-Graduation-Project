@@ -216,7 +216,7 @@
 </div>
 <div id="content" style="margin-left: 0px">
   <div id="content-header">
-    <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">Sample pages</a> <a href="#" class="current">Gallery</a> </div>
+    <div id="breadcrumb"> <a title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 首页</a> 主页商品页<a ></a> <a class="current">所有商品页</a> </div>
     <!--<h1>Gallery</h1>-->
   </div>
   <div class="container-fluid"> <!-- <hr> -->
@@ -224,7 +224,7 @@
       <div class="span12">
         <div class="widget-box">
           <div class="widget-title"> <span class="icon"> <i class="icon-picture"></i> </span>
-            <h5>Gallery</h5>
+            <h5>所有商品页</h5>
           </div>
           <div class="widget-content">
             <ul class="thumbnails">

@@ -99,9 +99,9 @@
 <!--添加商品的页面-->
 <div id="content">
     <div id="content-header">
-        <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a
-                href="#">后台管理</a>
-            <a href="#" class="current">广告管理</a>
+        <div id="breadcrumb"><a title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 主页</a> <a
+                >后台管理</a>
+            <a  class="current">广告管理</a>
         </div>
     </div>
     <div class="container-fluid">
@@ -137,7 +137,7 @@
                                     </div>
                                 </div>
                                 <div class="form-actions">
-                                    <button id="addNewAdsButton" type="button" class="btn btn-success">Save</button>
+                                    <button id="addNewAdsButton" type="button" class="btn btn-success">保存</button>
                                 </div>
                             </form>
                         </div>

@@ -94,11 +94,24 @@ public class addEvaluateServlet extends HttpServlet{
                     System.out.println(fileItem.getFieldName() + ": " + fileItem.getName());
                     String picturename = fileItem.getName();
                     //可以用File.separator 兼容不同系统的文件系统分隔符
-                    String path = "/Users/zazalu/Documents/MyChannelImg/img/evaluateImg/"+currentTime+"/"+picturename;
-                    String docPath = "/Users/zazalu/Documents/MyChannelImg/img/evaluateImg/" + currentTime;
-                    File docFile = new File(docPath);
-                    if(!docFile.exists()){
-                        docFile.mkdir();
+                    String path = "";
+                    String separator = File.separator;
+                    System.out.println(separator.equals("\\"));
+                    if(separator.equals("/")){
+
+                        path = separator+"Users"+separator+"zazalu"+separator+"Documents"+separator+"MyChannelImg"+separator+"img"+separator+"evaluateImg"+separator+currentTime+separator+picturename;
+                        String docPath = separator+"Users"+separator+"zazalu"+separator+"Documents"+separator+"MyChannelImg"+separator+"img"+separator+"evaluateImg"+separator + currentTime;
+                        File docFile = new File(docPath);
+                        if(!docFile.exists()){
+                            docFile.mkdirs();
+                        }
+                    }else if (separator.equals("\\")){
+                        path = "D:"+ separator+"Users"+separator+"zazalu"+separator+"Documents"+separator+"MyChannelImg"+separator+"img"+separator+"evaluateImg"+separator+currentTime+separator+picturename;
+                        String docPath = "D:"+ separator+"Users"+separator+"zazalu"+separator+"Documents"+separator+"MyChannelImg"+separator+"img"+separator+"evaluateImg"+separator + currentTime;
+                        File docFile = new File(docPath);
+                        if(!docFile.exists()){
+                            docFile.mkdirs();
+                        }
                     }
                     //存放在web项目外的一个文件夹中 所以用的是绝对路径 这个文件夹是一个tomcat虚拟目录
                     fileItem.write(new File(path));

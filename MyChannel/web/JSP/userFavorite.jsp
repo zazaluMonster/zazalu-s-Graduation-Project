@@ -160,7 +160,7 @@
 
   <!--start-top-serch-->
   <div id="search">
-    <input type="text" placeholder="Search here..." id="headSearch" />
+    <input type="text" placeholder="找不到？试试搜索" id="headSearch" />
     <button id="topSearchButton" type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
   </div>
   <!--close-top-serch-->

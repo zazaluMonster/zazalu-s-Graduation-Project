@@ -93,8 +93,8 @@
   <!--添加商品的页面-->
   <div id="content">
     <div id="content-header">
-      <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#">商铺管理</a>
-        <a href="#" class="current">商品信息</a>
+      <div id="breadcrumb"> <a title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 主页</a> <a >商铺管理</a>
+        <a  class="current">商品信息</a>
       </div>
     </div>
     <div class="container-fluid">

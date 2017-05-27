@@ -98,9 +98,9 @@
 <!--添加商品的页面-->
 <div id="content">
     <div id="content-header">
-        <div id="breadcrumb"><a href="#" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a
-                href="#">商铺管理</a>
-            <a href="#" class="current">订单查看</a>
+        <div id="breadcrumb"><a title="Go to Home" class="tip-bottom"><i class="icon-home"></i> 主页</a> <a
+               >商铺管理</a>
+            <a  class="current">订单查看</a>
         </div>
     </div>
     <div class="container-fluid">
@@ -252,7 +252,7 @@
                             </li>
                             <li style="width: 260px;float: left;">
                                 <div>
-                                    <input type="text" placeholder="Search here..." id="listSearch">
+                                    <input type="text" placeholder="找不到？试试搜索" id="listSearch">
                                     <button type="button" class="tip-bottom" data-original-title="Search" style="margin-bottom: 10px;"><i class="icon-search icon-white"></i></button>
                                 </div>
                             </li>
